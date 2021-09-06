@@ -1,0 +1,420 @@
+body {
+  --base-color: rgb(46, 49, 49);
+  --base-color-2: #FFB319;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
+}
+
+div.profile-nav > a {
+  font-size: 35px;
+  padding: 15%;
+  margin-right: 5%;
+}
+
+nav {
+  background-color: black;
+}
+
+nav.a {
+  font-family: 'Black Ops One', cursive;
+  font-size: 10000px;
+}
+
+ul.search {
+  display: flexbox;
+  flex-direction: row;
+  width: 500px;
+  height: 50px;
+  background-colo
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+button.button {
+  background-color:rgb(46, 49, 49);
+  color: grey;
+  margin-left: -45px;
+  border: none;
+}
+
+input.input{
+  flex: 1;
+  height: 40px;
+  width: 400px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  font-size: 18px;
+  padding-left: 20px;
+  background-color: rgb(46, 49, 49);
+  }
+
+  div.online_friends {
+      text-align: left;
+      padding: 10px;
+      font-size: 15px;
+      border: 3px;
+  }
+
+  div.language_menu {
+      background-color: rgb(46, 49, 49);
+  }
+
+  div.language_menu > a {
+      color: white;
+  }
+  
+  .dropdown-toggle::after {
+    content: none;
+}
+
+.Friend_bar_Option {
+  display: flex;
+  padding-left: 8%;
+  padding-top: 10px;
+}
+
+.Friend_bar_Option .material-icons {
+  padding-right: 5px;
+  color: white;
+}
+
+.Friend_bar_Option h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-right: 100px;
+  align-items: center;
+  color: white;
+}
+
+body {
+ margin-left: none;
+ margin-right: none;  
+ background-color: black; 
+}
+
+.other_nav {
+    display: flex;
+    margin-left: none;
+    margin-right: none;
+    padding: 0 10px;
+    margin-top: 60px;
+}
+
+.feed {
+  flex: 0.5;
+  min-width: fit-content;
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.uploads_input img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.uploads {
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-top: 10px;
+  margin: 10px;
+  color:white;
+  height: 140px;
+}
+
+.uploads form {
+  display: flex;
+}
+
+.uploads_input {
+  display: flex;
+  padding: 20px;
+  color:aqua;
+  margin-left: 20px;
+}
+
+.uploads_input input {
+  display: flex;
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: var(--base-color);
+  border-radius: 20px;
+  color: white;
+  padding-left: 20px;
+  width: 10000px;
+}
+
+.upload-button {
+  background-color: var(--base-color);
+  border: none;
+  color: white;
+  font-weight: 500;
+  margin-right: 20px;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: -90px;
+  margin-bottom: 5px;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.post {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid rgb(68, 66, 66);
+  border-top: 1px solid rgb(68, 66, 66);
+  padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.the_post_content {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.post_body img {
+  width: 450px;
+  object-fit: contain;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.utility-icon {
+  display: flex;
+  margin-top: 20px;
+}
+
+.utility-icon span {
+  margin-right: 15px;
+  font-size: 25px;
+  color: white;
+}
+
+.utility-icon button.like_button {
+  width: 20px;
+  background-color: black;
+  border: none;
+  margin-top: 0px;
+  margin-right: 25px;
+}
+
+.utility-icon button.like_button span.material-icons {
+  margin-right: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+  margin-top: 20px;
+}
+
+.username h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.desc {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: white;
+  word-break: break-all;
+  max-width: 30%;
+}
+
+.post_body {
+  flex: 1;
+  padding: 10px;
+}
+
+.profile-picture {
+  padding: 20px;
+}
+
+.widgets {
+  flex: 0.3;
+  width: fit-content;
+}
+
+.widgets__widgetContainer {
+  margin-top: 15px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.widgets__widgetContainer h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+}
+
+.feather {
+  width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+.navbar {
+  background-color: var(--base-color-2) !important;
+}
+
+.custom-toggler.navbar-toggler {
+  border: 2px solid black;
+}
+
+.custom-toggler.navbar-toggler span {
+  color: black;
+}
+
+li.nav-item {
+  color: black;
+}
+
+@media screen and (max-width: 1100px) {
+.widgets__widgetContainer {
+  display: none;
+}
+}
+
+@media screen and (max-width: 1100px) {
+.Friend_bar_Option {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+.other_nav {
+    justify-content: center;
+  }
+}
+
+.fab-container {
+position: fixed;
+bottom: 50px;
+right: 50px;
+z-index: 999;
+cursor: pointer;
+}
+
+.fab-icon-holder {
+width: 50px;
+height: 50px;
+border-radius: 100%;
+background: var(--base-color-2);
+
+box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.fab-icon-holder span.material-icons{
+margin-top: 10px;
+display: flex;
+justify-content: center;
+font-size: 40px;
+}
+
+.fab-icon-holder:hover{
+opacity: 0.8;
+}
+
+.fab-icon-holder i {
+display: flex;
+align-items: center;
+justify-content: center;
+
+height: 100%;
+font-size: 25px;
+color: #ffffff;
+}
+
+.fab {
+width: 60px;
+height: 60px;
+background: var(--base-color-2);
+padding: 0.5px;
+}
+
+.fab-options {
+list-style-type: none;
+margin: 0;
+
+position: absolute;
+bottom: 70px;
+right: 0;
+
+opacity: 0;
+
+transition: all 0.3s ease;
+transform: scale(0);
+transform-origin: 85% bottom;
+}
+
+.fab:hover + .fab-options, .fab-options:hover {
+opacity: 1;
+transform: scale(1);
+}
+
+.fab-options li {
+display: flex;
+justify-content: flex-end;
+padding: 5px;
+}
+
+.fab-label {
+padding: 2px 5px;
+align-self: center;
+user-select: none;
+white-space: nowrap;
+border-radius: 3px;
+font-size: 16px;
+background: #666666;
+color: #ffffff;
+box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+margin-right: 10px;
+}
+
+.fab-options li span.material-icons {
+margin-top: 5px;
+display: flex;
+justify-content: center;
+font-size: 40px;
+}
+
+.fab-options li a {
+color: black;
+}
+
+nav.navbar a.navbar-brand {
+color: black;
+}
