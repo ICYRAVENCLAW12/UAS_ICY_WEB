@@ -118,19 +118,11 @@ li.nav-item span.material-icons:hover {
 
 /*==================================================Nav=====================================================*/
 
-
-
 /*==================================================Panel=====================================================*/
 
 @media screen and (min-width: 1100px ) {
-  .panel {
-    background-color: var(--base-color);
-    margin: 0.5%;
-    margin-bottom: 0%;
-    margin-top: 4%;
-    display: flex;
+  .container {
     background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 2px;
   }
   
   .perpanel {
@@ -142,9 +134,8 @@ li.nav-item span.material-icons:hover {
     position: relative;
     border-radius: 25px;
   }
-  
   .perpanel:hover {
-    border: solid 1px white;
+    border: solid 5px white;
   }
 
   .box {
@@ -184,14 +175,10 @@ li.nav-item span.material-icons:hover {
 }
 
 @media screen and (max-width: 1100px ) {
-  .panel {
-    background-color: var(--base-color);
-    margin: 0.5%;
-    margin-bottom: 0%;
-    margin-top: 8.5%;
-    display: flex;
+  .container {
     background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 2px;
+    margin-left: 0;
+    height: 60px;
   }
   
   .perpanel {
@@ -203,17 +190,17 @@ li.nav-item span.material-icons:hover {
     position: relative;
     border-radius: 25px;
   }
-  
   .perpanel:hover {
-    border: solid 1px white;
+    border: solid 2px white;
   }
-
+  
   .box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 10px;
     width: 940px;
-    margin: 20px 0;
+    margin: 40px 0;
+    padding: 10px;
   }
 
   .item {
