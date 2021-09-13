@@ -34,7 +34,7 @@ ul.search {
 button.button {
     background-color:rgb(46, 49, 49);
     color: grey;
-    margin-left: -45px;
+    margin-left: -55px;
     border: none;
   }
   
@@ -75,8 +75,9 @@ div.language_menu > a {
     padding-right: 3%;
     margin-top: 30px;
     background-color: black;
-    margin-left: 9%;
+    margin-left: 8%;
     height: 800px;
+    position: fixed;
   }
   
 .Friend_bar_Option .material-icons {
@@ -113,7 +114,8 @@ body {
     flex: 0.5;
     height: fit-content;
     min-width: fit-content;
-    overflow-y: scroll;
+    float: right;
+    margin-left: 21%;
   }
 
 .feed::-webkit-scrollbar {
@@ -166,7 +168,7 @@ body {
     padding-left: 20px;
   }
   
-.upload-button {
+  .upload-button {
     background-color: var(--base-color);
     border: none;
     color: white;
@@ -183,7 +185,13 @@ body {
 .profile-picture img {
     border-radius: 50%;
     height: 40px;
+    margin-right: 2%;
   }
+  
+.profile-picture h3 a {
+  font-size: 16pt;
+  color: white;
+}
   
 .post {
     display: flex;
@@ -199,8 +207,6 @@ body {
   }
 
 .the_post_content {
-    display: flex;
-    align-items: flex-start;
     padding-bottom: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -209,10 +215,10 @@ body {
   }
   
 .post_body img {
-    width: 450px;
-    object-fit: contain;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
     border-radius: 4px;
-    margin-top: 10px;
     margin-bottom: 0;
   }
   
@@ -241,19 +247,6 @@ body {
     color: white;
   }
 
-.username {
-    font-weight: 600;
-    font-size: 12px;
-    color: white;
-    margin-top: 20px;
-  }
-  
-.username h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-    color: white;
-  }
-  
 .desc {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -269,7 +262,9 @@ body {
   }
   
 .profile-picture {
-    padding: 20px;
+    padding: 2%;
+    display: flex;
+    align-items: center;
   }
   
 .widgets {
@@ -278,19 +273,46 @@ body {
     margin-right: 0px;
   }
 
-.widgets__widgetContainer {
-    margin-top: 15px;
-    padding: 20px;
-    background-color: black;
-    border-radius: 20px;
-    width: 95%;
-  }
+.widgets .box {
+  width: 120%;
+  height: 20%;
+}
+
+.widgets .box .trend-content {
+  font-size: 13pt;
+  margin-left: 3%;
+  margin-bottom: 15%;
+  display: flex;
+}
+
+.credits {
+  width: 300px
+}
+
+.credits a {
+  font-size: 19px;
+  padding: 5px;
+  color: white;
   
-.widgets__widgetContainer h2 {
-    font-size: 18px;
-    font-weight: 800;
-    color: white;
-  }
+}
+
+.news a {
+  word-break: break-all;
+}
+
+.news {
+  width: 240px;
+  display: flex;
+}
+
+.logo {
+  margin-top: 2%;
+  margin-left: 20%;
+}
+
+br {
+  line-height: 190%;
+}
 
 .feather {
     width: 16px;
@@ -329,19 +351,35 @@ body {
     color:black;
   }
 
-li.nav-item .tool{
+li.nav-item {
+  padding: 0;
+}
+
+li.nav-item span.material-icons {
     color: black;
-    font-size: 50px;
-    margin-left: 20px ;
+    font-size: 25pt;
+    margin-left: -5px;
+    padding: ;
   }
 
 li.nav-item :hover {
     background-color: black;
+    border-radius: 10px;
   }
 
-li.nav-item .tool:hover {
-   color: var(--base-color-2);
+li.nav-item span.material-icons:hover {
+    color:var(--base-color-2);
+    font-size: 25pt;
+    margin-left: -5px ;
   }
+
+.account_menu a.dropdown-item {
+    color: white;
+  }
+
+.account_menu a.dropdown-item:hover {
+  color: white;
+}
 
 @media screen and (max-width: 1100px) {
   .widgets {
@@ -353,6 +391,10 @@ li.nav-item .tool:hover {
   .Friend_bar_Option {
       display: none;
     }
+  }
+
+  .feed {
+    margin-left: 22.5%;
   }
 
 @media screen and (max-width: 1100px) {
@@ -368,10 +410,22 @@ li.nav-item .tool:hover {
   }
 
 @media screen and (max-width: 1366px) {
-  .Friend_bar_Option {
+  .widgets {
       display: none;
     }
+  
+  .Friend_bar_Option {
+    margin-left: 0;
+    height: 460px;
+    margin-top: 1%;
+    }   
   }
+
+@media screen and (max-width: 1100px) {
+  .feed {
+    margin-left:0;
+  } 
+}
 
 .fab-container {
 	  position: fixed;
@@ -467,3 +521,118 @@ li.nav-item .tool:hover {
 nav.navbar a.navbar-brand {
     color: black;
   }
+
+@media screen and (max-width: 1100px ) { /*kecil*/
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: black; /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.527); /* Black w/ opacity */
+    margin-left: 0;
+    border: none;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: black;
+    border: 2px solid var(--base-color-2);
+    margin-left: 18% ;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 0px;
+    width: 65%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .modal-content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .modal-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+} 
+
+@media screen and (min-width: 1100px ) { /*besar*/
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: black; /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.527); /* Black w/ opacity */
+    margin-left: 0;
+    border: none;
+  }
+  /* Modal Content */
+  .modal-content {
+    background-color: black;
+    border: 2px solid var(--base-color-2);
+    margin-left: 25% ;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 0px;
+    width: 50%;
+    height: 80%;
+  }
+
+  .modal-content .apalaj {
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  .modal-post {
+    display: flex;
+    height: 95%;
+  }
+  
+  .apalaj::-webkit-scrollbar {
+    display: none;
+  }
+  .apalaj {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+} 
+
+.thecomment {
+  padding: 2%;
+}
+
+.comment_content {
+  display: flex;
+  align-items: center;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-bottom: 0;
+}
+
+.comment_content img {
+  width: 6%;
+  margin-right: 2%;
+}
+
+.comment_content h3 a {
+  font-size: 15pt;
+}
+
+.comment a {
+  padding-left: 12%;
+  margin-top: 0%;
+  padding-bottom: 1%;
+  font-size: 10pt;
+}
