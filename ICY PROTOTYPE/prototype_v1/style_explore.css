@@ -88,6 +88,12 @@ li.nav-item span.material-icons {
   }
 
 .account_menu a.dropdown-item img {
+  width: 50px;
+  margin-left: 0px;
+  margin-right: 8px;    
+  }
+
+.account_menu a.dropdown-item img {
     width: 50px;
     margin-left: 0px;
     margin-right: 8px;
@@ -107,13 +113,19 @@ li.nav-item span.material-icons:hover {
 
 .account_menu a.dropdown-item {
     color: white;
+    padding: 10px, 0px;
+
   }
 
 .account_menu a.dropdown-item:hover {
   color: white;
+  background-color: #FFB319;
+  border-radius: 0;
+  padding: 10px, 0px;
 }
+
 .bodyhtml {
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
+  background-color: black;
 }
 
 /*==================================================Nav=====================================================*/
@@ -123,22 +135,29 @@ li.nav-item span.material-icons:hover {
 @media screen and (min-width: 1100px ) {
   .container {
     background-color: rgba(0, 0, 0, 0.3);
+    padding-bottom: 0;
   }
   
   .perpanel {
     margin: 0.2%;
     margin-left: 2.2%;
+    margin-top: 1%;
     color: var(--base-color);
     background-color: var(--base-color-2);
     padding: 0.5% 1%;
     position: relative;
     border-radius: 25px;
+    border: 2px solid transparent;
   }
-  .perpanel:hover {
-    border: solid 5px white;
+
+  .active, .perpanel:hover {
+    border: solid 2px var(--base-color-2);
+    background-color: transparent;
+    color: var(--base-color-2);
   }
 
   .box {
+    padding-top: 0%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
@@ -162,6 +181,14 @@ li.nav-item span.material-icons:hover {
     height: 300px;
   }
 
+  .item:nth-child(15n+2):hover {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    transition: 0.3s;
+    border: 1px solid black;
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU");
+  }
+
   .item:nth-child(15n+5) {
     grid-row: span 2;
     height: 620px;
@@ -182,6 +209,7 @@ li.nav-item span.material-icons:hover {
   }
   
   .perpanel {
+    margin-bottom: 0;
     margin: 0.2%;
     margin-left: 2.2%;
     color: var(--base-color);
@@ -189,9 +217,13 @@ li.nav-item span.material-icons:hover {
     padding: 0.5% 1%;
     position: relative;
     border-radius: 25px;
+    border: 2px solid transparent;
   }
-  .perpanel:hover {
-    border: solid 2px white;
+  
+  .active, .perpanel:hover {
+    border: solid 2px var(--base-color-2);
+    background-color: transparent;
+    color: var(--base-color-2);
   }
   
   .box {
@@ -201,6 +233,7 @@ li.nav-item span.material-icons:hover {
     width: 940px;
     margin: 40px 0;
     padding: 10px;
+    padding-top: 0;
   }
 
   .item {
