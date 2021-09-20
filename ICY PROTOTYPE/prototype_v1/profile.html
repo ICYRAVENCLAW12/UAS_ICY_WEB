@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_2.css">
+    <title>Profile</title>
+</head>
+<body>
+    <nav class="navbar fixed-top sticky-top navbar-expand-lg">
+        <a class="navbar-brand" href="PROTOTYPE_2.html" style="font-family: Black Ops One , cursive; font-size: xx-large; padding: 0;" >
+            <b>ICY</b>
+        </a>
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="material-icons"><span class="material-icons">list</span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="search navbar-nav ml-auto mr-auto">
+                <li class="nav-item">
+                  <div class="justify-content-sm-center">
+                    <form class="form-inline my-2 my-md-0 my-md-0">
+                      <input class="input" type="text" placeholder="@username" aria-label="Search">    
+                      <button class="button" type="submit"><span class="material-icons">search</span></button>         
+                    </form>
+                  </div>
+                </li>
+            </ul>
+        
+
+            <ul class=" left_navbar_side navbar-nav"> 
+                <li class="nav-item"><a class="tool nav-link" href="#">
+                  <span class="material-icons">home</span></a>
+                </li>  
+                <li class="nav-item"><a class="tool nav-link" href="#">
+                  <span class="material-icons">explore</span></a>
+                </li>
+                <li class="nav-item"><a class="tool nav-link" href="#">
+                  <span class="material-icons">mail</span></a>
+                </li>
+                <li class="account_dropdown nav-item dropdown">
+                  <a class="tool nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="material-icons">account_circle</span></a></a>
+                  <div class="account_menu dropdown-menu dropdown-menu-right" style="background-color:rgb(46, 49, 49);">
+                    <a class="dropdown-item" href="#">Account Center</a>
+                    <a class="dropdown-item" href="#">Notification Center</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="login.html">Log Out</a>
+                  </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="form"style="padding-top: 40px;" >
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                  <ul class="nav flex-column garis">
+                    <li class="nav-item">
+                      <a class="nav-link" href="profile.html">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="change.html">Change password</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="helpandabout.html">Help And About</a>
+                    </li>             
+                  </ul>
+              </div>
+              <div class="col ">
+                <div class="card-body " style="text-align: left;">
+                    <form >
+                        <div class="form-group">
+                            <label >Name</label>
+                            <input type="text" placeholder="Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label >E-Mail</label>
+                            <input type="email" placeholder="Example@gmail.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label >Password</label>
+                            <input type="Password" placeholder="*******" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label >Phone Number</label>
+                            <input type="Number" placeholder="123456789" class="form-control">
+                        </div>
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Are you sure wanna change your password</label>
+                        </div>
+                        <div >
+                          <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
