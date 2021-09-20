@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Verification ICY</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+        <link rel="icon" href="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Icons\favicon.ico">
+        <style>
+            body {
+                --base-color: rgb(46, 49, 49);
+                --base-color-2: #FFB319;
+            }
+            .bodyhtml {
+                background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
+            }
+            .navbar {
+                box-shadow: 0px 5px 10px var(--base-color-2);
+            }
+            .navbar .navigasi-1 {
+                font-size: 20pt;
+                font-family: 'Black Ops One', cursive;
+                color: var(--base-color-2);
+            }
+            .navbar .navigasi-2 {
+                color: var(--base-color-2);
+                font-family: 'Black Ops One', cursive;
+            }
+            .card-sub {
+                color: var(--base-color-2);
+                font-family: 'Black Ops One', cursive;
+                border-radius: 20px;
+            }
+            .container{
+                background-color: var(--base-color-2);
+                display: flex;
+                flex-flow: column;
+                height: 50%;
+                align-items: space-around;
+                justify-content: center;
+                margin: 8%;
+                border-radius: 20px;
+                box-shadow: 0px 5px 10px var(--base-color-2);
+            }
+            .userInput{
+                display: flex;
+                justify-content: center;
+            }
+            input{
+                margin: 10px;
+                height: 35px;
+                width: 65px;
+                border: none;
+                border-radius: 5px;
+                text-align: center;
+                font-family: 'Black Ops One', cursive;
+                font-size: 1.2rem;
+                color: var(--base-color-2);
+                background: var(--base-color);
+            }
+            input:focus{
+                border: 2px solid var(--base-color);
+            }
+            h1{
+                text-align: center;
+                font-family: 'Black Ops One', cursive;
+                color: var(--base-color);
+            }
+            button{
+                width: 150px;
+                height: 40px;
+                margin: 25px auto 0px auto;
+                font-family: 'Black Ops One', cursive;
+                font-size: 1.1rem;
+                border: none;
+                border-radius: 5px;
+                letter-spacing: 2px;
+                cursor: pointer;
+                color: var(--base-color-2);
+                background: var(--base-color);
+            }
+        </style>
+        <script type="text/javascript">
+            function clickEvent(first,last){
+                if(first.value.length){
+                    document.getElementById(last).focus();
+                }
+            }
+        </script>
+    </head>
+    <body class="bodyhtml">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand logo-brand navigasi-1" href="login_beneran.html">ICY</a>
+        </nav>
+        <div class="container">
+            <h1>OTP</h1>
+            <div class="userInput">
+                <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+                <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+                <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+                <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+                <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+                <input type="text" id="sixth" maxlength="1">
+            </div>
+            <button class="btn btn-dark card-sub" type="submit">Confirm</button>
+            <br>
+            <div style="text-align: center;">
+                <a href="#" style="color: var(--base-color); font-family: 'Black Ops One', cursive;">Resend Code</a>
+                if you didn't get the email.
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </body>
+</html>
