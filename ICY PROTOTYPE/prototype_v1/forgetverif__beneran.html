@@ -19,7 +19,7 @@
                 box-shadow: 0px 5px 10px var(--base-color-2);
             }
             .navbar .navigasi-1 {
-                font-size: 48pt;
+                font-size: 20pt;
                 font-family: 'Black Ops One', cursive;
                 color: var(--base-color-2);
             }
@@ -75,6 +75,79 @@
                 color: var(--base-color-2);
                 background: var(--base-color);
             }
+            @media (max-width: 1000px) {
+                body {
+                    --base-color: rgb(46, 49, 49);
+                    --base-color-2: #FFB319;
+                }
+                .bodyhtml {
+                    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
+                }
+                .navbar {
+                    box-shadow: 0px 5px 10px var(--base-color-2);
+                }
+                .navbar .navigasi-1 {
+                    font-size: 48pt;
+                    font-family: 'Black Ops One', cursive;
+                    color: var(--base-color-2);
+                }
+                .card-sub {
+                    color: var(--base-color-2);
+                    font-family: 'Black Ops One', cursive;
+                    border-radius: 20px;
+                }
+                .kotak{
+                    background-color: var(--base-color-2);
+                    display: flex;
+                    flex-flow: column;
+                    text-align: center;
+                    margin: 5% 5%;
+                    border-radius: 10px;
+                    box-shadow: 0px 5px 10px var(--base-color-2);
+                    padding: 2% 0%;
+                }
+                .userInput{
+                    display: flex;
+                    justify-content: center;
+                }
+                input{
+                    margin: 10px;
+                    width: 85px;
+                    border: none;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-family: 'Black Ops One', cursive;
+                    font-size: 14pt;
+                    color: var(--base-color-2);
+                    background: var(--base-color);
+                }
+                input:focus{
+                    border: 2px solid var(--base-color);
+                }
+                h1{
+                    text-align: center;
+                    font-family: 'Black Ops One', cursive;
+                    color: var(--base-color);
+                    font-size: 24pt;
+                }
+                button{
+                    width: 200px;
+                    height: 40px;
+                    margin: 25px auto 0px auto;
+                    font-family: 'Black Ops One', cursive;
+                    font-size: 14pt;
+                    border: none;
+                    border-radius: 5px;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+                    color: var(--base-color-2);
+                    background: var(--base-color);
+                }
+                .resend-code {
+                    text-align: center;
+                    font-size: 14pt;
+                }
+            }
         </style>
         <script type="text/javascript">
             function clickEvent(first,last){
@@ -100,7 +173,7 @@
             </div>
             <button class="btn btn-dark card-sub" type="submit">Confirm</button>
             <br>
-            <div style="text-align: center;">
+            <div class="resend-code">
                 <a href="#" style="color: var(--base-color); font-family: 'Black Ops One', cursive;">Resend Code</a>
                 if you didn't get the email.
             </div>
