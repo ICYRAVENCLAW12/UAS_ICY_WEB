@@ -1,0 +1,296 @@
+body {
+    --base-color: rgb(46, 49, 49);
+    --base-color-2: #FFB319;
+}
+.navbrand {
+    font-family: 'Black Ops One' , cursive;
+    color: var(--base-color);
+    font-size: xx-large;
+    padding: 0;
+}
+.navbrand:hover {
+    color: var(--base-color);
+}
+div.profile-nav > a {
+    font-size: 35px;
+    padding: 15%;
+    margin-right: 5%;
+}
+nav {
+    background-color: black;
+}
+nav.a {
+    font-family: 'Black Ops One', cursive;
+    font-size: 10000px;
+}
+ul.search {
+    display: flexbox;
+    flex-direction: row;
+    width: 500px;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+button.button {
+    background-color:rgb(46, 49, 49);
+    color: grey;
+    margin-left: -55px;
+    border: none;
+}
+
+input.input{
+    flex: 1;
+    height: 40px;
+    width: 400px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 18px;
+    padding-left: 20px;
+    background-color: rgb(46, 49, 49);
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.navbar {
+    background-color: var(--base-color-2) !important;
+    position: sticky; 
+    }
+
+.custom-toggler.navbar-toggler {
+    border: 2px solid black;
+    }
+
+.custom-toggler.navbar-toggler span {
+    color:black;
+    }
+
+li.nav-item {
+    padding: 0;
+}
+
+li.nav-item span.material-icons {
+    color: black;
+    font-size: 20pt;
+    margin-left: -5px;
+    
+    }
+
+.account_menu a.dropdown-item img {
+    width: 50px;
+    margin-left: 0px;
+    margin-right: 8px;
+    }
+
+li.nav-item :hover {
+    border: 2px solid black;
+    border-radius: 10px;
+    }
+
+li.nav-item span.material-icons:hover {
+    color:black;
+    font-size: 20pt;
+    margin-left: -5px;
+    }
+
+.account_menu a.dropdown-item {
+    color: white;
+    }
+
+.account_menu a.dropdown-item:hover {
+    color: white;
+}
+.bodyhtml {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
+}
+
+     
+body {
+    --base-color: rgb(46, 49, 49);
+    --base-color-2: #FFB319;
+    height: 100%;
+    width: 100%;
+}
+.navbrand {
+    font-family: 'Black Ops One' , cursive;
+    color: var(--base-color);
+    font-size: xx-large;
+    padding: 0;
+}
+.navbrand:hover {
+    color: var(--base-color);
+}
+div.profile-nav > a {
+    font-size: 35px;
+    padding: 15%;
+    margin-right: 5%;
+}
+nav {
+    background-color: black;
+}
+nav.a {
+    font-family: 'Black Ops One', cursive;
+    font-size: 10000px;
+}
+ul.search {
+    display: flexbox;
+    flex-direction: row;
+    width: 500px;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+button.button {
+    background-color:rgb(46, 49, 49);
+    color: grey;
+    margin-left: -55px;
+    border: none;
+}
+
+input.input{
+    flex: 1;
+    height: 40px;
+    width: 400px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 18px;
+    padding-left: 20px;
+    background-color: rgb(46, 49, 49);
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.navbar {
+    background-color: var(--base-color-2) !important;
+    position: sticky; 
+    }
+
+.custom-toggler.navbar-toggler {
+    border: 2px solid black;
+    }
+
+.custom-toggler.navbar-toggler span {
+    color:black;
+    }
+
+li.nav-item {
+    padding: 0;
+}
+
+li.nav-item span.material-icons {
+    color: black;
+    font-size: 20pt;
+    margin-left: -5px;
+    
+    }
+
+.account_menu a.dropdown-item img {
+    width: 50px;
+    margin-left: 0px;
+    margin-right: 8px;
+    }
+
+li.nav-item :hover {
+    border: 2px solid black;
+    border-radius: 10px;
+    }
+
+li.nav-item span.material-icons:hover {
+    color:black;
+    font-size: 20pt;
+    margin-left: -5px;
+    }
+
+.account_menu a.dropdown-item {
+    color: white;
+    }
+
+.account_menu a.dropdown-item:hover {
+    color: white;
+}
+
+body {
+background-color: black;
+height: 940px;
+}
+
+.row {
+border-radius: 10px;
+background-color:black;
+border: 2px solid var(--base-color-2);
+height: 90%;
+}
+
+.garis {
+border-right: 1px solid var(--base-color-2);
+height:100%;
+position: relative;
+}
+
+li > a {
+color:white;
+font-size: 20pt;
+}
+
+li > a:hover {
+color: black;
+background-color: #FFB319;
+font-size: 20pt;
+}
+
+.material-icons{
+font-size: 20px;
+color: white;
+}
+
+.form-group input {
+    background-color: var(--base-color);
+    border:1px solid #FFB319;
+}
+
+.form-group textarea {
+    background-color: var(--base-color);
+    border:1px solid #FFB319;
+}
+
+.form-group label.form-check-label {
+    color: white;
+}
+
+.form-group label {
+    color: white;
+}
+
+.form-group input:focus {
+    background-color: var(--base-color);
+    border:1px solid #FFB319;
+}
+
+.form-group textarea:focus {
+    background-color: var(--base-color);
+    border:1px solid #FFB319;
+}
+
+.profile-picture {
+ text-align: center;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    height: 250px;
+    margin-right: 2%;
+  }
+  
+.profile-picture h3 {
+  font-size: 16pt;
+  color: white;
+  }
