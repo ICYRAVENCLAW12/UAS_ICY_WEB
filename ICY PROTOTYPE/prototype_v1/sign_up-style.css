@@ -1,7 +1,7 @@
 body {
   --base-color: rgb(46, 49, 49);
   --base-color-2: #FFB319;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
+  background-color: black;
 }
 
 .card-header {
