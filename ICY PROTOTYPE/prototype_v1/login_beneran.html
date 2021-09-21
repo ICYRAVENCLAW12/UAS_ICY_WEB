@@ -14,7 +14,7 @@
                 --base-color-2: #FFB319;
             }
             .bodyhtml {
-                background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
+                background: black;
             }
             .navbar {
                 box-shadow: 0px 5px 10px var(--base-color-2);
@@ -86,7 +86,7 @@
                 font-weight: bold;
             }
             .carousel {
-                margin-top: 7%;
+                margin-top: 5%;
             }
             .carousel-item {
                 width: 500px;
@@ -94,9 +94,112 @@
             .carousel-item img {
                 object-fit: cover;
             }
+            .main {
+                margin-top: 3%;
+                display: flex;
+                justify-content: center;
+            }
+            .main .card .material-icons {
+                font-size: 50pt;
+            }
 
-            @media all and (max-width: 500px) {
-
+            @media (max-width: 1000px) {
+                .bodyhtml {
+                    background: black;
+                }
+                .navbar {
+                    box-shadow: 0px 5px 10px var(--base-color-2);
+                }
+                .navbar .navigasi-1:hover {
+                    color: var(--base-color-2);
+                }
+                .navbar .navigasi-1 {
+                    font-size: 50pt;
+                    font-family: 'Black Ops One', cursive;
+                    color: var(--base-color-2);
+                    text-decoration: none;
+                }
+                .navbar .navigasi-2 {
+                    color: var(--base-color-2);
+                    font-family: 'Black Ops One', cursive;
+                    text-decoration: none;
+                    position: relative;
+                    font-size: 24pt;
+                }
+                .navbar .navigasi-2::after {
+                    content: '';
+                    height: 3px;
+                    width: 0;
+                    background: var(--base-color-2);
+                    position: absolute;
+                    left: 0;
+                    bottom: -5px;
+                    transition: 0.5s;
+                }
+                .navbar .navigasi-2:hover::after {
+                    width: 100%;
+                }
+                .card-1 {
+                    margin: 0%;
+                    margin-left: 5%;
+                    border-radius: 10px;
+                    position: relative;
+                    box-shadow: 0px 5px 10px var(--base-color-2);
+                }
+                .card-2 {
+                    color: var(--base-color);
+                    font-family: 'Black Ops One', cursive;
+                    font-weight: bold;
+                    font-size: 50pt;
+                    text-align: center;
+                    border: none;
+                }
+                .card-font {
+                    color: var(--base-color);
+                    font-family: 'Black Ops One', cursive;
+                    font-size: 24pt;
+                }
+                .card-input {
+                    border-radius: 20px;
+                    position: relative;
+                    height: 60px;
+                    font-size: 20pt;
+                }
+                .card-input:focus {
+                    border: 2px solid var(--base-color);
+                }
+                .card-sub {
+                    color: var(--base-color-2);
+                    font-family: 'Black Ops One', cursive;
+                }
+                .card-fontkecil {
+                    font-size: 12pt;
+                    color: var(--base-color);
+                    text-decoration: none;
+                }
+                .card-fontkecil:hover {
+                    font-weight: bold;
+                }
+                .carousel {
+                    display: none;   
+                }
+                .main {
+                    margin-top: 5%;
+                    margin-right: 5%;
+                    justify-content: center;
+                }
+                .main .card .material-icons {
+                    font-size: 100pt;
+                }
+                .card-fontsedang {
+                    color: var(--base-color);
+                    font-family: 'Black Ops One', cursive;
+                    font-size: 20pt;
+                }
+                .form-check-label {
+                    font-size: 20pt;
+                    border-radius: 20px;
+                }
             }
         </style>
         <script>
@@ -112,8 +215,8 @@
                 </li>
             </ul>
         </nav>
-        <div style="display: flex; margin: 3% 15%;">
-            <div id="carouselExampleControls" class="carousel slide carousel-fade col-6" data-ride="carousel">
+        <div class="main">
+            <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
                     <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Carousel\Source_gambar\carl-raw-8Gdayy2Lhi0-unsplash.jpg" class="d-block w-100" alt="Gambar">
@@ -137,9 +240,9 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-            <div class="card text-white bg-warning card-1 col-5">
+            <div class="card text-white bg-warning card-1">
                 <div class="card-header card-2">
-                    <span class="material-icons" style="font-size: 50pt;">account_box</span>
+                    <span class="material-icons">account_box</span>
                     <br>
                     Login
                 </div>
@@ -148,7 +251,7 @@
                         <div class="form-group">
                             <label class="card-font" id="email" for="exampleInputEmail1">Email :</label>
                             <input class="card-input form-control" placeholder="Email" type="email" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <small class="form-text text-muted card-font" id="emailHelp">We'll never share your email with anyone else.</small>
+                            <small class="form-text text-muted card-fontsedang" id="emailHelp">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                             <label class="card-font" for="exampleInputPassword1">Password :</label>
@@ -157,9 +260,7 @@
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="card-input form-check-input" id="exampleCheck1">
-                            <label class="form-check-label card-font" for="exampleCheck1">Remember me</label>
-                        </div>
-                        <div class="form-group">
+                            <label class="form-check-label card-fontsedang" for="exampleCheck1">Remember me</label>
                         </div>
                         <button class="card-input btn btn-dark btn-block card-sub" type="submit">login</button>
                     </form>
