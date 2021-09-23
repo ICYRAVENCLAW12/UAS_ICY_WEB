@@ -11,10 +11,16 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="./style_explore.css">
         <title>ICY.COM</title>
+        <link rel = "icon" href = 
+        "https://i.ibb.co/7rWKwZS/1.jpg" 
+        type = "image/x-icon">
     </head>
     <body class="bodyhtml">
+            <div class="loader">
+                <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
+            </div>
             <nav class="navbar fixed-top sticky-top navbar-expand-lg">
-                <a class="navbar-brand navbrand" href="PROTOTYPE_2.html">
+                <a class="navbar-brand navbrand" href="index.html">
                     <b>ICY</b>
                 </a>
                 <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -35,10 +41,10 @@
                 
 
                     <ul class=" left_navbar_side navbar-nav"> 
-                        <li class="nav-item"><a class="tool nav-link" href="PROTOTPYE_V1.html">
+                        <li class="nav-item"><a class="tool nav-link" href="index.html">
                             <span class="material-icons">home</span></a>
                         </li>  
-                        <li class="nav-item"><a class="tool nav-link" href="#">
+                        <li class="nav-item"><a class="tool nav-link" href="explore_beneran.html">
                             <span class="material-icons">explore</span></a>
                         </li>
                         <li class="nav-item"><a class="tool nav-link" href="#">
@@ -47,14 +53,14 @@
                         <li class="account_dropdown nav-item dropdown">
                         <a class="tool nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="material-icons">account_circle</span></a></a>
                         <div class="account_menu dropdown-menu dropdown-menu-right" style="background-color:black;">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="profile_page.html">
                                 <img
                                     src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
                                     alt=""
                                 />Account Center</a>
                             <a class="dropdown-item" href="#">Notification Center</a>
-                            <a class="dropdown-item" href="#">Settings</a>
-                            <a class="dropdown-item" href="login.html">Log Out</a>
+                            <a class="dropdown-item" href="setting.html">Settings</a>
+                            <a class="dropdown-item" href="login_beneran.html">Log Out</a>
                         </div>
                         </li>
                     </ul>
@@ -354,5 +360,11 @@
                 image[i] = img;
             }
         </script>
+        <script>
+            window.addEventListener("load", function () {
+              const loader = document.querySelector(".loader");
+              loader.className += " hidden"; // class "loader hidden"
+            });
+          </script> 
     </body>
 </html>
