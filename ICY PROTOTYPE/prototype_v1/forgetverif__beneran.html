@@ -43,8 +43,13 @@
                 visibility: hidden;
             }
             }
-            .logo-brand img {
-                width: 50px;
+            .logo-brand {
+                font-size: 20pt;
+                color: var(--base-color-2);
+            }
+            .logo-brand:hover {
+                color: var(--base-color);
+                cursor: pointer;
             }
             .bodyhtml {
                 background: black;
@@ -113,6 +118,12 @@
                 color: var(--base-color-2);
                 background: var(--base-color);
             }
+            .kotak img {
+                width: 300px;
+                margin: 0;
+            }
+
+
             @media (max-width: 980px) {
                 body {
                     --base-color: rgb(46, 49, 49);
@@ -121,8 +132,13 @@
                 .bodyhtml {
                     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
                 }
-                .logo-brand img {
-                    width: 100px;
+                .logo-brand {
+                    font-size: 30pt;
+                    color: var(--base-color-2);
+                }
+                .logo-brand:hover {
+                    color: var(--base-color);
+                    cursor: pointer;
                 }
                 .navbar {
                     box-shadow: 0px 5px 10px var(--base-color-2);
@@ -136,6 +152,7 @@
                     color: var(--base-color-2);
                     font-family: 'Black Ops One', cursive;
                     border-radius: 20px;
+                    font-size: 24pt;
                 }
                 .kotak{
                     background-color: var(--base-color-2);
@@ -178,8 +195,8 @@
                     font-size: 60pt;
                 }
                 button{
-                    width: 200px;
-                    height: 50px;
+                    width: 300px;
+                    height: 70px;
                     margin: 25px auto 0px auto;
                     font-family: 'Black Ops One', cursive;
                     font-size: 14pt;
@@ -193,6 +210,10 @@
                 .resend-code {
                     text-align: center;
                     font-size: 24pt;
+                }
+                .kotak img {
+                    width: 400px;
+                    margin: 0;
                 }
             }
         </style>
@@ -209,11 +230,11 @@
             <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
         </div>
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand logo-brand navigasi-1" href="login_beneran.html"><img src="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Logo.png"></a>
+            <a class="navbar-brand logo-brand navigasi-1" href="login_beneran.html">ICY</a>
         </nav>
         <div class="kotak">
             <div style="justify-content: center;">
-                <img src="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Resource\7023968_transaction_password_otp_verification code_security_icon.png" alt="Gambar">
+                <img src="https://media2.giphy.com/media/ukx7mWo5EyObRskaas/giphy.gif?cid=790b761129adcf55dea1b628e0bc7388f9351669bb07ec7c&rid=giphy.gif&ct=s" alt="Gambar">
             </div>
             <h1>OTP</h1>
             <div class="userInput">
