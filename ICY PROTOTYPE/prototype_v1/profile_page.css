@@ -7,7 +7,6 @@ body {
   --base-color-4: white;
   --base-color-5: grey;
   background-color: #010815;
-  overflow-y: hidden;
 }
 
 /* Loader */
@@ -54,6 +53,7 @@ body {
   grid-column-gap: 1.5rem;
   margin-left: 3%;
   margin-right: 7%;
+  grid-auto-rows: minmax(min-content, max-content)
 }
 
 .grid-left {
