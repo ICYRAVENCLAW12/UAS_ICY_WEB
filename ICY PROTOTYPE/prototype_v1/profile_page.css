@@ -1,13 +1,16 @@
 body {
-  --main-radius: 20px;
+  --main-radius: 15px;
   --main-padding: 8px;
   --base-color: rgb(46, 49, 49);
-  --base-color-2: #ffb319;
+  --base-color-2: #5c7aea;
   --base-color-3: #d6991e;
-  --base-color-4: whitesmoke;
+  --base-color-4: white;
   --base-color-5: grey;
-  background-color: black;
+  background-color: #010815;
+  overflow-y: hidden;
 }
+
+/* Loader */
 
 .loader {
   position: fixed;
@@ -42,28 +45,15 @@ body {
 
 .grid-container {
   display: grid;
-  height: 100vh;
-  grid-template-columns: 0.9fr 2fr 1.1fr;
-  grid-template-rows: 0.3fr;
+  grid-template-columns: 0.9fr 2fr 1.02fr;
+  grid-template-rows: 0.3fr 0.1fr;
   grid-template-areas:
     "friends_online profile follow_me"
-    "friends_online profile trending";
-  grid-gap: 1.5rem;
+    "friends_online profile trending"
+    "empty profile credits";
+  grid-column-gap: 1.5rem;
   margin-left: 3%;
   margin-right: 7%;
-  margin-top: 1%;
-  grid-auto-rows: minmax(min-content, max-content);
-}
-
-.grid-top {
-  grid-area: widget-tabs;
-  display: flex;
-  padding: 0 10px 0 10px !important;
-  grid-template-columns: 30% 30% 30%;
-  justify-content: space-between;
-  display: none;
-  border: 2px solid grey;
-  border-radius: 10px;
 }
 
 .grid-left {
@@ -71,14 +61,27 @@ body {
   border: 1.5px solid var(--base-color-2);
   grid-area: friends_online;
   border-radius: var(--main-radius);
-  padding-top: 4%;
+  padding-top: 3%;
 }
 
 .grid-mid {
+  height: 100vh;
   grid-area: profile;
   padding: var(--main-padding);
-  padding-top: 0;
-  margin-top: 0;
+  padding: 0;
+  margin: 2.5% 0 0 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border-top: 1.5px solid var(--base-color-2);
+  border-left: 1.5px solid var(--base-color-2);
+  border-right: 1.5px solid var(--base-color-2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.grid-mid::-webkit-scrollbar {
+  display: none;
 }
 
 .grid-right-top {
@@ -86,33 +89,27 @@ body {
   border: 1.5px solid var(--base-color-2);
   grid-area: follow_me;
   border-radius: var(--main-radius);
-  padding-top: 4%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-bottom: 6.3%;
 }
 
 .grid-right-bottom {
   border: 1.5px solid var(--base-color-2);
   grid-area: trending;
   border-radius: var(--main-radius);
-  padding-top: 4%;
-}
-
-/* Tabs */
-
-.grid-top button {
-  background-color: var(--base-color-2);
-  border-radius: 20px;
-  padding: 5% 2% 5% 2%;
-  width: 150px;
-  border: none;
-}
-
-.grid-top button:hover {
-  background-color: rgba(255, 179, 25, 0.5);
-}
-
-.grid-top div {
   padding-top: 2%;
-  padding-bottom: 2%;
+  padding-bottom: 3%;
+  margin-bottom: 0;
+}
+
+.grid-empty {
+  grid-area: empty;
+}
+
+.grid-credits {
+  font-size: 14px;
+  padding-top: 2%;
 }
 
 /* Navigation Bar */
@@ -242,28 +239,95 @@ nav.navbar a.navbar-brand {
 
 /* Top */
 
-.top {
-  padding-top: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
+.header {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  padding-top: 1%;
+  padding-left: 4%;
+  border-bottom: 1.5px solid var(--base-color-2);
+  z-index: 100;
+  background-color: #010815;
+}
+
+.header-left {
+  display: flex;
+}
+
+.header-left .friends p {
+  color: var(--base-color-4);
+  font-weight: 620;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 18%;
+  font-size: 18px;
+}
+
+.friends-information {
+  padding: 14% 0 0 3% ;
+}
+
+.friends-information button {
+  background-color: transparent;
+  border: none;
+  color: var(--base-color-5);
+}
+
+.friends-information .material-icons {
+  font-size: 20px;
+}
+
+.friends-information button:hover {
+  color: rgb(39, 107, 233);
+}
+
+.background_img {
+  position: relative;
+  width: 100%;
+}
+
+.background_img::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background: url(https://images.unsplash.com/photo-1574619151033-a9e1f81cae52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -99;
+}
+
+.page_name h3 {
+  color: var(--base-color-4);
+  font-size: 32px;
+  font-weight: 650;
 }
 
 .top_content {
+  padding: 3% 5% 2% 3%; 
   display: flex;
+}
+
+.top_right {
+  padding-top: 2%;
+  padding-left: 11%;
+  color: var(--base-color-4);
 }
 
 .profile_img {
   position: relative;
-  margin-top: 3%;
+  padding-top: 3%;
   text-align: center;
   color: black;
   font-weight: 600;
   border-radius: 50%;
 }
 
-.profile_img:hover {
-  opacity: 0.5;
-}
 .change_img {
   position: absolute;
   top: 55%;
@@ -285,26 +349,42 @@ nav.navbar a.navbar-brand {
   opacity: 1;
 }
 
-.top_right {
-  margin-top: 5%;
-  padding-left: 11%;
-  color: var(--base-color-4);
+.name {
+  display: flex;
 }
 
 .name h4 {
   color: var(--base-color-4);
-  font-weight: 600;
+  font-weight: 650;
 }
 
+.name .material-icons {
+  color: rgb(39, 107, 233);
+  padding: 1% 0 0 3%;
+}
+/*
+.edit {
+  background-color: transparent;
+  border: none;
+  color: var(--base-color-5);
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+
+.feather {
+  height: 20px;
+  width: 20px;
+}
+*/
 .number-tweets-followers-following{
-  padding-top: 5%;
+  padding-top: 3%;
   display: flex;
 }
 
 .number_tweets p {
   padding-bottom: 0; 
   margin-bottom: 0; 
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .number_followers, .number_following {
@@ -315,7 +395,7 @@ nav.navbar a.navbar-brand {
   border: none; 
   background-color: transparent; 
   color: var(--base-color-4); 
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .edit_profile {
@@ -329,17 +409,18 @@ nav.navbar a.navbar-brand {
   border: 2px solid var(--base-color-4);
   width: 325px;
   border-radius: 5px;
-  border-color: grey;
+  font-weight: 500;
 }
 
 .edit_profile button:hover {
   background-color: rgba(61, 65, 69, 0.5);
-  border-color: grey;
+  border-color: var(--base-color-4);
 }
 
 .more_profile_info p {
-  color: var(--base-color-5);
-  padding-top: 2%;
+  color: var(--base-color-4);
+  padding: 0 4% 3% 4%;
+  font-weight: 500;
 }
 
 .username p {
@@ -355,16 +436,10 @@ nav.navbar a.navbar-brand {
   color: var(--base-color-4);
 }
 
-/* Bottom */
-
-.bottom {
-  padding-top: 5%;
-}
-
 .nav-tabs > li > a {
   margin-left: 50px;
   margin-right: 52px;
-  color: var(--base-color);
+  color: var(--base-color-5);
   font-size: 17px;
   font-weight: 600;
 }
@@ -372,25 +447,32 @@ nav.navbar a.navbar-brand {
 .nav-tabs > li > a.follow_2 {
   margin-left: 80px;
   margin-right: 82px;
-  color: var(--base-color);
+  color: var(--base-color-5);
   font-size: 17px;
   font-weight: 600;
 }
 
 .nav-tabs .nav-link.active {
   background-color: var(--base-color-2);
-  border: none;
+  border: 1px solid var(--base-color-2);
   color: var(--base-color-4);
 }
 
 .nav-tabs .nav-link:hover {
-  background-color: rgba(255, 179, 25, 0.5) !important;
-  border: none;
+  background-color: rgba(61, 65, 69, 0.5) !important;
+  border: 1px solid rgba(61, 65, 69, 0.2);
   color: var(--base-color-4);
 }
 
 .nav-tabs {
-  border-bottom: 1px solid grey;
+  border-bottom: 1.5px solid var(--base-color-2);
+}
+
+/* Bottom */
+
+.bottom {
+  padding: 0;
+  margin: 0;
 }
 
 .main {
@@ -411,21 +493,21 @@ nav.navbar a.navbar-brand {
 .post {
   display: flex;
   align-items: flex-start;
-  border-bottom: 1px solid grey;
   padding-bottom: 10px;
-  margin-top: 0px;
+  padding-top: 10px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: black;
+  background-color: #010815;
+  border-bottom: 0.1pt solid var(--base-color-2);
 }
 
 .the_post_content {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .post_body img {
@@ -447,9 +529,9 @@ nav.navbar a.navbar-brand {
   color: white;
 }
 
-.utility-icon button.like_button {
+.utility-icon button {
   width: 20px;
-  background-color: black;
+  background-color: #010815;
   border: none;
   margin-top: 0px;
   margin-right: 25px;
@@ -481,56 +563,32 @@ nav.navbar a.navbar-brand {
   align-items: center;
 }
 
-.thecomment {
-  padding: 2%;
-}
-
-.comment_content {
-  display: flex;
-  align-items: center;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-bottom: 0;
-}
-
-.comment_content img {
-  width: 6%;
-  margin-right: 2%;
-}
-
-.comment_content h3 a {
-  font-size: 15pt;
-}
-
-.comment a {
-  padding-left: 12%;
-  margin-top: 0%;
-  padding-bottom: 1%;
-  font-size: 10pt;
-}
-
 /* Follow Me & Trending*/
 
-.titles {
+.grid-right-bottom .titles, .grid-right-top .titles {
+  font-size: 40px;
+  font-family: 'bebas neue', cursive;
   color: var(--base-color-4);
   padding-left: 6%; 
-  padding-bottom: 2%; 
   font-weight: 700;
 }
 
-.hover_effect:hover {
-  background-color: rgba(61, 65, 69, 0.5);
+.grid-right-bottom a:hover, .grid-right-top a:hover {
+  cursor: pointer;
 }
 
-.hover_effect a:hover {
+.grid-left .titles {
+  font-size: 30px;
   color: var(--base-color-4);
+  padding-left: 6%; 
+  font-weight: 700;
 }
 
-.suggested_account {
+.suggested_account, .modal-body-followers-content, .modal-body-following-content {
   padding-left: 6%; 
   padding-right: 6%; 
   display: grid; 
-  grid-template-columns: 20% 57% 40%; 
+  grid-template-columns: 21% 62% 17%; 
   align-items: center;
 }
 
@@ -539,7 +597,7 @@ nav.navbar a.navbar-brand {
 }
 
 .name-username {
-  padding-top: 5%;
+  padding-top: 7%;
 }
 
 .name-username a p {
@@ -554,53 +612,43 @@ nav.navbar a.navbar-brand {
 .name-username a {
   color: var(--base-color-4);
   font-weight: 600;
+  font-size: 17px;
 }
 
 .follow_button {
-  border-radius: 20px; 
-  background-color: none; 
-  color:black; 
-  border: 1px solid transparent; 
-  width: 70px; 
-  padding-top: 5%; 
-  padding-bottom: 5%;
+  background-color: var(--base-color-4); 
+  color: var(--base-color); 
+  border: none;
+  border-radius: 10px;
+  width: 45px; 
+  height: 37px;
+  font-size: 20px;
+  padding-left: 10%;
+  margin-top: 8%;
 }
 
-.show_more-hover:hover {
-  cursor: pointer;
-  background-color: rgba(61, 65, 69, 0.5);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.show_more {
-  padding-top: 3%; 
-  padding-bottom: 5%; 
-  padding-left: 6%; 
-  padding-right: 5%;
-}
-
-.show_more-button {
-  border: none; 
-  background-color: 
-  transparent; 
-  color: #0052ce;
+.follow_button:hover {
+  background-color: rgba(61, 65, 69, 0.7);
+  color: var(--base-color-4);
 }
 
 .trend {
   display: grid;
+  grid-template-columns: 80% 20%;
   padding: 3% 0 0 6%;
   margin-bottom: 0;
 }
 
-.trend p {
-  font-size: 12px;
-  color: var(--base-color-5);
+.trend a {
+  font-size: 18px;
+  color: var(--base-color-4);
 }
 
-.trend_where p {
-  padding: 0 !important; 
-  margin-bottom: 0 !important;
+.trend button {
+  background-color: transparent;
+  border: none;
+  color: var(--base-color-4);
+  margin-bottom: 15%;
 }
 
 .trend_what p {
@@ -617,6 +665,17 @@ nav.navbar a.navbar-brand {
   margin-top: 0;
 }
 
+/* Credits */
+
+.credits-content {
+  padding: 1% 0 0 4%;
+}
+
+.credits-content a {
+  padding-right: 2%;
+  color: var(--base-color-4);
+}
+
 /* Modal */
 
 .modal-followers, .modal-following, .modal-friends_online {
@@ -627,9 +686,9 @@ nav.navbar a.navbar-brand {
   transition: 200ms ease-in-out;
   border: 1px solid var(--base-color-2);
   border-radius: 10px;
-  z-index: 10;
+  z-index: 999;
   background-color: black;
-  width: 400px;
+  width: 365px;
   max-width: 80%;
   overflow: hidden;
 }
@@ -643,7 +702,7 @@ nav.navbar a.navbar-brand {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--base-color-5);
+  border-bottom: 1px solid var(--base-color-2);
 }
 
 .modal-header .title {
@@ -669,22 +728,8 @@ nav.navbar a.navbar-brand {
   overflow-x: hidden;
 }
 
-.modal-body-followers-content, .modal-body-following-content, .modal-body-friends_online-content {
-  padding-left: 5%; 
-  padding-right: 6%; 
-  display: grid; 
-  grid-template-columns: 20% 55% 40%; 
-  align-items: center;
-}
-
-.following-button button, .followers-button button {
-  border-radius: 20px; 
-  background-color: none; 
-  color:black; 
-  border: 1px solid transparent; 
-  width: 90px; 
-  padding-top: 5%; 
-  padding-bottom: 5%;
+.follow_button .material-icons {
+  padding: 15% 0 0 0;
 }
 
 #overlay {
@@ -702,60 +747,61 @@ nav.navbar a.navbar-brand {
 #overlay.active {
   opacity: 1;
   pointer-events: all;
+  z-index: 100;
 }
 
-@media screen and (min-width:1600px) {
+/* Responsive */
+
+@media screen and (min-width:1500px) {
   .grid-container {
-    max-width: 80%;
-    grid-gap: 2rem;
+    max-width: 1400px;
+    grid-column-gap: 1.5rem;
     margin: auto;
   }
 }
 
-@media screen and (min-width:1800px) {
+@media screen and (max-width:1400px) {
   .grid-container {
-    max-width: 72%;
-    grid-gap: 2rem;
-    margin: auto;
-  }
-}
-
-@media screen and (max-width:1325px) {
-  .grid-container {
+    max-width: 1000px;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 0.3fr;
     grid-template-areas:
       "profile follow_me"
-      "profile trending";
-    grid-gap: 1.5rem;
+      "profile trending"
+      "profile credits";
+    grid-column-gap: 1.5rem;
+    margin: auto;
   }
 
   .grid-left {
+    display: none;
+  }
+
+  .grid-empty {
     display: none;
   }
 }
 
 @media screen and (max-width:1000px) {
   .grid-container {
+    display: grid;
+    max-width: 650px;
     grid-template-columns: 1fr;
     grid-template-areas:
-      "widget-tabs"
       "profile";
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-top: 2%;
     grid-gap: 0;
+    margin: auto;
   }
 
-  .grid-top {
-    display: flex;
-  }
-
-  .grid-mid {
-    padding-top: 0;
-    margin-top: 0;
-  }
   .grid-right-bottom, .grid-right-top {
+    display: none;
+  }
+
+  .grid-empty {
+    display: none;
+  }
+
+  .grid-credits {
     display: none;
   }
 }
