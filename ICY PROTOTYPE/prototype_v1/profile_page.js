@@ -95,3 +95,13 @@ file.addEventListener('change', function() {
   }
 });
 
+/* To change icon when clicked */
+function changeIcons(icon) {
+  icon.classList.toggle("fa-user-times");
+}
+
+/* Loading */
+window.addEventListener("load", function () {
+  const loader = document.querySelector(".loader");
+  loader.className += " hidden"; // class "loader hidden"
+});
