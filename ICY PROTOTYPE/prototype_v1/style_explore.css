@@ -1,6 +1,16 @@
 body {
   --base-color: rgb(46, 49, 49);
-  --base-color-2: #FFB319;
+  --base-color-2: #5C7AEA;
+  --base-color-3: #5C7AEA;
+  --base-color-4: #010815;
+  background-color: var(--base-color-4);
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+.body::-webkit-scrollbar {
+    display: none;
 }
 
 .loader {
@@ -10,37 +20,32 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background:black;
+  background: #020415;
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
-  .loader > img {
-  width: 250px;
-  }
+.loader > img {
+  width: 400px;
+}
 
-  .loader.hidden {
+.loader.hidden {
   animation: fadeOut 1s;
   animation-fill-mode: forwards;
-  }
+}
 
-  @keyframes fadeOut {
+@keyframes fadeOut {
   100% {
       opacity: 0;
       visibility: hidden;
   }
-  }
-
-.navbrand {
-  font-family: 'Black Ops One' , cursive;
-  color: var(--base-color);
-  font-size: xx-large;
-  padding: 0;
 }
 
-.navbrand:hover {
-  color: var(--base-color);
+.thumb {
+  height: 100px;
+  border: 1px solid black;
+  margin: 10px;
 }
 
 div.profile-nav > a {
@@ -53,13 +58,7 @@ nav {
   background-color: black;
 }
 
-nav.a {
-  font-family: 'Black Ops One', cursive;
-  font-size: 10000px;
-}
-
 ul.search {
-  display: flexbox;
   flex-direction: row;
   width: 500px;
   height: 50px;
@@ -70,9 +69,10 @@ ul.search {
 }
 
 button.button {
-  background-color:rgb(46, 49, 49);
-  color: grey;
-  margin-left: -55px;
+  background-color:var(--base-color-4);
+  color: white;
+  margin-left: -50px;
+  margin-top: 5px;
   border: none;
 }
 
@@ -85,76 +85,88 @@ input.input{
   outline: none;
   font-size: 18px;
   padding-left: 20px;
+  color: gray;
+  background-color: var(--base-color-4);
+}
+
+div.online_friends {
+  text-align: left;
+  padding: 10px;
+  font-size: 15px;
+  border: 3px;
+}
+
+div.language_menu {
   background-color: rgb(46, 49, 49);
 }
 
+div.language_menu > a {
+  color: white;
+}
+
+.navbar a.navbar-brand b {
+  font-family: Black Ops One , cursive;
+  font-size: xx-large; 
+  padding: 0; color: var(--base-color-4);
+}
+  
 .dropdown-toggle::after {
   content: none;
 }
 
 .navbar {
-    background-color: var(--base-color-2) !important;
-    position: sticky; 
-  }
+  background-color: var(--base-color-3) !important;
+  position: sticky; 
+}
 
 .custom-toggler.navbar-toggler {
-    border: 2px solid black;
-  }
+  border: 2px solid black;
+}
 
 .custom-toggler.navbar-toggler span {
-    color:black;
-  }
+  color:black;
+}
 
 li.nav-item {
-  padding: 0;
+padding: 0;
 }
 
 li.nav-item span.material-icons {
-    color: black;
-    font-size: 20pt;
-    margin-left: -5px;
-    
-  }
+  color: black;
+  font-size: 20pt;
+  margin-left: -5px;
+  
+}
 
 .account_menu a.dropdown-item img {
   width: 50px;
   margin-left: 0px;
-  margin-right: 8px;    
-  }
-
-.account_menu a.dropdown-item img {
-    width: 50px;
-    margin-left: 0px;
-    margin-right: 8px;
-    
-  }
-
-li.nav-item span:hover {
-    box-shadow: 5px 5px 10px black;
-    border-radius: 10px;
-  }
-
-li.nav-item span.material-icons:hover {
-    color:black;
-    font-size: 20pt;
-    margin-left: -5px ;
-  }
-
-.account_menu a.dropdown-item {
-    color: white;
-    padding: 10px, 0px;
-
-  }
-
-.account_menu a.dropdown-item:hover {
-  color: white;
-  background-color: #FFB319;
-  border-radius: 0;
-  padding: 10px, 0px;
+  margin-right: 8px;
+  
 }
 
-.bodyhtml {
-  background-color: black;
+li.nav-item span:hover {
+  box-shadow: 2px 5px 5px black;
+  border-radius: 10px;
+}
+
+li.nav-item span.material-icons:hover {
+  color:black;
+  font-size: 20pt;
+  margin-left: -5px ;
+}
+
+.account_menu a.dropdown-item {
+  color: white;
+  padding: 10px, 0px;
+
+}
+
+.account_menu a.dropdown-item:hover {
+color: white;
+background-color: var(--base-color-2);
+border-radius: 0;
+padding: 10px, 0px;
 }
 
 /*==================================================Nav=====================================================*/
@@ -192,6 +204,12 @@ li.nav-item span.material-icons:hover {
     grid-gap: 20px;
     width: 1540px;
     margin: 20px auto;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .box::-webkit-scrollbar {
+    display: none;
   }
 
   .item {
@@ -296,5 +314,97 @@ li.nav-item span.material-icons:hover {
     width: 100%;
     height: 100%;
   }
+}
+
+.fab-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+.fab-icon-holder {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: var(--base-color-2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.fab-icon-holder span.material-icons{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: black;
+}
+
+.fab-icon-holder:hover{
+  opacity: 0.8;
+}
+
+.fab-icon-holder i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 25px;
+  color: black;
+}
+
+.fab {
+  width: 60px;
+  height: 60px;
+  background: var(--base-color-2);
+  padding: 0.5px;
+}
+
+.fab-options {
+  list-style-type: none;
+  margin: 0;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  transform-origin: 85% bottom;
+}
+
+.fab:hover + .fab-options, .fab-options:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fab-options li {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.fab-label {
+  padding: 2px 5px;
+  align-self: center;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 3px;
+  font-size: 16px;
+  background: #666666;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  margin-right: 10px;
+}
+
+.fab-options li span.material-icons {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.fab-options li a {
+  color: black;
 }
 

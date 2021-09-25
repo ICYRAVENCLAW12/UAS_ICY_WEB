@@ -1,8 +1,12 @@
 body {
   --base-color: rgb(46, 49, 49);
-  --base-color-2: #FFB319;
-  background-color: black;
-  height: 100vh;
+  --base-color-2: #5C7AEA;
+  --base-color-3: #5C7AEA;
+  --base-color-4: #010815;
+  background-color: var(--base-color-4);
+  position: fixed;
+  right: 0;
+  left: 0;
 }
 
 .body::-webkit-scrollbar {
@@ -16,7 +20,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background:black;
+  background: #020415;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +62,6 @@ ul.search {
   flex-direction: row;
   width: 500px;
   height: 50px;
-  background-colo
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -66,9 +69,10 @@ ul.search {
 }
 
 button.button {
-  background-color:rgb(46, 49, 49);
-  color: grey;
-  margin-left: -55px;
+  background-color:var(--base-color-4);
+  color: white;
+  margin-left: -50px;
+  margin-top: 5px;
   border: none;
 }
 
@@ -81,7 +85,8 @@ input.input{
   outline: none;
   font-size: 18px;
   padding-left: 20px;
-  background-color: rgb(46, 49, 49);
+  color: gray;
+  background-color: var(--base-color-4);
 }
 
 div.online_friends {
@@ -98,13 +103,19 @@ div.language_menu {
 div.language_menu > a {
   color: white;
 }
+
+.navbar a.navbar-brand b {
+  font-family: Black Ops One , cursive;
+  font-size: xx-large; 
+  padding: 0; color: var(--base-color-4);
+}
   
 .dropdown-toggle::after {
   content: none;
 }
 
 .navbar {
-  background-color: var(--base-color-2) !important;
+  background-color: var(--base-color-3) !important;
   position: sticky; 
 }
 
@@ -153,7 +164,7 @@ li.nav-item span.material-icons:hover {
 
 .account_menu a.dropdown-item:hover {
 color: white;
-background-color: #FFB319;
+background-color: var(--base-color-2);
 border-radius: 0;
 padding: 10px, 0px;
 }
@@ -173,12 +184,22 @@ padding: 10px, 0px;
 /*=======================================*/
 
 .Friend_bar_Option {
-    border: 1px solid var(--base-color-2);
-    height: 800px;
+    border-right: 1px solid var(--base-color-2);
+    height: 100%;
     width: 300px;
     margin-top: 20px;
-    border-radius: 10px;
     justify-items: right;
+    display: flex;
+    justify-items: right;
+}
+
+.Friend_bar_Option span {
+  font-size: 15pt;
+} 
+
+.Friend_bar_Option h2 {
+  font-size: 15pt;
+  padding-left: 10px;
 }
 
 .feed {
@@ -274,7 +295,7 @@ color: white;
   margin-bottom: 0px;
   margin-left: 40px;
   margin-right: 0px;
-  background-color: black;
+  background-color: var(--base-color-4);
 }
 
 .the_post_content {
@@ -363,7 +384,8 @@ color: white;
 }
 
 .credits {
-  width: 300px
+  width: 300px;
+  margin-top: 15px;
 }
 
 .credits a {
@@ -604,7 +626,7 @@ br {
   
   .Friend_bar_Option {
     margin-left: 0;
-    height: 800px;
+    height: 100vh;
     margin-top: 20px;
     }   
   }
@@ -635,7 +657,6 @@ br {
         top: 0;
         width: 100%; /* Full width */
         height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
         background-color: black; /* Fallback color */
         background-color: rgba(0, 0, 0, 0.527); /* Black w/ opacity */
         margin-left: 0;
@@ -651,7 +672,7 @@ br {
         margin-bottom: 2%;
         padding: 0px;
         width: 65%;
-        height: fit-content;
+        height: 90%;
         overflow-y: scroll;
       }
       
@@ -663,6 +684,11 @@ br {
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+
+      .modal-post {
+        height: 95%;
+      }
+
       } 
       
       @media screen and (min-width: 1100px ) { /*besar*/
@@ -738,4 +764,65 @@ br {
       margin-top: 0%;
       padding-bottom: 1%;
       font-size: 10pt;
+      }
+    }
+      
+      .modal-body-following,{
+        padding: 0 !important;
+        height: 40vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      
+      .follow_button .material-icons {
+        padding: 15% 0 0 0;
+      }
+
+      .modal-body-following-content {
+        padding-left: 6%; 
+        padding-right: 6%; 
+        display: grid; 
+        grid-template-columns: 21% 62% 17%; 
+        align-items: center;
+        height: 10%;
+      }
+
+      .follow_button {
+        background-color: white; 
+        color: var(--base-color); 
+        border: none;
+        border-radius: 10px;
+        width: 45px; 
+        height: 37px;
+        font-size: 20px;
+        padding-left: 10%;
+        margin-top: 8%;
+      }
+
+      .follow_button:hover {
+        background-color: rgba(61, 65, 69, 0.7);
+        color: white;
+      }
+
+      .acc_img {
+        border-radius: 50%;
+      }
+
+      .name-username {
+        padding-top: 7%;
+      }
+      
+      .name-username a p {
+        margin-bottom: 0; 
+        padding-bottom: 0; 
+      }
+      
+      .name-username p {
+        color: gray;
+      }
+      
+      .name-username a {
+        color: white;
+        font-weight: 600;
+        font-size: 17px;
       }
