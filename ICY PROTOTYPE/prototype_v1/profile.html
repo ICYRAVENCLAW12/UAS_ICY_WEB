@@ -16,14 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style_setting.css">
     <title>Profile</title>
-    <link rel = "icon" href = 
-    "https://i.ibb.co/7rWKwZS/1.jpg" 
-    type = "image/x-icon">
+
 </head>
 <body>
-    <div class="loader">
-      <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
-    </div>
     <nav class="navbar fixed-top sticky-top navbar-expand-sm">
         <a class="navbar-brand" href="index.html" style="font-family: Black Ops One , cursive; font-size: xx-large; padding: 0;" >
             <b>ICY</b>
@@ -53,7 +48,7 @@
               <li class="nav-item"><a class="tool nav-link" href="explore_beneran.html">
                 <span class="material-icons">explore</span></a>
               </li>
-              <li class="nav-item"><a class="tool nav-link" href="message_box.html">
+              <li class="nav-item"><a class="tool nav-link" href="#">
                 <span class="material-icons">mail</span></a>
               </li>
               <li class="account_dropdown nav-item dropdown">
@@ -77,15 +72,18 @@
             <div class="row no-gutters">
                 <div class="col-lg-5">
                   <ul class="nav flex-column garis">
-                    <li class="nav-item">
-                      <a class="nav-link" href="profile.html">My Profile</a>
+                     <li class="nav-item" >
+                      <a class="nav-link" href="profile.html"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">account_circle</p>&nbsp &nbsp My Profile</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="change.html">Change password</a>
+                      <a class="nav-link" href="change.html"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">lock</p>&nbsp &nbsp Change Password</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="helpandabout.html">Help And About</a>
-                    </li>             
+                      <a class="nav-link" href="helpandabout.html"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">help</p>&nbsp &nbsp Help center</a>
+                    </li>     
+                    <li class="nav-item">
+                      <a class="nav-link" href="Contactus.html"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">info</p>&nbsp &nbsp Contact Us</a>
+                    </li>       
                   </ul>
               </div>
               <div class="col ">
@@ -101,26 +99,26 @@
                               test_someone
                             </h3>
                           </div>
-                            <input type="text" placeholder="Name" class="form-control">
+                            <input type="text" id="textColor" placeholder="Name" class="form-control">
                         </div>
                         <div class="form-group">
                           <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          <textarea class="form-control" id="textColor" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label >E-Mail</label>
-                            <input type="email" placeholder="Example@gmail.com" class="form-control">
+                            <input type="email" id="textColor" placeholder="Example@gmail.com" class="form-control">
                         </div>
                         <div class="form-group">
                             <label >Password</label>
-                            <input type="Password" placeholder="*******" class="form-control">
+                            <input type="Password" id="textColor"placeholder="*******" class="form-control">
                         </div>
                         <div class="form-group">
                             <label >Phone Number</label>
-                            <input type="Number" placeholder="123456789" class="form-control">
+                            <input type="Number" id="textColor" placeholder="123456789" class="form-control">
                         </div>
                         <div class="mb-3 form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <input type="checkbox" class="form-check-input" id="textColor">
                           <label class="form-check-label" for="exampleCheck1" style="color: white;">Are you sure wanna change your password</label>
                         </div>
                         <div >
@@ -133,13 +131,10 @@
         </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script>
-        window.addEventListener("load", function () {
-          const loader = document.querySelector(".loader");
-          loader.className += " hidden"; // class "loader hidden"
-        });
-    </script> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script>
+  document.getElementById("textColor").style.color='White';
+</script>
 </body>
 </html>
