@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login ICY</title>
+        <title>Login-ICY</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,6 +117,14 @@
                 color: var(--base-color-2);
                 font-family: 'Black Ops One', cursive;
             }
+            .card-fontkecil {
+                font-size: 10pt;
+                color: var(--base-color);
+                text-decoration: none;
+            }
+            .card-fontkecil:hover {
+                font-weight: bold;
+            }
             .gambar {
                 margin-top: 4%;
                 display: flex;
@@ -135,23 +143,7 @@
                 font-size: 10pt;
             }
             .forget-pass {
-                margin-right: 33%;
-                font-size: 10pt;
-                color: var(--base-color);
-                text-decoration: none;
-            }
-            .forget-pass:hover {
-                color: var(--base-color);
-            }
-            .btn-pass {
-                background: transparent;
-                font-size: 10pt;
-                color: var(--base-color);
-                text-decoration: none;
-            }
-            .btn-pass:focus {
-                box-shadow: none;
-                border: transparent;
+                margin-left: 30%;
             }
 
             @media (max-width: 980px) {
@@ -231,6 +223,14 @@
                     color: var(--base-color-2);
                     font-family: 'Black Ops One', cursive;
                 }
+                .card-fontkecil {
+                    font-size: 12pt;
+                    color: var(--base-color);
+                    text-decoration: none;
+                }
+                .card-fontkecil:hover {
+                
+                }
                 .gambar {
                     display: none;
                 }
@@ -252,26 +252,7 @@
                     border-radius: 20px;
                 }
                 .forget-pass {
-                    margin-right: 35%;
-                    font-size: 20pt;
-                    color: var(--base-color);
-                    text-decoration: none;
-                }
-                .btn-pass {
-                    background: transparent;
-                    font-size: 20pt;
-                    color: var(--base-color);
-                    text-decoration: none;
-                }
-                .btn-pass:focus {
-                    box-shadow: none;
-                    border: transparent;
-                }
-                input[type='checkbox'] {
-                    width: 30px;
-                    height: 30px;
-                    background:white;
-                    border:2px solid black;
+                    margin-left: 60%;
                 }
             }
         </style>
@@ -324,9 +305,9 @@
                         </div>
                         <div class="form-group">
                             <label class="card-font" for="password">Password :</label>
-                            <input placeholder="Password" type="password" class="card-input form-control" id="passwordaja">
-                            <a class="forget-pass" href="forgetpass_beneran.html">Forgot password?</a>
-                            <a class="btn btn-pass" id="hide" onclick="showpass()">show password</a>
+                            <input placeholder="Password" type="password" class="card-input form-control" id="passwordaja" required>
+                            <a style="cursor: pointer; color: var(--base-color); background-color: var(--base-color); color: var(--base-color-2); padding: 2%; border-radius: 20px;" id="hide" onclick="showpass()">show password</a>
+                            <a class="card-fontkecil forget-pass" href="forgetpass_beneran.html">Forgot password?</a>
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="card-input form-check-input" id="exampleCheck1">
