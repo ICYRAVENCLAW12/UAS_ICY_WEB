@@ -12,10 +12,14 @@
         "https://i.ibb.co/7rWKwZS/1.jpg" 
         type = "image/x-icon">
         <style>
-            body {
-                --base-color: rgb(46, 49, 49);
-                --base-color-2: #FFB319;
-            }
+            /*body {
+                --base-color: #010815;
+                --base-color-2: #14279B;
+                --base-color-3: #5C7AEA;
+                --base-color-4: #3D56B2;
+                --base-color-5: rgb(46, 49, 49);
+                --base-color-6: #FFB319;
+            }*/
 
             .loader {
                 position: fixed;
@@ -45,31 +49,27 @@
                     visibility: hidden;
                 }
                 }
-                .logo-brand {
-                    font-size: 20pt;
-                    color: var(--base-color-2);
-                }
-                .logo-brand:hover {
-                    color: var(--base-color);
-                    cursor: pointer;
-                }
             .bodyhtml {
                 background: black;
             }
             .navbar {
-                box-shadow: 0px 5px 10px var(--base-color-2);
+                border: 2px solid #5c7aea;
+                box-shadow: none;
             }
-            .navbar .navigasi-1:hover {
-                color: var(--base-color-2);
+            .bg-color1 {
+                background: #5c7aea;
             }
             .navbar .navigasi-1 {
                 font-size: 20pt;
                 font-family: 'Black Ops One', cursive;
-                color: var(--base-color-2);
+                color: black;
                 text-decoration: none;
             }
+            .navbar .navigasi-1:hover {
+                color: black;
+            }
             .navbar .navigasi-2 {
-                color: var(--base-color-2);
+                color: black;
                 font-family: 'Black Ops One', cursive;
                 text-decoration: none;
                 position: relative;
@@ -78,7 +78,7 @@
                 content: '';
                 height: 3px;
                 width: 0;
-                background: var(--base-color-2);
+                background: black;
                 position: absolute;
                 left: 0;
                 bottom: -5px;
@@ -87,39 +87,43 @@
             .navbar .navigasi-2:hover::after {
                 width: 100%;
             }
+            .bg-color2 {
+                background-color: transparent;
+            }
             .card-1 {
                 margin: 0%;
                 margin-left: 5%;
                 border-radius: 10px;
                 position: relative;
-                box-shadow: 0px 5px 10px var(--base-color-2);
+                box-shadow: none;
+                border: 2px solid #5c7aea;
             }
             .card-2 {
-                color: var(--base-color);
-                font-family: 'Black Ops One', cursive;
+                color: #5c7aea;
+                font-family: sans-serif;
                 font-weight: bold;
                 font-size: 18pt;
                 text-align: center;
                 border: none;
             }
             .card-font {
-                color: var(--base-color);
-                font-family: 'Black Ops One', cursive;
+                color: #5c7aea;
+                font-family: sans-serif;
             }
             .card-input {
                 border-radius: 20px;
                 position: relative;
             }
             .card-input:focus {
-                border: 2px solid var(--base-color);
+                border: 2px solid #5c7aea;
             }
             .card-sub {
-                color: var(--base-color-2);
-                font-family: 'Black Ops One', cursive;
+                color: #5c7aea;
+                font-family: sans-serif;
             }
             .card-fontkecil {
                 font-size: 10pt;
-                color: var(--base-color);
+                color:#5c7aea;
                 text-decoration: none;
             }
             .card-fontkecil:hover {
@@ -138,40 +142,48 @@
                 font-size: 50pt;
             }
             .card-fontsedang {
-                color: var(--base-color);
-                font-family: 'Black Ops One', cursive;
+                color: #5c7aea;
+                font-family: sans-serif;
                 font-size: 10pt;
             }
             .forget-pass {
-                margin-left: 30%;
+                margin-right: 26%;
+                font-size: 10pt;
+            }
+            .forget-pass:hover {
+                border: none;
+                font-weight: normal;
+                color: #5c7aea;
+            }
+            .show-pass {
+                cursor: pointer;
+                color: #5c7aea;
+                font-size: 10pt;
+            }
+            .show-pass:hover {
+                color: #5c7aea;
+                text-decoration: none;
             }
 
             @media (max-width: 980px) {
-                .logo-brand {
-                    font-size: 30pt;
-                    color: var(--base-color-2);
-                }
-                .logo-brand:hover {
-                    color: var(--base-color);
-                    cursor: pointer;
-                }
                 .bodyhtml {
                     background: black;
                 }
                 .navbar {
-                    box-shadow: 0px 5px 10px var(--base-color-2);
+                    box-shadow: none;
+                    border: 2px solid #5c7aea;
                 }
                 .navbar .navigasi-1:hover {
-                    color: var(--base-color-2);
+                    color: black;
                 }
                 .navbar .navigasi-1 {
                     font-size: 50pt;
                     font-family: 'Black Ops One', cursive;
-                    color: var(--base-color-2);
+                    color: black;
                     text-decoration: none;
                 }
                 .navbar .navigasi-2 {
-                    color: var(--base-color-2);
+                    color: black;
                     font-family: 'Black Ops One', cursive;
                     text-decoration: none;
                     position: relative;
@@ -181,7 +193,7 @@
                     content: '';
                     height: 3px;
                     width: 0;
-                    background: var(--base-color-2);
+                    background: black;
                     position: absolute;
                     left: 0;
                     bottom: -5px;
@@ -195,19 +207,19 @@
                     margin-left: 5%;
                     border-radius: 10px;
                     position: relative;
-                    box-shadow: 0px 5px 10px var(--base-color-2);
+                    box-shadow: none;
                 }
                 .card-2 {
-                    color: var(--base-color);
-                    font-family: 'Black Ops One', cursive;
+                    color: #5c7aea;
+                    font-family: sans-serif;
                     font-weight: bold;
                     font-size: 50pt;
                     text-align: center;
                     border: none;
                 }
                 .card-font {
-                    color: var(--base-color);
-                    font-family: 'Black Ops One', cursive;
+                    color: #5c7aea;
+                    font-family: sans-serif;
                     font-size: 24pt;
                 }
                 .card-input {
@@ -220,16 +232,13 @@
                     border: 2px solid var(--base-color);
                 }
                 .card-sub {
-                    color: var(--base-color-2);
-                    font-family: 'Black Ops One', cursive;
+                    color: #5c7aea;
+                    font-family: sans-serif;
                 }
                 .card-fontkecil {
                     font-size: 12pt;
-                    color: var(--base-color);
+                    color: #5c7aea;
                     text-decoration: none;
-                }
-                .card-fontkecil:hover {
-                
                 }
                 .gambar {
                     display: none;
@@ -243,8 +252,8 @@
                     font-size: 100pt;
                 }
                 .card-fontsedang {
-                    color: var(--base-color);
-                    font-family: 'Black Ops One', cursive;
+                    color: #5c7aea;
+                    font-family: sans-serif;
                     font-size: 20pt;
                 }
                 .form-check-label {
@@ -252,7 +261,32 @@
                     border-radius: 20px;
                 }
                 .forget-pass {
-                    margin-left: 60%;
+                    margin-right: 26%;
+                    font-size: 20pt;
+                }
+                .forget-pass:hover {
+                    border: none;
+                    font-weight: normal;
+                }
+                .show-pass {
+                    cursor: pointer;
+                    color: #5c7aea;
+                    font-size: 20pt;
+                }
+                .show-pass:hover {
+                    color: #5c7aea;
+                    text-decoration: none;
+                }
+                input[type='checkbox'] {
+                    width:30px;
+                    height:30px;
+                    background:white;
+                    border-radius:5px;
+                    border:2px solid #555;
+                    margin-right: 1%;
+                }
+                input[type='checkbox']:checked {
+                    background: #abd;
                 }
             }
         </style>
@@ -275,8 +309,8 @@
         <div class="loader">
             <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
         </div>
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand logo-brand navigasi-1" href="login_beneran.html">ICY</a>
+        <nav class="navbar navbar-dark bg-color1">
+            <a class="navbar-brand navigasi-1" href="login_beneran.html">ICY</a>
             <ul class="navbar-nav" style="display: flex;">
                 <li class="nav-item">
                     <a class="navigasi-2" href="sign_up.html" >Sign Up</a>
@@ -290,7 +324,7 @@
                     <img style="object-fit: cover; margin: 3px; margin-top: 70px; border-radius: 10px;" width="150px" height="300px" src="https://source.unsplash.com/collection/user/micheile">
                     <img style="object-fit: cover; margin: 3px; margin-bottom: 70px; border-radius: 10px;" width="150px" height="300px" src="https://source.unsplash.com/collection/user/melakii">
             </div>
-            <div class="card text-white bg-warning card-1">
+            <div class="card text-white bg-color2 card-1">
                 <div class="card-header card-2">
                     <span class="material-icons">account_box</span>
                     <br>
@@ -299,15 +333,15 @@
                 <div class="card-body">
                     <form>
                         <div class="form-group">
-                            <label class="card-font" for="email">Email :</label>
+                            <label class="card-font" style="font-weight: bold;" for="email">Email :</label>
                             <input class="card-input form-control" placeholder="Email" type="email" id="email" aria-describedby="emailHelp" required>
-                            <small class="form-text text-muted card-fontsedang" id="emailHelp">We'll never share your email with anyone else.</small>
+                            <small class="form-text card-fontsedang" id="emailHelp">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
-                            <label class="card-font" for="password">Password :</label>
+                            <label class="card-font" style="font-weight: bold;" for="password">Password :</label>
                             <input placeholder="Password" type="password" class="card-input form-control" id="passwordaja" required>
-                            <a style="cursor: pointer; color: var(--base-color); background-color: var(--base-color); color: var(--base-color-2); padding: 2%; border-radius: 20px;" id="hide" onclick="showpass()">show password</a>
                             <a class="card-fontkecil forget-pass" href="forgetpass_beneran.html">Forgot password?</a>
+                            <a class="show-pass" id="hide" onclick="showpass()">show password</a>
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="card-input form-check-input" id="exampleCheck1">

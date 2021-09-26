@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Verification-ICY</title>
+        <title>Verification ICY</title>
         <link rel = "icon" href = 
         "https://i.ibb.co/7rWKwZS/1.jpg" 
         type = "image/x-icon">
@@ -11,10 +11,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
         <link rel="icon" href="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Icons\favicon.ico">
         <style>
-            body {
-                --base-color: rgb(46, 49, 49);
-                --base-color-2: #FFB319;
-            }
             .loader {
             position: fixed;
             z-index: 99;
@@ -43,39 +39,35 @@
                 visibility: hidden;
             }
             }
-            .logo-brand {
-                font-size: 20pt;
-                color: var(--base-color-2);
-            }
-            .logo-brand:hover {
-                color: var(--base-color);
-                cursor: pointer;
-            }
             .bodyhtml {
                 background: black;
             }
             .navbar {
-                box-shadow: 0px 5px 10px var(--base-color-2);
+                border: 2px solid #5c7aea;
+                box-shadow: none;
+            }
+            .bg-color1 {
+                background: #5c7aea;
             }
             .navbar .navigasi-1 {
                 font-size: 20pt;
                 font-family: 'Black Ops One', cursive;
-                color: var(--base-color-2);
+                color: black;
+                text-decoration: none;
             }
-            .card-sub {
-                color: var(--base-color-2);
-                font-family: 'Black Ops One', cursive;
-                border-radius: 20px;
+            .navbar .navigasi-1:hover {
+                color: black;
             }
             .kotak{
-                background-color: var(--base-color-2);
+                background-color: transparent;
                 display: flex;
                 flex-flow: column;
                 text-align: center;
                 margin: 3% 20%;
                 border-radius: 10px;
-                box-shadow: 0px 5px 10px var(--base-color-2);
+                box-shadow: none;
                 padding: 2% 0%;
+                border: 2px solid #5c7aea;
             }
             .kotak img {
                 width: 15%;
@@ -91,78 +83,74 @@
                 border: none;
                 border-radius: 5px;
                 text-align: center;
-                font-family: 'Black Ops One', cursive;
+                font-family: sans-serif;
                 font-size: 14pt;
-                color: var(--base-color-2);
-                background: var(--base-color);
+                color: black;
+                background: #5c7aea;
             }
             input:focus{
-                border: 2px solid var(--base-color);
+                border: 2px solid #5c7aea;
             }
             h1{
                 text-align: center;
-                font-family: 'Black Ops One', cursive;
-                color: var(--base-color);
-                font-size: 24pt;
+                font-family: sans-serif;
+                color: #5c7aea;
+                font-size: 30pt;
             }
             button{
                 width: 150px;
                 height: 40px;
                 margin: 25px auto 0px auto;
-                font-family: 'Black Ops One', cursive;
+                font-family: sans-serif;
                 font-size: 14pt;
                 border: none;
                 border-radius: 5px;
                 letter-spacing: 2px;
                 cursor: pointer;
-                color: var(--base-color-2);
-                background: var(--base-color);
+                color: black;
+                background-color: #5c7aea;
             }
             .kotak img {
                 width: 300px;
                 margin: 0;
             }
-
+            .btn-color1 {
+                background-color: #5c7aea;
+            }
+            .card-sub {
+                color: black;
+                font-size: 14pt;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
 
             @media (max-width: 980px) {
-                body {
-                    --base-color: rgb(46, 49, 49);
-                    --base-color-2: #FFB319;
-                }
                 .bodyhtml {
-                    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-gPo_0cSk9Lrtl5x4itVpWj7LclMU_9xnww&usqp=CAU);
-                }
-                .logo-brand {
-                    font-size: 30pt;
-                    color: var(--base-color-2);
-                }
-                .logo-brand:hover {
-                    color: var(--base-color);
-                    cursor: pointer;
+                    background: black;
                 }
                 .navbar {
-                    box-shadow: 0px 5px 10px var(--base-color-2);
+                    box-shadow: none;
+                    border: 2px solid #5c7aea;
+                }
+                .navbar .navigasi-1:hover {
+                    color: black;
                 }
                 .navbar .navigasi-1 {
-                    font-size: 48pt;
+                    font-size: 50pt;
                     font-family: 'Black Ops One', cursive;
-                    color: var(--base-color-2);
-                }
-                .card-sub {
-                    color: var(--base-color-2);
-                    font-family: 'Black Ops One', cursive;
-                    border-radius: 20px;
-                    font-size: 24pt;
+                    color: black;
+                    text-decoration: none;
                 }
                 .kotak{
-                    background-color: var(--base-color-2);
+                    background-color: transparent;
                     display: flex;
                     flex-flow: column;
                     text-align: center;
                     margin: 5% 5%;
                     border-radius: 10px;
-                    box-shadow: 0px 5px 10px var(--base-color-2);
+                    box-shadow: none;
                     padding: 2% 0%;
+                    border: 2px solid #5c7aea;
                 }
                 .kotak img {
                     width: 30%;
@@ -180,32 +168,32 @@
                     border: none;
                     border-radius: 5px;
                     text-align: center;
-                    font-family: 'Black Ops One', cursive;
+                    font-family: sans-serif;
                     font-size: 14pt;
-                    color: var(--base-color-2);
-                    background: var(--base-color);
+                    color: black;
+                    background: #5c7aea;
                 }
                 input:focus{
                     border: 2px solid var(--base-color);
                 }
                 h1{
                     text-align: center;
-                    font-family: 'Black Ops One', cursive;
-                    color: var(--base-color);
+                    font-family: sans-serif;
+                    color: #5c7aea;
                     font-size: 60pt;
                 }
                 button{
                     width: 300px;
                     height: 70px;
                     margin: 25px auto 0px auto;
-                    font-family: 'Black Ops One', cursive;
+                    font-family: sans-serif;
                     font-size: 14pt;
                     border: none;
                     border-radius: 5px;
                     letter-spacing: 2px;
                     cursor: pointer;
-                    color: var(--base-color-2);
-                    background: var(--base-color);
+                    color: black;
+                    background-color: #5c7aea;
                 }
                 .resend-code {
                     text-align: center;
@@ -214,6 +202,15 @@
                 .kotak img {
                     width: 400px;
                     margin: 0;
+                }
+                .btn-color1 {
+                    background-color: #5c7aea;
+                }
+                .card-sub {
+                    color: black;
+                    font-size: 24pt;
+                    font-weight: bold;
+                    font-family: sans-serif;
                 }
             }
         </style>
@@ -229,14 +226,14 @@
         <div class="loader">
             <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
         </div>
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand logo-brand navigasi-1" href="login_beneran.html">ICY</a>
+        <nav class="navbar navbar-dark bg-color1">
+            <a class="navbar-brand navigasi-1" href="login_beneran.html">ICY</a>
         </nav>
         <div class="kotak">
             <div style="justify-content: center;">
                 <img src="https://media2.giphy.com/media/ukx7mWo5EyObRskaas/giphy.gif?cid=790b761129adcf55dea1b628e0bc7388f9351669bb07ec7c&rid=giphy.gif&ct=s" alt="Gambar">
             </div>
-            <h1>OTP</h1>
+            <h1 style="font-weight: bold;">OTP</h1>
             <div class="userInput">
                 <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
                 <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
@@ -245,11 +242,11 @@
                 <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
                 <input type="text" id="sixth" maxlength="1">
             </div>
-            <button class="btn btn-dark card-sub" type="submit">Confirm</button>
+            <button class="btn btn-color1 card-sub" type="submit">Confirm</button>
             <br>
             <div class="resend-code">
-                <a href="#" style="color: var(--base-color); font-family: 'Black Ops One', cursive;">Resend Code</a>
-                if you didn't get the email.
+                <a href="#" style="color: #5c7aea; font-family: sans-serif; font-weight: bold;">Resend Code</a>
+                <a style="color: #5c7aea; font-family: sans-serif;">if you didn't get the email.</a>
             </div>
         </div>
 
