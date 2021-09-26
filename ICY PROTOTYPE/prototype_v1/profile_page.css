@@ -130,13 +130,7 @@ nav {
   background-color: black;
 }
 
-nav.a {
-  font-family: 'Black Ops One', cursive;
-  font-size: 10000px;
-}
-
 ul.search {
-  display: flexbox;
   flex-direction: row;
   width: 500px;
   height: 50px;
@@ -147,9 +141,10 @@ ul.search {
 }
 
 button.button {
-  background-color:rgb(46, 49, 49);
-  color: grey;
-  margin-left: -55px;
+  background-color:#010815;
+  color: white;
+  margin-left: -50px;
+  margin-top: 5px;
   border: none;
 }
 
@@ -162,7 +157,8 @@ input.input{
   outline: none;
   font-size: 18px;
   padding-left: 20px;
-  background-color: rgb(46, 49, 49);
+  color: gray;
+  background-color: #010815;
 }
 
 div.online_friends {
@@ -179,7 +175,14 @@ div.language_menu {
 div.language_menu > a {
   color: white;
 }
-  
+
+.navbar a.navbar-brand b {
+  font-family: Black Ops One , cursive;
+  font-size: xx-large; 
+  padding: 0; 
+  color: #010815;
+}
+
 .dropdown-toggle::after {
   content: none;
 }
@@ -198,11 +201,11 @@ div.language_menu > a {
 }
 
 li.nav-item {
-padding: 0;
+  padding: 0; 
 }
 
 li.nav-item span.material-icons {
-  color: #010815;
+  color: black;
   font-size: 20pt;
   margin-left: -5px;
   
@@ -221,7 +224,7 @@ li.nav-item span:hover {
 }
 
 li.nav-item span.material-icons:hover {
-  color:black;
+  color:#010815;
   font-size: 20pt;
   margin-left: -5px ;
 }
@@ -233,10 +236,10 @@ li.nav-item span.material-icons:hover {
 }
 
 .account_menu a.dropdown-item:hover {
-color: white;
-background-color: #FFB319;
-border-radius: 0;
-padding: 10px, 0px;
+  color: white;
+  background-color: var(--base-color-2);
+  border-radius: 0;
+  padding: 10px, 0px;
 }
 
 nav.navbar a.navbar-brand {
