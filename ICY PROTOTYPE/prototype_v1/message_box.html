@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
-    <link rel="stylesheet" href="style_login.css">
-    <link rel="icon" href="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Icons\favicon.ico">
     <link rel = "icon" href="https://i.ibb.co/7rWKwZS/1.jpg" type = "image/x-icon">
     <title>Message Box ICY</title>
     <style>
@@ -172,16 +170,18 @@
         /*=====================================================================*/
 
         .friend {
-            border: 2px solid var(--base-color);
+            border: 2px solid var(--base-color-2);
             border-radius: 20px;
             margin: 1% 0%;
             display: flex;
             font-size: 16pt;
             font-family: sans-serif;
+            background-color: #5C7AEA;
         }
+
         .friend img {
-            max-width: 60px;
-            max-height: 30px;
+            width: 50px;
+            height: 50px;
             border-radius: 100%;
             object-fit: cover;
             margin-right: 1%;
@@ -191,6 +191,13 @@
             border-right: 1px solid  var(--base-color-2);
             padding-right: 3%;
         }
+        
+        .friend a.name {
+            margin-top: 10px;
+            margin-left: 5px;
+            color: #010815;
+        }
+
         .kelas {
             margin-top: 1%;
             padding: 1%;
@@ -269,7 +276,7 @@
                     <div class="account_menu dropdown-menu dropdown-menu-right" style="background-color:rgb(46, 49, 49);">
                         <a class="dropdown-item" href="profile_page.html">
                         <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"alt=""/>Account Center</a>
-                        <a class="dropdown-item" href="#">Notification Center</a>
+                        <a class="dropdown-item" href="Notif.html">Notification Center</a>
                         <a class="dropdown-item" href="setting.html">Settings</a>
                         <a class="dropdown-item" href="login_beneran.html">Log Out</a>
                     </div>
@@ -281,7 +288,7 @@
             <div class="friendlist">
                 <button type="button" class="btn btn-block btn-light friend" data-toggle="modal" data-target="#Modal1">
                     <img src="https://source.unsplash.com/collection/user/melakii">
-                    Chatting 1
+                    <a class="name">chatting 1</a>
                 </button>
             </div>
             <div class="massaging">
@@ -305,11 +312,20 @@
             var textbox = document.getElementById("textbox");
             var button = document.getElementById("button");
 
-            button.addEventListener("click", function(){
+            button.addEventListener("click", function(event){
                 var newMessage = document.createElement("p");
                 newMessage.innerHTML = textbox.value;
                 messages.appendChild(newMessage);
                 textbox.value = "";
+            });
+
+            button.addEventListener("keyup", function(event) {
+              if (event.keyCode === 13) {
+                var newMessage = document.createElement("p");
+                newMessage.innerHTML = textbox.value;
+                messages.appendChild(newMessage);
+                textbox.value = "";
+              }
             });
         </script>
 </body>
