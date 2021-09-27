@@ -117,9 +117,10 @@
             .card-input:focus {
                 border: 2px solid #5c7aea;
             }
-            .card-sub {
-                color: #5c7aea;
+            .btn-color3 {
+                color: black;
                 font-family: sans-serif;
+                background: #5c7aea;
             }
             .card-fontkecil {
                 font-size: 10pt;
@@ -163,6 +164,12 @@
             .show-pass:hover {
                 color: #5c7aea;
                 text-decoration: none;
+            }
+            .btn-color3:hover {
+                height: 38px;
+                color: #5c7aea;
+                background: transparent;
+                border: 2px solid #5c7aea;
             }
 
             @media (max-width: 980px) {
@@ -231,9 +238,14 @@
                 .card-input:focus {
                     border: 2px solid var(--base-color);
                 }
-                .card-sub {
+                .btn-color3 {
                     color: #5c7aea;
                     font-family: sans-serif;
+                }
+                .btn-color3:hover {
+                    color: black;
+                    background: transparent;
+                    border: 2px solid #5c7aea;
                 }
                 .card-fontkecil {
                     font-size: 12pt;
@@ -347,7 +359,7 @@
                             <input type="checkbox" class="card-input form-check-input" id="exampleCheck1">
                             <label class="form-check-label card-fontsedang" for="exampleCheck1">Remember me</label>
                         </div>
-                        <button class="card-input btn btn-dark btn-block card-sub" type="submit">login</button>
+                        <button class="card-input btn btn-block btn-color3" type="submit">Login</button>
                     </form>
                 </div>
             </div>
