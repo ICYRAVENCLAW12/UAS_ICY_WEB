@@ -1,7 +1,8 @@
 body {
   --base-color: rgb(46, 49, 49);
-  --base-color-2: #FFB319;
-  background-color: black;
+  --base-color-2: #5C7AEA;
+  --base-color-4: #010815;
+  background-color: #010815;
 }
 
 .loader {
@@ -75,7 +76,7 @@ body {
   border: none;
   border-radius: 50px;
   height: 50px;
-  color: #FFB319;
+  color: var(--base-color-2);
   
 }
 
@@ -115,7 +116,7 @@ body {
 
 .form-group input:hover {
   border: 3px solid var(--base-color-2);
-  border-color: #FFB319;
+  border-color: var(--base-color-2);  
   cursor: text;
 }
 
@@ -126,8 +127,8 @@ body {
 }
 
 .form-group-button {
-  background-color: #FFB319;
-  color: #FFB319;
+  background-color: var(--base-color-2);
+  color: #5C7AEA;
   float: left;
 }
 

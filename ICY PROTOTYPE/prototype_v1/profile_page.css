@@ -80,7 +80,7 @@ body {
   border-left: 1.5px solid var(--base-color-2);
   border-right: 1.5px solid var(--base-color-2);
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-right-radius: 10px
 }
 
 .grid-mid::-webkit-scrollbar {

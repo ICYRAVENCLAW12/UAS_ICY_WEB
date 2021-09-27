@@ -19,8 +19,11 @@
 
 </head>
 <body>
+  <div class="loader">
+    <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
+</div>
     <nav class="navbar fixed-top sticky-top navbar-expand-sm">
-        <a class="navbar-brand" href="index.html" style="font-family: Black Ops One , cursive; font-size: xx-large; padding: 0;" >
+        <a class="navbar-brand" href="index.html">
             <b>ICY</b>
         </a>
         <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -34,39 +37,41 @@
                   <div class="justify-content-sm-center">
                     <form class="form-inline my-2 my-md-0 my-md-0">
                       <input class="input" type="text" placeholder="@username" aria-label="Search">    
-                      <button class="button" type="submit"><span class="material-icons">search</span></button>         
+                      <button class="button" type="submit"><span class="material-icons" style="color: grey; font-size: 20pt;">search</span></button>         
                     </form>
                   </div>
                 </li>
             </ul>
         
-
+  
             <ul class=" left_navbar_side navbar-nav"> 
-              <li class="nav-item"><a class="tool nav-link" href="index.html">
-                <span class="material-icons">home</span></a>
-              </li>  
-              <li class="nav-item"><a class="tool nav-link" href="explore_beneran.html">
-                <span class="material-icons">explore</span></a>
-              </li>
-              <li class="nav-item"><a class="tool nav-link" href="#">
-                <span class="material-icons">mail</span></a>
-              </li>
-              <li class="account_dropdown nav-item dropdown">
-                <a class="tool nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="material-icons">account_circle</span></a></a>
-                <div class="account_menu dropdown-menu dropdown-menu-right" style="background-color:rgb(46, 49, 49);">
-                  <a class="dropdown-item" href="profile.html">
-                    <img
-                      src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                      alt=""
-                    />Account Center</a>
-                  <a class="dropdown-item" href="#">Notification Center</a>
-                  <a class="dropdown-item" href="setting.html">Settings</a>
-                  <a class="dropdown-item" href="login.html">Log Out</a>
-                </div>
-              </li>
-          </ul>
+                <li class="nav-item"><a class="tool nav-link" href="index.html">
+                  <span class="material-icons">home</span></a>
+                </li>  
+                <li class="nav-item"><a class="tool nav-link" href="explore_beneran.html">
+                  <span class="material-icons">explore</span></a>
+                </li>
+                <li class="nav-item"><a class="tool nav-link" href="message_box.html">
+                  <span class="material-icons">mail</span></a>
+                </li>
+                <li class="account_dropdown nav-item dropdown">
+                  <a class="tool nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="material-icons">account_circle</span></a></a>
+                  <div class="account_menu dropdown-menu dropdown-menu-right" style="background-color:rgb(46, 49, 49);">
+                    <a class="dropdown-item" href="profile_page.html">
+                      <img
+                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                        alt=""
+                      />Account Center</a>
+                    <a class="dropdown-item" href="Notif.html">Notification Center</a>
+                    <a class="dropdown-item" href="setting.html">Settings</a>
+                    <a class="dropdown-item" href="login_beneran.html">Log Out</a>
+                  </div>
+                </li>
+            </ul>
         </div>
     </nav>
+  </nav>
+
     <div class="form"style="padding-top: 40px;" >
         <div class="container">
             <div class="row no-gutters">
@@ -136,5 +141,11 @@
 <script>
   document.getElementById("textColor").style.color='White';
 </script>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+  });
+</script> 
 </body>
 </html>
