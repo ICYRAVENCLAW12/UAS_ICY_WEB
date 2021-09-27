@@ -100,12 +100,6 @@ function changeIcons(icon) {
   icon.classList.toggle("fa-user-times");
 }
 
-// Loading 
-window.addEventListener("load", function () {
-  const loader = document.querySelector(".loader");
-  loader.className += " hidden"; // class "loader hidden"
-});
-
 // Stop body scroll 
 $.fn.isolatedScroll = function() {
   this.bind('mousewheel DOMMouseScroll', function (e) {
