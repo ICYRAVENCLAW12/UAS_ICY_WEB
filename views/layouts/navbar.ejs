@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICY</title>
+    <link rel = "icon" href = "https://i.ibb.co/7rWKwZS/1.jpg" type = "image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+    body {
+        background-color:#010815;;
+      }
+      
+      /* Loader */
+      
+      .loader {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .loader > img {
+        width: 400px;
+      }
+      
+      .loader.hidden {
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+      }
+      
+      @keyframes fadeOut {
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+      }
+
+      /* Navigation Bar */
+      
+      div.profile-nav > a {
+        font-size: 35px;
+        padding: 15%;
+        margin-right: 5%;
+      }
+      
+      nav {
+        background-color: black;
+      }
+      
+      ul.search {
+        flex-direction: row;
+        width: 500px;
+        height: 50px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+      
+      button.button {
+        background-color:#010815;
+        color: white;
+        margin-left: -50px;
+        margin-top: 5px;
+        border: none;
+      }
+      
+      input.input{
+        flex: 1;
+        height: 40px;
+        width: 400px;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        font-size: 18px;
+        padding-left: 20px;
+        color: gray;
+        background-color: #010815;
+      }
+      
+      div.online_friends {
+        text-align: left;
+        padding: 10px;
+        font-size: 15px;
+        border: 3px;
+      }
+      
+      div.language_menu {
+        background-color: rgb(46, 49, 49);
+      }
+      
+      div.language_menu > a {
+        color: white;
+      }
+      
+      .navbar a.navbar-brand b {
+        font-family: Black Ops One , cursive;
+        font-size: xx-large; 
+        padding: 0; 
+        color: #010815;
+      }
+      
+      .dropdown-toggle::after {
+        content: none;
+      }
+      
+      .navbar {
+        background-color: #5c7aea !important;
+        position: sticky; 
+      }
+      
+      .custom-toggler.navbar-toggler {
+        border: 2px solid black;
+      }
+      
+      .custom-toggler.navbar-toggler span {
+        color:black;
+      }
+      
+      li.nav-item {
+        padding: 0; 
+      }
+      
+      li.nav-item span.material-icons {
+        color: black;
+        font-size: 20pt;
+        margin-left: -5px;
+        
+      }
+      
+      .account_menu a.dropdown-item img {
+        width: 50px;
+        margin-left: 0px;
+        margin-right: 8px;
+        
+      }
+      
+      li.nav-item span:hover {
+        box-shadow: 5px 5px 10px black;
+        border-radius: 10px;
+      }
+      
+      li.nav-item span.material-icons:hover {
+        color:#010815;
+        font-size: 20pt;
+        margin-left: -5px ;
+      }
+      
+      .account_menu a.dropdown-item {
+        color: white;
+        padding: 10px, 0px;
+      
+      }
+      
+      .account_menu a.dropdown-item:hover {
+        color: white;
+        background-color: #5c7aea;
+        border-radius: 0;
+        padding: 10px, 0px;
+      }
+      
+      nav.navbar a.navbar-brand {
+        color: black;
+      }
+    </style>
+</head>
+    <body>
+        <div class="loader">
+            <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
+        </div>
+
+        <nav class="navbar fixed-top sticky-top navbar-expand-sm">
+            <a class="navbar-brand" href="/">
+                <b>ICY</b>
+            </a>
+            <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="material-icons"><span class="material-icons">list</span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="search navbar-nav ml-auto mr-auto">
+                    <li class="nav-item">
+                      <div class="justify-content-sm-center">
+                          <form class="form-inline my-2 my-md-0 my-md-0">
+                          <input class="input" type="text" placeholder="@username" aria-label="Search">    
+                          <button class="button" type="submit"><span class="material-icons" style="color: grey; font-size: 20pt;">search</span></button>         
+                          </form>
+                      </div>
+                    </li>
+                </ul>
+            
+    
+                <ul class=" left_navbar_side navbar-nav"> 
+                    <li class="nav-item"><a class="tool nav-link" href="/">
+                      <span class="material-icons">home</span></a>
+                    </li>  
+                    <li class="nav-item"><a class="tool nav-link" href="/explore">
+                      <span class="material-icons">explore</span></a>
+                    </li>
+                    <li class="nav-item"><a class="tool nav-link" href="/message">
+                      <span class="material-icons">mail</span></a>
+                    </li>
+                    <li class="account_dropdown nav-item dropdown">
+                      <a class="tool nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="material-icons">account_circle</span></a></a>
+                      <div class="account_menu dropdown-menu dropdown-menu-right" style="background-color:rgb(46, 49, 49);">
+                          <a class="dropdown-item" href="/profile_page">
+                          <img
+                              src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                              alt=""
+                          />Account Center</a>
+                          <a class="dropdown-item" href="/notification_panel">Notification Center</a>
+                          <a class="dropdown-item" href="/setting">Settings</a>
+                          <a class="dropdown-item" href="/logout">Log Out</a>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>feather.replace()</script>
+        <script>
+          // Get the modal
+          var modal = document.getElementById("myModal");
+          
+          // Get the button that opens the modal
+          var btn = document.getElementById("comment_button");
+          
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+
+          for(var i = 0 ; i < 1000 ; i++) {
+            btn.onclick = function() {
+            modal.style.display = "block";
+            };
+          }
+          
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+          </script>
+          <script>
+            window.addEventListener("load", function () {
+              const loader = document.querySelector(".loader");
+              loader.className += " hidden"; // class "loader hidden"
+            });
+          </script> 
+  </body>
+</html>

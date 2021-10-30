@@ -1,0 +1,824 @@
+body {
+  --main-radius: 15px;
+  --main-padding: 8px;
+  --base-color-1: rgb(46, 49, 49);
+  --base-color-2: #5c7aea;
+  --base-color-3: #ffffff;
+  background-color: #010815;
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+/* Loader */
+
+/* Lay Out */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 670px 350px;
+  grid-template-rows: 340px 258px;
+  grid-template-areas:
+    "friends_online profile follow_me"
+    "friends_online profile trending"
+    "empty profile credits";
+  grid-column-gap: 1.5rem;
+  margin-left: 3%;
+  margin-right: 7%;
+  grid-auto-rows: minmax(min-content, max-content);
+  padding-top: 0px;
+  position: relative;
+}
+
+.grid-left {
+  margin-top: 5%;
+  border: 1.5px solid var(--base-color-2);
+  grid-area: friends_online;
+  border-radius: var(--main-radius);
+  padding-top: 3%;
+  background:black;
+  height: 625px;
+}
+
+.grid-mid {
+  grid-area: profile;
+  height: 100vh;
+  padding: var(--main-padding);
+  padding: 0;
+  margin: 2.5% 0 0 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border-top: 1.5px solid var(--base-color-2);
+  border-left: 1.5px solid var(--base-color-2);
+  border-right: 1.5px solid var(--base-color-2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px
+}
+
+.grid-mid::-webkit-scrollbar {
+  display: none;
+}
+
+.grid-right-top {
+  display: block;
+  margin-top: 5%;
+  border: 1.5px solid var(--base-color-2);
+  grid-area: follow_me;
+  border-radius: var(--main-radius);
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-bottom: 6.3%;
+  background:black;
+}
+
+.grid-right-bottom {
+  border: 1.5px solid var(--base-color-2);
+  grid-area: trending;
+  border-radius: var(--main-radius);
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-bottom: 0;
+  background:black;
+}
+
+.grid-empty {
+  grid-area: empty;
+}
+
+.grid-credits {
+  font-size: 14px;
+  padding-top: 2%;
+}
+
+/* Navigation Bar */
+
+div.profile-nav > a {
+  font-size: 35px;
+  padding: 15%;
+  margin-right: 5%;
+}
+
+nav {
+  background-color: black;
+}
+
+ul.search {
+  flex-direction: row;
+  width: 500px;
+  height: 50px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+button.button {
+  background-color:#010815;
+  color: white;
+  margin-left: -50px;
+  margin-top: 5px;
+  border: none;
+}
+
+input.input{
+  flex: 1;
+  height: 40px;
+  width: 400px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  font-size: 18px;
+  padding-left: 20px;
+  color: gray;
+  background-color: #010815;
+}
+
+div.online_friends {
+  text-align: left;
+  padding: 10px;
+  font-size: 15px;
+  border: 3px;
+}
+
+div.language_menu {
+  background-color: rgb(46, 49, 49);
+}
+
+div.language_menu > a {
+  color: white;
+}
+
+.navbar a.navbar-brand b {
+  font-family: Black Ops One , cursive;
+  font-size: xx-large; 
+  padding: 0; 
+  color: #010815;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.navbar {
+  background-color: var(--base-color-2) !important;
+  position: sticky; 
+}
+
+.custom-toggler.navbar-toggler {
+  border: 2px solid black;
+}
+
+.custom-toggler.navbar-toggler span {
+  color:black;
+}
+
+li.nav-item {
+  padding: 0; 
+}
+
+li.nav-item span.material-icons {
+  color: black;
+  font-size: 20pt;
+  margin-left: -5px;
+  
+}
+
+.account_menu a.dropdown-item img {
+  width: 50px;
+  margin-left: 0px;
+  margin-right: 8px;
+  
+}
+
+li.nav-item span:hover {
+  box-shadow: 5px 5px 10px black;
+  border-radius: 10px;
+}
+
+li.nav-item span.material-icons:hover {
+  color:#010815;
+  font-size: 20pt;
+  margin-left: -5px ;
+}
+
+.account_menu a.dropdown-item {
+  color: white;
+  padding: 10px, 0px;
+
+}
+
+.account_menu a.dropdown-item:hover {
+  color: white;
+  background-color: var(--base-color-2);
+  border-radius: 0;
+  padding: 10px, 0px;
+}
+
+nav.navbar a.navbar-brand {
+  color: black;
+}
+
+/* Top */
+
+.header {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  padding-top: 1%;
+  padding-left: 4%;
+  border-bottom: 1.5px solid var(--base-color-2);
+  z-index: 100;
+  background-color: #010815;
+}
+
+.header-left {
+  display: flex;
+}
+
+.header-left .friends p {
+  color: var(--base-color-3);
+  font-weight: 620;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 18%;
+  font-size: 18px;
+}
+
+.friends-information {
+  padding: 14% 0 0 3% ;
+}
+
+.friends-information button {
+  background-color: transparent;
+  border: none;
+  color: var(--base-color-3);
+  margin-bottom: 10px;
+}
+
+.friends-information .material-icons {
+  font-size: 20px;
+}
+
+.friends-information button:hover {
+  color: var(--base-color-3);
+}
+
+.background_img {
+  position: relative;
+  width: 100%;
+}
+
+.background_img::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background: url(https://source.unsplash.com/1600x900/?nature,mountain);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -99;
+}
+
+.page_name h3 {
+  color: var(--base-color-3);
+  font-size: 32px;
+  font-weight: 650;
+}
+
+.top_content {
+  padding: 3% 5% 2% 3%; 
+  display: flex;
+}
+
+.top_right {
+  padding-top: 2%;
+  padding-left: 11%;
+  color: var(--base-color-3);
+}
+
+.profile_img {
+  position: relative;
+  padding-top: 3%;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.change_img {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#file {
+  display: none;
+}
+
+#uploadBtn {
+  cursor: pointer;
+  display: none;
+  opacity: 0.5;
+}
+
+#uploadBtn:hover {
+  opacity: 1;
+}
+
+.name {
+  display: flex;
+}
+
+.name h4 {
+  color: var(--base-color-3);
+  font-weight: 650;
+}
+
+.name .material-icons {
+  color: var(--base-color-2);
+  padding: 1% 0 0 3%;
+}
+/*
+.edit {
+  background-color: transparent;
+  border: none;
+  color: var(--base-color-5);
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+
+.feather {
+  height: 20px;
+  width: 20px;
+}
+*/
+.number-tweets-followers-following{
+  padding-top: 3%;
+  display: flex;
+}
+
+.number_tweets p {
+  padding-bottom: 0; 
+  margin-bottom: 0; 
+  font-weight: 550;
+}
+
+.number_followers, .number_following {
+  padding-left: 12%;
+}
+
+.number_followers button, .number_following button {
+  border: none; 
+  background-color: transparent; 
+  color: var(--base-color-3); 
+  font-weight: 550;
+}
+
+.edit_profile {
+  padding-top: 7%;
+  display: flex;
+}
+
+.edit_profile button {
+  background-color: transparent;
+  color: var(--base-color-3);
+  border: 2px solid var(--base-color-2);
+  width: 325px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.edit_profile button:hover {
+  background-color: rgba(61, 65, 69, 0.5);
+  border-color: var(--base-color-3);
+}
+
+.more_profile_info p {
+  color: var(--base-color-3);
+  padding: 0 4% 3% 4%;
+  font-weight: 500;
+}
+
+.username p {
+  padding-bottom: 0; 
+  margin-bottom: 0; 
+  font-size: 17px; 
+  font-weight: 600;
+}
+
+.bio p {
+  padding-top: 0.5%; 
+  margin-top: 0.5%; 
+  color: var(--base-color-3);
+}
+
+.nav-tabs > li > a {
+  margin-left: 50px;
+  margin-right: 52px;
+  color: var(--base-color-3);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.nav-tabs > li > a.follow_2 {
+  margin-left: 80px;
+  margin-right: 82px;
+  color: var(--base-color-3);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--base-color-2);
+  border: 1px solid var(--base-color-2);
+  color: var(--base-color-3);
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: rgba(61, 65, 69, 0.5) !important;
+  border: 1px solid rgba(31, 32, 34, 0.2);
+  color: var(--base-color-3);
+}
+
+.nav-tabs {
+  border-bottom: 1.5px solid var(--base-color-2);
+}
+
+/* Bottom */
+
+.bottom {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  height: 40px;
+  margin-right: 2%;
+}
+
+.profile-picture h3 a {
+  font-size: 14pt;
+  color: white;
+}
+
+.post {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #010815;
+  border-bottom: 0.1pt solid var(--base-color-2);
+}
+
+.the_post_content {
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.post_body img {
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-bottom: 0;
+}
+
+.utility-icon {
+  display: flex;
+  margin-top: 20px;
+}
+
+.utility-icon span {
+  margin-right: 15px;
+  font-size: 25px;
+  color: white;
+}
+
+.utility-icon button {
+  width: 20px;
+  background-color: black;
+  border: none;
+  margin-top: 0px;
+  margin-right: 25px;
+}
+
+.utility-icon button.like_button span.material-icons {
+  margin-right: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+.desc {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: white;
+  word-break: break-all;
+  max-width: 768px;
+}
+
+.post_body {
+  flex: 1;
+  padding: 10px;
+}
+
+.profile-picture {
+  padding: 2%;
+  display: flex;
+  align-items: center;
+}
+
+/* Friends Online, Follow Me & Trending*/
+
+.grid-right-bottom .titles, .grid-right-top .titles {
+  font-size: 40px;
+  font-family: 'bebas neue', cursive;
+  color: var(--base-color-3);
+  padding-left: 6%; 
+  font-weight: 700;
+}
+
+.grid-right-bottom a:hover, .grid-right-top a:hover {
+  cursor: pointer;
+}
+
+.grid-left .titles {
+  font-size: 30px;
+  color: var(--base-color-3);
+  padding-left: 3%; 
+  font-weight: 700;
+}
+
+.friends_online-header {
+  display: flex;
+}
+
+.friends_online-header .material-icons {
+  color: var(--base-color-3);
+  padding: 3% 0 0 3%;
+  width: 32px;
+}
+
+.suggested_account, .modal-body-followers-content, .modal-body-following-content {
+  padding-left: 6%; 
+  padding-right: 6%; 
+  display: grid; 
+  grid-template-columns: 21% 62% 17%; 
+  align-items: center;
+}
+
+.acc_img {
+  border-radius: 50%;
+}
+
+.name-username {
+  padding-top: 7%;
+}
+
+.name-username a p {
+  margin-bottom: 0; 
+  padding-bottom: 0; 
+}
+
+.name-username p {
+  color: var(--base-color-3)
+}
+
+.name-username a {
+  color: var(--base-color-3);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.follow_button {
+  background-color: var(--base-color-3); 
+  color: var(--base-color); 
+  border: none;
+  border-radius: 10px;
+  width: 45px; 
+  height: 37px;
+  font-size: 20px;
+  padding-left: 10%;
+  margin-top: 8%;
+}
+
+.follow_button:hover {
+  background-color: rgba(61, 65, 69, 0.7);
+  color: var(--base-color-3);
+}
+
+.trend {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  padding: 3% 0 0 6%;
+  margin-bottom: 0;
+}
+
+.trend a {
+  font-size: 18px;
+  color: var(--base-color-3);
+}
+
+.trend button {
+  background-color: transparent;
+  border: none;
+  color: var(--base-color-3);
+  margin-bottom: 15%;
+}
+
+.trend_what p {
+  color: white;
+  font-weight: 650;
+  font-size: 16px;
+  padding: 0; 
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.trend_amount-of-tweets p {
+  padding: 0; 
+  margin-top: 0;
+}
+
+.trending-seeMore {
+  padding: 5% 0 0 6%;
+}
+
+.trending-followMe {
+  padding: 3% 0 0 6%;
+}
+/* Credits */
+
+.credits-content {
+  padding: 1% 0 0 4%;
+}
+
+.credits-content a {
+  padding-right: 2%;
+  color: var(--base-color-3);
+}
+
+/* Modal */
+
+.modal-followers, .modal-following, .modal-information {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid var(--base-color-3);
+  border-radius: 10px;
+  z-index: 999;
+  background-color: black;
+  max-width: 80%;
+  overflow: hidden;
+}
+
+.modal-followers.active, .modal-following.active, .modal-information.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--base-color-3);
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--base-color-3);
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background:none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--base-color-3);
+}
+
+.modal-body-followers, .modal-body-following {
+  padding: 0 !important;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 365px;
+}
+
+.modal-body-information {
+  padding: 0 !important;
+  height: 60px;
+  width: 680px;
+}
+
+.modal-body-information h4 {
+  padding: 1% 3% 3% 2%;
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: var(--base-color-3);
+}
+
+.follow_button .material-icons {
+  padding: 15% 0 0 0;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 100;
+}
+
+/* Responsive */
+
+@media screen and (min-width:1500px) {
+  .grid-container {
+    max-width: 1400px;
+    grid-column-gap: 1.5rem;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width:1420px) {
+  .grid-container {
+    max-width: 1000px;
+    grid-template-columns: 670px 350px;
+    grid-template-rows: 360px 278px;
+    grid-template-areas:
+      "profile follow_me"
+      "profile trending"
+      "profile credits";
+    grid-column-gap: 1.5rem;
+    margin: auto;
+  }
+
+  .grid-left {
+    display: none;
+  }
+
+  .grid-empty {
+    display: none;
+  }
+}
+
+@media screen and (max-width:1100px) {
+  .grid-container {
+    display: grid;
+    max-width: 650px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "profile";
+    grid-gap: 0;
+    margin: auto;
+  }
+
+  .grid-right-bottom, .grid-right-top {
+    display: none;
+  }
+
+  .grid-empty {
+    display: none;
+  }
+
+  .grid-credits {
+    display: none;
+  }
+
+  .modal-body-information {
+    width: 600px;
+  }
+}

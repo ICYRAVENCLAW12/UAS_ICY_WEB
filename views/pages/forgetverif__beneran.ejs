@@ -1,0 +1,274 @@
+<html>
+    <head>
+        <title>Verification ICY</title>
+        <link rel = "icon" href = 
+        "https://i.ibb.co/7rWKwZS/1.jpg" 
+        type = "image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+        <link rel="icon" href="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Icons\favicon.ico">
+        <style>
+            .loader {
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .loader > img {
+            width: 250px;
+            }
+
+            .loader.hidden {
+            animation: fadeOut 1s;
+            animation-fill-mode: forwards;
+            }
+
+            @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+            }
+            .bodyhtml {
+                background: black;
+            }
+            .navbar {
+                border: 2px solid #5c7aea;
+                box-shadow: none;
+            }
+            .bg-color1 {
+                background: #5c7aea;
+            }
+            .navbar .navigasi-1 {
+                font-size: 20pt;
+                font-family: 'Black Ops One', cursive;
+                color: black;
+                text-decoration: none;
+            }
+            .navbar .navigasi-1:hover {
+                color: black;
+            }
+            .kotak{
+                background-color: transparent;
+                display: flex;
+                flex-flow: column;
+                text-align: center;
+                margin: 3% 20%;
+                border-radius: 10px;
+                box-shadow: none;
+                padding: 2% 0%;
+                border: 2px solid #5c7aea;
+            }
+            .kotak img {
+                width: 15%;
+                margin: 1% 0%;
+            }
+            .userInput{
+                display: flex;
+                justify-content: center;
+            }
+            input{
+                margin: 10px;
+                width: 65px;
+                border: none;
+                border-radius: 5px;
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 14pt;
+                color: black;
+                background: #5c7aea;
+            }
+            input:focus{
+                border: 2px solid #5c7aea;
+            }
+            h1{
+                text-align: center;
+                font-family: sans-serif;
+                color: #5c7aea;
+                font-size: 30pt;
+            }
+            button{
+                width: 150px;
+                height: 40px;
+                margin: 25px auto 0px auto;
+                font-family: sans-serif;
+                font-size: 14pt;
+                border: none;
+                border-radius: 5px;
+                letter-spacing: 2px;
+                cursor: pointer;
+                color: black;
+                background-color: #5c7aea;
+            }
+            .kotak img {
+                width: 300px;
+                margin: 0;
+            }
+            .btn-color1 {
+                background-color: #5c7aea;
+                color: black;
+            }
+            .btn-color1:hover {
+                background: transparent;
+                color: #5c7aea;
+                border: 2px solid #5c7aea;
+            }
+            .card-sub {
+                color: black;
+                font-size: 14pt;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+
+            @media (max-width: 980px) {
+                .bodyhtml {
+                    background: black;
+                }
+                .navbar {
+                    box-shadow: none;
+                    border: 2px solid #5c7aea;
+                }
+                .navbar .navigasi-1:hover {
+                    color: black;
+                }
+                .navbar .navigasi-1 {
+                    font-size: 50pt;
+                    font-family: 'Black Ops One', cursive;
+                    color: black;
+                    text-decoration: none;
+                }
+                .kotak{
+                    background-color: transparent;
+                    display: flex;
+                    flex-flow: column;
+                    text-align: center;
+                    margin: 5% 5%;
+                    border-radius: 10px;
+                    box-shadow: none;
+                    padding: 2% 0%;
+                    border: 2px solid #5c7aea;
+                }
+                .kotak img {
+                    width: 30%;
+                    margin: 1% 0%;
+                    color: var(--base-color-2);
+                }
+                .userInput{
+                    display: flex;
+                    justify-content: center;
+                }
+                input{
+                    margin: 10px;
+                    width: 85px;
+                    height: 55px;
+                    border: none;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-family: sans-serif;
+                    font-size: 14pt;
+                    color: black;
+                    background: #5c7aea;
+                }
+                input:focus{
+                    border: 2px solid var(--base-color);
+                }
+                h1{
+                    text-align: center;
+                    font-family: sans-serif;
+                    color: #5c7aea;
+                    font-size: 60pt;
+                }
+                button{
+                    width: 300px;
+                    height: 70px;
+                    margin: 25px auto 0px auto;
+                    font-family: sans-serif;
+                    font-size: 14pt;
+                    border: none;
+                    border-radius: 5px;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+                    color: black;
+                    background-color: #5c7aea;
+                }
+                .resend-code {
+                    text-align: center;
+                    font-size: 24pt;
+                }
+                .kotak img {
+                    width: 400px;
+                    margin: 0;
+                }
+                .btn-color1 {
+                    background-color: #5c7aea;
+                    color: black;
+                }
+                .btn-color1:hover {
+                    background: transparent;
+                    color: #5c7aea;
+                    border: 2px solid #5c7aea;
+                }
+                .card-sub {
+                    color: black;
+                    font-size: 24pt;
+                    font-weight: bold;
+                    font-family: sans-serif;
+                }
+            }
+        </style>
+        <script type="text/javascript">
+            function clickEvent(first,last){
+                if(first.value.length){
+                    document.getElementById(last).focus();
+                }
+            }
+        </script>
+    </head>
+    <body class="bodyhtml">
+        <div class="loader">
+            <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
+        </div>
+        <nav class="navbar navbar-dark bg-color1">
+            <a class="navbar-brand navigasi-1" href="/">ICY</a>
+        </nav>
+        <div class="kotak">
+            <div style="justify-content: center;">
+                <img src="https://media2.giphy.com/media/ukx7mWo5EyObRskaas/giphy.gif?cid=790b761129adcf55dea1b628e0bc7388f9351669bb07ec7c&rid=giphy.gif&ct=s" alt="Gambar">
+            </div>
+            <h1 style="font-weight: bold;">OTP</h1>
+            <div class="userInput">
+                <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+                <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+                <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+                <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+                <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+                <input type="text" id="sixth" maxlength="1">
+            </div>
+            <button class="btn btn-color1 card-sub" type="submit">Confirm</button>
+            <br>
+            <div class="resend-code">
+                <a href="#" style="color: #5c7aea; font-family: sans-serif; font-weight: bold;">Resend Code</a>
+                <a style="color: #5c7aea; font-family: sans-serif;">if you didn't get the email.</a>
+            </div>
+        </div>
+
+        <script>
+            window.addEventListener("load", function () {
+              const loader = document.querySelector(".loader");
+              loader.className += " hidden"; // class "loader hidden"
+            });
+        </script> 
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </body>
+</html>

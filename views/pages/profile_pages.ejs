@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="icon" href="https://i.ibb.co/7rWKwZS/1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Assets/css/profilepage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="body_html">
+    <nav class="fixed-top sticky-top">
+        <%- include('../layouts/navbar.ejs'); %>
+    </nav>
+    <div class="grid-container">
+
+        <!-- Friends Online -->
+        <div class="grid-left" id="friends_online">
+            <div class="friends_online-header">
+                <span class="material-icons">group</span>
+                <h4 class="titles">Friends Online</h4>
+            </div>
+        </div>
+        <!-- End of Friends Online -->
+
+        <!-- Empty -->
+        <div class="grid-empty">&nbsp;</div>
+        <!-- End of Empty -->
+
+        <!-- Profile -->
+        <div class="grid-mid" id="profile">
+            <div class="header">
+                <div class="page_name">
+                    <h3>Profile</h3>
+                </div>
+                <div class="header-left">
+                    <div class="friends">
+                        <p><b>0</b>&nbsp;&nbsp;Friends</p>
+                    </div>
+                    <div class="friends-information"> 
+                        <button type="button" data-modal-target="#modal-information"><span class="material-icons"> info </span></button>
+                        <span class="popup-text" id="popup"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="top">
+                <div class="background_img">
+                    <div class="top_content">
+                        <div class="image">
+                            <div class="profile_img">
+                                <img src="https://saudivax.com/wp-content/uploads/2020/09/empty-profile-pic.jpg"
+                                    alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                                <div class="change_img">
+                                    <input type="file" id="file">
+                                    <label for="file" id="uploadBtn">Change Image</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top_right">
+                            <div class="name">
+                                <h4>Ferdinand Iskandar</h4>
+                                <span class="material-icons"> verified </span>
+                                <!--
+                                <button class="edit" onclick="location.href='profile.html';"><i
+                                        data-feather="edit"></i></button>
+                                -->
+                            </div>
+                            <div class="number-tweets-followers-following">
+                                <div class="number_tweets">
+                                    <p> <b>0</b>&nbsp;&nbsp;Tweets</p>
+                                </div>
+                                <div class="number_followers">
+                                    <button type="button" data-modal-target="#modal-followers">
+                                        <b>0</b>&nbsp;&nbsp;Followers</button>
+                                </div>
+                                <div class="number_following">
+                                    <button type="button" data-modal-target="#modal-following">
+                                        <b>0</b>&nbsp;&nbsp;Following</button>
+                                </div>
+                            </div>
+                            <div class="edit_profile">
+                                <button type="button" onclick="location.href='profile.html';">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more_profile_info">
+                        <div class="username">
+                            <p>@KuRoZz</p>
+                        </div>
+                        <div class="bio">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Sapiente amet cumque in! Magni nulla voluptates dolore tenetur
+                                debitis magnam molestiae cum alias dolorem tempore sapiente
+                                quis nisi, amet sunt illo!
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs justify-content-center main" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="tweets-tab" data-toggle="tab" href="#tweets" role="tab"
+                                aria-controls="tweets" aria-selected="true">Tweets</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="media-tab" data-toggle="tab" href="#media" role="tab"
+                                aria-controls="media" aria-selected="false">Media</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="shorts-tab" data-toggle="tab" href="#shorts" role="tab"
+                                aria-controls="shorts" aria-selected="false">Shorts</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tweets, Media, Shorts -->
+
+            <div class="bottom">
+                <div class="tab-content bottom_content" id="myTabContent">
+                    <div class="tab-pane fade show active your_tweets" id="tweets" role="tabpanel"
+                        aria-labelledby="tweets-tab">
+                        <div class="post">
+                            <div class="the_post_content">
+                                <div class="profile-picture">
+                                    <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                        alt="" />
+                                    <h3>
+                                        <a href="#">test_someone</a>
+                                    </h3>
+                                </div>
+
+                                <div class="post_body">
+                                    <img src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+                                        alt="" />
+                                    <div class="utility-icon">
+                                        <button class="like_button"><span
+                                                class="material-icons">favorite_border</span></button>
+                                        <button class="like_button" id="comment_button"><span
+                                                class="material-icons">maps_ugc_outline</span></button>
+                                        <button class="like_button"><span
+                                                class="material-icons">send_round</span></button>
+                                    </div>
+                                    <div class="desc">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore
+                                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                            ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="post">
+                            <div class="the_post_content">
+                                <div class="profile-picture">
+                                    <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                        alt="" />
+                                    <h3>
+                                        <a href="#">test_someone</a>
+                                    </h3>
+                                </div>
+
+                                <div class="post_body">
+                                    <img src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+                                        alt="" />
+                                    <div class="utility-icon">
+                                        <button class="like_button"><span
+                                                class="material-icons">favorite_border</span></button>
+                                        <button class="like_button" id="comment_button"><span
+                                                class="material-icons">maps_ugc_outline</span></button>
+                                        <button class="like_button"><span
+                                                class="material-icons">send_round</span></button>
+                                    </div>
+                                    <div class="desc">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore
+                                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                            ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade your_media" id="media" role="tabpanel" aria-labelledby="media-tab">
+                        <div class="post">
+                            <div class="the_post_content">
+                                <div class="profile-picture">
+                                    <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                        alt="" />
+                                    <h3>
+                                        <a href="#">test_someone</a>
+                                    </h3>
+                                </div>
+
+                                <div class="post_body">
+                                    <img src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+                                        alt="" />
+                                    <div class="utility-icon">
+                                        <button class="like_button"><span
+                                                class="material-icons">favorite_border</span></button>
+                                        <button class="like_button" id="comment_button"><span
+                                                class="material-icons">maps_ugc_outline</span></button>
+                                        <button class="like_button"><span
+                                                class="material-icons">send_round</span></button>
+                                    </div>
+                                    <div class="desc">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore
+                                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                            ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade your_shorts" id="shorts" role="tabpanel" aria-labelledby="shorts-tab">
+                        <div class="post">
+                            <div class="the_post_content">
+                                <div class="profile-picture">
+                                    <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                        alt="" />
+                                    <h3>
+                                        <a href="#">test_someone</a>
+                                    </h3>
+                                </div>
+
+                                <div class="post_body">
+                                    <img src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+                                        alt="" />
+                                    <div class="utility-icon">
+                                        <button class="like_button"><span
+                                                class="material-icons">favorite_border</span></button>
+                                        <button class="like_button" id="comment_button"><span
+                                                class="material-icons">maps_ugc_outline</span></button>
+                                        <button class="like_button"><span
+                                                class="material-icons">send_round</span></button>
+                                    </div>
+                                    <div class="desc">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore
+                                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                            ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Profile -->
+
+        <!-- Trending Now -->
+        <div class="grid-right-top" id="trending_now">
+            <a class="titles">#TRENDING NOW</a>
+            <div class="trends">
+                <div class="trend">
+                    <a href="">North Korea nuked Washington DC</a>
+                    <button onclick="location.href='login_beneran.html';"><span
+                            class="material-icons">more_horiz</span></button>
+                </div>
+
+                <div class="trend">
+                    <a href="">Kim Jong Un's drastic weight loss</a>
+                    <button onclick="location.href='login_beneran.html';"><span
+                            class="material-icons">more_horiz</span></button>
+                </div>
+
+                <div class="trend">
+                    <a href="">North Korea united with South Korea</a>
+                    <button onclick="location.href='login_beneran.html';"><span
+                            class="material-icons">more_horiz</span></button>
+                </div>
+            </div>
+            <div class="trending-seeMore">
+                <a href="">See More</a>
+            </div>
+        </div>
+        <!-- End of Trending Now -->
+
+        <!-- Follow Me -->
+        <div class="grid-right-bottom" id="follow_me">
+            <a class="titles">FOLLOW ME</a>
+            <div class="suggested_accounts">
+                <div class="suggested_account">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
+                            class="fa fa-user-plus"></i></button>
+                </div>
+
+                <div class="suggested_account">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
+                            class="fa fa-user-plus"></i></button>
+                </div>
+            </div>
+            <div class="trending-followMe">
+                <a href="">See More</a>
+            </div>
+        </div>
+        <!-- End of Follow Me -->
+
+        <!-- Credits-->
+        <div class="grid-credits" id="credits">
+            <div class="credits-content">
+                <a href="#">terms of service</a>
+                <a href="#">privacy policy</a>
+                <a href="#">cookie policy</a><br>
+                <a href="#">&copy; 2021 IcyRavenclaw Fondation</a>
+            </div>
+        </div>
+        <!-- End of Credits -->
+    </div>
+    <!-- End of Container -->
+
+    <!-- Modal Followers -->
+    <div class="modal-followers" id="modal-followers">
+        <div class="modal-header">
+            <div class="title"> Followers</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body-followers">
+            <div class="modal-body-followers-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><i class="fa fa-user-times"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- End of Modal Followers -->
+
+    <!-- Modal Following -->
+    <div class="modal-following" id="modal-following">
+        <div class="modal-header">
+            <div class="title">Following</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body-following">
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- End of Modal Following -->
+
+    <!-- Modal Information -->
+    <div class="modal-information" id="modal-information">
+        <div class="modal-header">
+            <div class="title"> Information</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body-information">
+            <div class="modal-body-information-content">
+                <h4>Friends are people or accounts you followed and they followed you back.</h4>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- End of Modal Information-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="/Assets/js/profile.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

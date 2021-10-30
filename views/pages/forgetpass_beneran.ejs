@@ -1,0 +1,286 @@
+<html>
+    <head>
+        <title>Forgot Password ICY</title>
+        <link rel = "icon" href = 
+        "https://i.ibb.co/7rWKwZS/1.jpg" 
+        type = "image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+        <link rel="icon" href="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Icons\favicon.ico">
+        <style>
+            .loader {
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .loader > img {
+            width: 250px;
+            }
+
+            .loader.hidden {
+            animation: fadeOut 1s;
+            animation-fill-mode: forwards;
+            }
+
+            @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+            }
+            .bodyhtml {
+                background: black;
+            }
+            .navbar {
+                border: 2px solid #5c7aea;
+                box-shadow: none;
+            }
+            .bg-color1 {
+                background: #5c7aea;
+            }
+            .navbar .navigasi-1 {
+                font-size: 20pt;
+                font-family: 'Black Ops One', cursive;
+                color: black;
+                text-decoration: none;
+            }
+            .navbar .navigasi-1:hover {
+                color: black;
+            }
+            .navbar .navigasi-2 {
+                color: black;
+                font-family: 'Black Ops One', cursive;
+                text-decoration: none;
+                position: relative;
+            }
+            .navbar .navigasi-2::after {
+                content: '';
+                height: 3px;
+                width: 0;
+                background: black;
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                transition: 0.5s;
+            }
+            .navbar .navigasi-2:hover::after {
+                width: 100%;
+            }
+            .card-1 {
+                justify-content: center;
+                margin: 3% 30%;
+                border-radius: 10px;
+                border: 2px solid #5c7aea;
+                box-shadow: none;
+                padding: 0% 1%;
+            }
+            .material-icons {
+                font-size: 50pt;
+            }
+            .card-2 {
+                color: #5c7aea;
+                font-family: sans-serif;
+                font-weight: bold;
+                font-size: 16pt;
+                text-align: center;
+            }
+            .card-3 {
+                color: #5c7aea;
+                font-family: sans-serif;
+                font-weight: bold;
+                font-size: 14pt;
+            }
+            .card-3:hover {
+                color: #5c7aea;
+            }
+            .card-font {
+                color: #5c7aea;
+                font-family: sans-serif;
+            }
+            .btn-color3 {
+                color: black;
+                background: #5c7aea;
+                font-family: sans-serif;
+                border-radius: 20px;
+            }
+            .btn-color3:hover {
+                height: 38px;
+                color: #5c7aea;
+                background: transparent;
+                border: 2px solid #5c7aea;
+            }
+            .bg-color2 {
+                background-color: transparent;
+            }
+            .form-control {
+                border-radius: 20px;
+            }
+            .form-control:focus {
+                border: 2px solid #5c7aea;
+            }
+            .kecil {
+                font-size: 10pt;
+            }
+            .card-5 {
+                color: #5c7aea;
+                font-family: sans-serif;
+                border-radius: 20px;
+                font-size: 12pt;
+                text-align: center;
+            }
+            .nolink:hover {
+                text-decoration: none;
+                color: #5c7aea;
+            }
+            .card-header {
+                border-bottom: 0.1px solid #5c7aea;
+            }
+            .material-icons {
+                font-size: 60pt;
+            }
+
+            /*===========================================================================================*/
+
+            @media (max-width:980px) {
+                .logo-brand {
+                    font-size: 30pt;
+                    color: var(--base-color-2);
+                }
+                .logo-brand:hover {
+                    color: var(--base-color);
+                    cursor: pointer;
+                }
+                .navbar {
+                    box-shadow: 0px 5px 10px var(--base-color-2);
+                }
+                .navbar .navigasi-1 {
+                    font-size: 50pt;
+                    font-family: 'Black Ops One', cursive;
+                    color: var(--base-color-2);
+                }
+                .navbar .navigasi-1:hover {
+                    color: var(--base-color-2);
+                }
+                .card-1 {
+                    justify-content: center;
+                    box-shadow: none;
+                    margin: 5%;
+                    padding: 2% 5%;
+                }
+                .material-icons {
+                    font-size: 150pt;
+                }
+                .card-2 {
+                    color: #5c7aea;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    font-size: 24pt;
+                    text-align: center;
+                }
+                .card-3 {
+                    color: #5c7aea;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    font-size: 24pt;
+                }
+                .card-3:hover {
+                    color: #5c7aea;
+                }
+                .card-font {
+                    color: #5c7aea;
+                    font-family: sans-serif;
+                    font-size: 24pt;
+                }
+                .btn-color3 {
+                    color: black;
+                    background: #5c7aea;
+                    font-family: sans-serif;
+                    border-radius: 20px;
+                    font-size: 24pt;
+                }
+                .btn-color3:hover {
+                    color: black;
+                    background: transparent;
+                    border: 2px solid #5c7aea;
+                }
+                .card-5 {
+                    color: #5c7aea;
+                    font-family: sans-serif;
+                    border-radius: 20px;
+                    font-size: 24pt;
+                    margin: 5% 0%;
+                    text-align: center;
+                }
+                .form-control {
+                    border-radius: 20px;
+                    font-size: 24pt;
+                }
+                .form-control:focus {
+                    border: 2px solid #5c7aea;
+                }
+                .kecil {
+                    font-size: 14pt;
+                }
+                .nolink:hover {
+                    text-decoration: none;
+                    color: #5c7aea;
+                }
+                .card-header {
+                    border-bottom: 0.1px solid #5c7aea;
+                }
+            }
+        </style>
+    </head>
+    <body class="bodyhtml">
+        <div class="loader">
+            <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
+        </div>
+        <nav class="navbar navbar-dark bg-color1 navbar-expand-sm">
+            <a class="navbar-brand navigasi-1" href="/">ICY</a>
+        </nav>
+        <div class="card bg-color2 card-1">
+            <div class="card-header card-2">
+                <span class="material-icons" style="color: yellow;">lock</span>
+                <br>
+                Trouble Logging In?
+                <br>
+                <small class="kecil">Enter your email or username and we'll send you a link to get back into your account.</small>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label class="card-font" style="font-weight: bold;" for="exampleInputEmail1">Email / Username :</label>
+                        <input class="form-control" placeholder="Email / Username :" type="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+
+                </form>
+                <a href="/forgetverif" class="nolink"><button class="btn btn-block btn-color3 mb-3" type="submit">Send Login Link</button></a>
+                <p class="card-5">Or</p>
+                <div style="text-align:center; margin-bottom: 3%;">
+                    <a href="/signup" class="card-3">Create Account</a>
+                </div>
+                <a href="/" class="nolink"><button class="btn btn-block btn-color3" type="submit">Back To Login</button></a>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script>
+            window.addEventListener("load", function () {
+              const loader = document.querySelector(".loader");
+              loader.className += " hidden"; // class "loader hidden"
+            });
+        </script> 
+    </body>
+</html>

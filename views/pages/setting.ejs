@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style_navigate.css">
+    <link rel="stylesheet" href="Assets/css/setting.css">
+
+</head>
+<body>
+    <nav class="fixed-top sticky-top">
+      <%- include('../layouts/navbar.ejs'); %>
+    </nav>
+
+    <div class="form" style="padding-top: 40px;">
+        <div class="container" style="height: 768px;">
+            <div class="row no-gutters" style="height: 100%;">
+                <div class="col-lg-5 garis">
+                  <ul class="nav flex-column ">
+                    <li class="nav-item" >
+                      <a class="nav-link" href="/profile_setting"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">account_circle</p>&nbsp &nbsp My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="change.html"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">lock</p>&nbsp &nbsp Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="helpandabout.html"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">help</p>&nbsp &nbsp Help Center</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="Contactus.html"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">info</p>&nbsp &nbsp Contact Us</a>
+                    </li>
+                  </ul>
+              </div>
+              <div class="col ">
+               <h1 style="text-align: center; padding-top: 100px; color: white;">Welcome To Settings</h1>
+               <p class="material-icons" style="padding-left: 280px; font-size: 50pt;"> settings</p>
+              </div>
+            </div>
+        </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+  });
+</script> 
+</body>
+</html>

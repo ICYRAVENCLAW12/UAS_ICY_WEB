@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification-ICY</title>
+    <link rel = "icon" href = 
+    "https://i.ibb.co/7rWKwZS/1.jpg" 
+    type = "image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/notif.css">
+</head>
+
+<body class="body_html">
+        <nav class="fixed-top sticky-top">
+            <%- include('../layouts/navbar.ejs'); %>
+        </nav>
+
+      <!--content-->
+      <div class="container">
+          <div class="leftside">
+            <div class="all_notif">
+                <button onclick="replace1();return false"><a class="text"><span class="material-icons">notifications_active</span> Notification</a></button>
+            </div>
+            <div class="likes">
+                <button onclick="replace2();return false"><a class="text"><span class="material-icons">favorite</span>likes</a></button>
+            </div>
+            <div class="friend">
+                <button onclick="replace3();return false"><a class="text"><span class="material-icons">person_add</span> Request</a></button>
+            </div>
+          </div>
+          <div class="rightside">
+            <div class="all_notif" id="all_notif">
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>    
+                
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                
+            </div>
+            <div class="likes_content" id="likes_content">
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>likes your post in <b>19m</b></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="follow_req" id="follow_req">
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+
+                <div class="modal-body-following-content">
+                    <div class="account_img">
+                        <img class="acc_img"
+                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                            alt="gambar" width="50px" height="50px" />
+                    </div>
+                    <div class="name-username">
+                        <a href="">Ferdinand Iskandar</a>
+                        <p>@KuRoZz</p>
+                    </div>
+                    <button class="follow_button" id="follow_button"><a>Follow</a>
+                    </button>
+                    <button class="follow_button" id="follow_button"><a>Delete</a>
+                    </button>
+                </div>
+            </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/feather-icons"></script>
+      <script>feather.replace()</script>
+      <!--modal repos
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("comment_button");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        for(var i = 0 ; i < 1000 ; i++) {
+          btn.onclick = function() {
+          modal.style.display = "block";
+          };
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+        -->
+        <script> 
+            function replace1() { 
+            document.getElementById("all_notif").style.display="block"; 
+            document.getElementById("likes_content").style.display="none";
+            document.getElementById("follow_req").style.display="none";  
+            } 
+            function replace2() { 
+                document.getElementById("all_notif").style.display="none"; 
+            document.getElementById("likes_content").style.display="block";
+            document.getElementById("follow_req").style.display="none"; 
+            }
+            function replace3() { 
+                document.getElementById("all_notif").style.display="none"; 
+            document.getElementById("likes_content").style.display="none";
+            document.getElementById("follow_req").style.display="block";
+            } 
+            </script>
+
+        <script>
+            var header = document.getElementsByClassName("container ")
+            var button = document.getElementsByClassName("btn")
+            for (var i = 0 ; i < button.length ; i++) {
+                button[i].addEventListener("click",function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+                }
+        </script>
+</body>
+
+</html>

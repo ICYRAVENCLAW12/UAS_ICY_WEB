@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help And About</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style_setting.css">
+
+    <style>
+      .faq-content{
+        display: flex;
+        border-left: 1px burlywood solid;
+        padding: 10px;
+      }
+
+      .faq-header{
+        font-size: 30pt;
+        margin-right: 20px;
+      }
+
+      .faq-isi{
+        padding-top: 10px;
+      }
+
+      .big-text{
+        font-size: 16pt;
+      }
+    </style>
+
+</head>
+<body>
+    <nav class="fixed-top sticky-top">
+      <%- include('../layouts/navbar.ejs'); %>
+    </nav>
+
+    <div class="form" style="padding-top: 40px;">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                  <ul class="nav flex-column garis">
+                    <li class="nav-item" >
+                      <a class="nav-link" href="/profile_setting"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">account_circle</p>&nbsp &nbsp My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/changepass"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">lock</p>&nbsp &nbsp Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/helpandabout"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">help</p>&nbsp &nbsp Help center</a>
+                    </li>    
+                    <li class="nav-item">
+                      <a class="nav-link" href="/contactus"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">info</p>&nbsp &nbsp Contact Us</a>
+                    </li>              
+                  </ul>
+              </div>
+              <div class="col">
+                <div class="card-body" style="text-align: left;">
+                   <div class="bg-secondary text-white faq-content">
+                       <div class="faq-header">Q.</div>
+                       <div class="faq-isi big-text">
+                        <p>How you Rated this app</p>
+                       </div>
+                   </div>
+                   <div class="bg-light faq-content" style="border-color: darkgray;">
+                    <div class="faq-header">A.</div>
+                    <div class="faq-isi big-text">
+                        <label for="customRange1" class="form-label">Put Your Rated</label><br>
+                        <input type="range" class="form-range" id="customRange1">
+                        <br>
+                        <button type="button" class="btn btn-primary ">Save</button>
+                    </div>
+                  </div>
+                    <br>
+                <div class="bg-secondary text-white faq-content">
+                    <div class="faq-header">Q.</div>
+                    <div class="faq-isi big-text">
+                     <p>What we can do on your social media?</p>
+                    </div>
+                </div>
+                <div class="bg-light faq-content" style="border-color: darkgray;">
+                    <div class="faq-header">A.</div>
+                    <div class="faq-isi big-text">
+                        <ol class="list-group ">
+                            <li class="list-group-item list-group-item-success">You can search for information and get to know people in the world</li>
+                            <li class="list-group-item list-group-item-danger">You can chats with your friend's</li>
+                            <li class="list-group-item list-group-item-info">You can search for something that's trending in the world</li>
+                          </ol>
+                    </div>
+                </div>
+                <br>
+                <div class="bg-secondary text-white faq-content">
+                  <div class="faq-header">Q.</div>
+                  <div class="faq-isi big-text">
+                   <p>What is Icy?</p>
+                  </div>
+              </div>
+              <div class="bg-light faq-content" style="border-color: darkgray;">
+               <div class="faq-header">A.</div>
+               <div class="faq-isi big-text">
+                   <p>It's is a social media that can socialize with each other and is done online which allows humans to interact with each other without being limited by space and time.</p>
+               </div>
+             </div>
+             <br>
+            
+              </div>
+            </div>
+        </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+  });
+</script> 
+</body>
+</html>
