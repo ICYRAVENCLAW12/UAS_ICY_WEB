@@ -1,7 +1,7 @@
 # UAS_ICY_WEB
 //?/ ICY COMMIT NOTE..... T_T /?//
 * add login
-* add logout (yes you are now can login and logut now)
+* add logout (yes you are now can login and logOut now)
 * remove bug (at what cost, ofc adding more bugs)
 * add more bugs
 * trying to fix it
