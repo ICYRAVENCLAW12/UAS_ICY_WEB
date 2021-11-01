@@ -20,7 +20,7 @@ height: 100vh;
 border-radius: 10px;
 background-color:black;
 border: 2px solid var(--base-color-2);
-height: 90%;
+height: 89%;
 }
 
 .garis {
@@ -51,7 +51,7 @@ color: white;
 }
 
 .form-group textarea {
-    background-color: var(--base-color);
+    background-color: var(--base-color-1);
     border:1px solid var(--base-color-2);
 }
 
@@ -64,12 +64,12 @@ color: white;
 }
 
 .form-group input:focus {
-    background-color: var(--base-color);
+    background-color: var(--base-color-1);
     border:1px solid var(--base-color-2);
 }
 
 .form-group textarea:focus {
-    background-color: var(--base-color);
+    background-color: var(--base-color-1);
     border:1px solid var(--base-color-2);
 }
 
@@ -103,6 +103,14 @@ color: white;
 }
 
 .form-group input {
-  background-color: var(--base-color);
+  background-color: var(--base-color-1);
 }
 
+.form-group .form-control {
+  -webkit-text-security: disc;
+}
+
+.button-send button{
+  border-radius: 20%;
+  border: 1px solid var(--base-color-2)
+}

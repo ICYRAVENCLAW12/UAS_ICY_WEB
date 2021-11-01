@@ -34,6 +34,10 @@ router.get('/profile_page',(req, res) => {
     res.render('pages/profile_pages')
 })
 
+router.get('/modal',(req, res) => {
+    res.render('pages/MODAL')
+})
+
 router.get('/notification_panel',(req, res) => {
     res.render('pages/notif')
 })

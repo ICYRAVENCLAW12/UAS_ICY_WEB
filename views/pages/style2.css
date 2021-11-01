@@ -1,9 +1,9 @@
 body {
     --base-color: rgb(46, 49, 49);
-    --base-color-1: rgb(46, 49, 49);
-    --base-color-2: #5c7aea;
-    --base-color-3: #ffffff;
-    background-color: #010815;
+    --base-color-2: #5C7AEA;
+    --base-color-3: #5C7AEA;
+    --base-color-4: #010815;
+    background-color: var(--base-color-4);
     position: fixed;
     right: 0;
     left: 0;
