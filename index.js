@@ -1,37 +1,157 @@
-const express = require('express');
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require('mongoose');
+
+const Movie = require('./models/Movie');
+const account = require('./models/account');
+const User = require('./models/account')
 const app = express();
-const bodyParser = require('body-parser');
+
+
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+const imageMimeTypes = ["image/jpeg", "image/png", "images/gif"];
+
 const session = require('express-session');
 
-app.set('view engine', 'ejs');
-app.use(express.static('public')); //untuk serve .css, .js, images dari folder /public
-app.use(bodyParser.urlencoded());
-//layouts
-
 app.use(session({
-    secret: '123asd21asg45',
+  secret: '123asd21asg45',
 }))
 
-//routes
+
+mongoose.connect(('mongodb+srv://ICY:ICY@cluster0.c2p5x.mongodb.net/icyweb?retryWrites=true&w=majority')
+, (err,res) => {
+    if(err){
+        console.error(err);
+    }
+    else{
+        console.log('Database terhubung')
+    }
+})
+
+
+// MIDDLEWARE
+app.set("view engine", "ejs");
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
+app.use(express.static('public')); 
+
+// ROUTES
 const homeRoute = require('./routes/home');
 app.use('/', homeRoute)
 const authRoute = require('./routes/auth');
 app.use('/auth', authRoute);
 
-// app.get('/', (req,res) => {
-//     res.send('Hello World!');
+app.post('/changepw', async (req, res, next)=>{
+  const Username= req.session.user;
+  const Pass = req .session.pass;
+  const new_password = req.body.newpassword;
+  const confirm_new_password = req.body.confirmnewpassword;
+  const old_password = req.body.oldpassword;
+
+  await User.findOne({"email" : User}, async (err, User)=> {
+        if (old_password == account.password) {
+          console.log(User);
+          console.log(new_password);
+          console.log(confirm_new_password);
+          await account.updateOne ({email: Username}, {password: new_password})
+          console.log(User)
+          res.render('pages/setting')
+          } else {
+                res.render('pages/change', {
+                companyName : 'SALAH',
+                error : 'wrong old password. '
+            })
+        }
+      })
+})
+
+// app.post('/profile_settings' , async(req , res)=>{
+// const Username= req.session.user;
+//  await User.findOne({"email": User},async(err , User)=>{
+//   if(Username != null){
+//     console.log(Username)
+//     console.log('berhasil');
+//     res.render('/profile_settings' , {name : Username})
+//   }else{
+//     res.render('pages/signup',{
+//       companyName: 'Salah',
+//       error: 'dont have any account'
+//     })
+//     console.log('gagal');
+//   }
+//  })
 // })
 
-// app.get('/fti', (req,res) => {
-//     res.send('ini fti asd');
-// });
+app.post('/profile_settings', async (req, res, next)=>{
+  const Username= req.session.user;
+  const Pass = req .session.pass;
+  const Name = req.body.name;
+  const Bio = req.body.Bio;
+  const Email = req.body.email;
+  const Number = req.body.number;
 
-// app.get('/users/:userid', (req,res) => {
-//     const users = ['1','2','3','4','5','6'];
-//     res.send(users[req.params.userid]);
-// })
+  await User.findOne({"email" : User}, async (err, User)=> {
+        if (Name != account.name) {
+          console.log(User);
+          console.log(Name);
+          console.log(Bio);
+          console.log(Email);
+          console.log(Number);
+          await account.updateOne ({email: Username}, {name:Name})
+          await account.updateOne ({email: Username}, {bio:Bio})
+          await account.updateOne ({email: Username}, {email:Email})
+          await account.updateOne ({email: Username}, {number:Number})
+          console.log(User)
+          res.render('pages/setting')
+          } else {
+                res.render('pages/profile_settings', {
+                companyName : 'SALAH',
+                error : 'wrong old password. '
+            })
+        }
+      })
+})
 
+app.post('/add', async ( req, res, next)=>{
+  const {name, type, img} = req.body;
+  const movie = new Movie({
+    name,
+    type
+  });
+
+  // SETTING IMAGE AND IMAGE TYPES
+  saveImage(movie, img);
+  try{
+    const newMovie = await movie.save();
+    console.log(newMovie);  
+    res.redirect('/')  ;
+  }catch (err){
+    console.log(err);    
+  }
+});
+
+function saveImage(movie, imgEncoded) {
+  // CHECKING FOR IMAGE IS ALREADY ENCODED OR NOT
+  if (imgEncoded == null) return;
+
+  // ENCODING IMAGE BY JSON PARSE
+  // The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string
+  const img = JSON.parse(imgEncoded);
+  console.log( "JSON parse: "+ img);
+  
+  // CHECKING FOR JSON ENCODED IMAGE NOT NULL 
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+  // AND HAVE VALID IMAGE TYPES WITH IMAGE MIME TYPES
+  if (img != null && imageMimeTypes.includes(img.type)) {
+
+    // https://nodejs.org/api/buffer.html
+    // The Buffer class in Node.js is designed to handle raw binary data. 
+    // SETTING IMAGE AS BINARY DATA
+    movie.img = new Buffer.from(img.data, "base64");
+    movie.imgType = img.type;
+  }
+}
 
 app.listen('4000', () => {
-    console.log('Server is active');
+  console.log('Server is active');
 });
