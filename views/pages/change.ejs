@@ -43,26 +43,29 @@
               </div>
               <div class="col">
                 <div class="card-body" style="text-align: left;">
-                    <form >
+                  <form action="/changepw" method="post">
                         <div class="form-group">
                             <label >Old Password</label>
                             <input type="Password" placeholder="Old Password" id="textColor" class="form-control">
                         </div>
                         <div class="form-group">
                             <label >New Password</label>
-                            <input type="Password" placeholder="New Password" id="textColor" class="form-control">
+                            <input type="Password" placeholder="New Password" id="textColor" name="newpassword" class="form-control">
                         </div>
                         <div class="form-group">
                             <label >Confirm New Password</label>
-                            <input type="Password" placeholder="Confirm New Password" id="textColor" class="form-control">
+                            <input type="Password" placeholder="Confirm New Password" name="confirmnewpassword" id="textColor" class="form-control">
                         </div>
                         <div class="mb-3 form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label" for="exampleCheck1" style="color: white;">Are you sure wanna change your password</label>
                         </div>
                         <div>
-                          <button type="button" class="btn btn-primary ">Submit</button>
+                          <button name="submit" id="submit" type="submit" class="btn btn-primary ">Submit</button>
                         </div>
+                        <% if(locals.error) { %>
+                          <span class ="text-danger pl-2"><%= error %></span>
+                        <% } %>
                     </form>
                 </div>
               </div>

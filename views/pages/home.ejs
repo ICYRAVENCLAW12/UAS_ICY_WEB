@@ -23,7 +23,7 @@
 
 <body class="body_html">
    
-    <%- include('../layouts/navbar.ejs'); %>
+    <%- include('../layouts/navbar.ejs'); %>  
     <div class="container-xxl">
         <div class="leftside">
             <div class="Friend_bar_Option">
@@ -132,7 +132,8 @@
             
         </div>
         <main class="post_main">
-            <div class="feed">
+              <!-- tweetbox start -->
+              <div class="feed">
       
                 <div class="uploads">
                   <form>
@@ -142,388 +143,55 @@
                         alt=""
                       />
                       <input type="text" placeholder="What's happening?" />
+                      
+                      <span class="spanmodal2">
+                        <a href="/upload" style="color: white; text-decoration: none;">Post</a>
+                      </span>
+                      
                       <button class="upload-button">Share</button>
-                    </div>
                   </form>
-                </div>
-                <!-- tweetbox ends -->
-          
-                <!-- post starts -->
-                <div class="post">
-                  <div class="the_post_content">
-                    <div class="profile-picture">
-                      <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                    </div>
-            
-                    <div class="post_body">
-                      <img
-                        src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                        alt=""
-                      />
-                      <div class="utility-icon">
-                        <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                        <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                        <button class="like_button"><span class="material-icons">send_round</span></button>
-                      </div>
-                      <div class="desc">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                           et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                           ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- post ends -->
-
-                <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-
-                  <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-
-                  <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-
-                  <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-
-                  <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button" id="like"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-
-                  <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-
-                  <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-
-                  <!-- post starts -->
-                <div class="post">
-                    <div class="the_post_content">
-                      <div class="profile-picture">
-                        <img
-                          src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                          alt=""
-                        />
-                        <h3>
-                          <a href="#">test_someone</a>
-                        </h3>
-                      </div>
-              
-                      <div class="post_body">
-                        <img
-                          src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                          alt=""
-                        />
-                        <div class="utility-icon">
-                          <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                          <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                          <button class="like_button"><span class="material-icons">send_round</span></button>
-                        </div>
-                        <div class="desc">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- post ends -->
-              </div>
+                </div> 
+              <!-- tweetbox ends -->
+              <!--post start-->
+              <%- include('../layouts/pro.ejs'); %>
+              <!--post end-->  
         </main>
         <div class="rightside">
-            <div class="widgets">
-                <div class="container">
-                    <div class="box">
-                        <a class="Right_box">#TRENDINGNOW</a>
-                            <div class="trend-content" style="margin-top: 20px;">
-                                <div class="news">
-                                    <a>North Korea nuke Washington DC</a>
-                                </div>
-                                <div class="logo">
-                                    <a href="login.html"><span class="material-icons">more_horiz</span></a>
-                                </div>
-                            </div>
-                            <div class="trend-content">
-                                <div class="news">
-                                    <a>North Korea nuke Washington DC</a>
-                                </div>
-                                <div class="logo">
-                                    <a href="login.html"><span class="material-icons">more_horiz</span></a>
-                                </div>
-                            </div>
-                            <div class="trend-content">
-                                <div class="news">
-                                    <a>North Korea nuke Washington DC</a>
-                                </div>
-                                <div class="logo">
-                                    <a href="login.html"><span class="material-icons">more_horiz</span></a>
-                                </div>
-                            </div>
-                            <div class="seemore">
-                                <a href="#">see more</a>
-                            </div>
-                    </div>
-                    <div class="box">
-                        <a class="Right_box">FOLLOW ME</a>
-                        <div class="modal-body-following">
-                              <div class="modal-body-following-content">
-                                <div class="account_img">
-                                    <img class="acc_img"
-                                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                                        alt="gambar" width="50px" height="50px" />
-                                </div>
-                                <div class="name-username">
-                                    <a href="">Ferdinand Iskandar</a>
-                                    <p>@KuRoZz</p>
-                                </div>
-                                <button class="follow_button" id="follow_button"><span class="material-icons"> <span class="material-icons-outlined">
-                                  person_add_alt
-                                  </span> </span></button>
+          <div class="widgets">
+              <div class="container">
+                  <div class="box">
+                      <a class="Right_box">#TRENDINGNOW</a>
+                          <div class="trend-content" style="margin-top: 20px;">
+                              <div class="news">
+                                  <a>North Korea nuke Washington DC</a>
+                              </div>
+                              <div class="logo">
+                                  <a href="login.html"><span class="material-icons">more_horiz</span></a>
+                              </div>
                           </div>
-                          <div class="modal-body-following">
+                          <div class="trend-content">
+                              <div class="news">
+                                  <a>North Korea nuke Washington DC</a>
+                              </div>
+                              <div class="logo">
+                                  <a href="login.html"><span class="material-icons">more_horiz</span></a>
+                              </div>
+                          </div>
+                          <div class="trend-content">
+                              <div class="news">
+                                  <a>North Korea nuke Washington DC</a>
+                              </div>
+                              <div class="logo">
+                                  <a href="login.html"><span class="material-icons">more_horiz</span></a>
+                              </div>
+                          </div>
+                          <div class="seemore">
+                              <a href="#">see more</a>
+                          </div>
+                  </div>
+                  <div class="box">
+                      <a class="Right_box">FOLLOW ME</a>
+                      <div class="modal-body-following">
                             <div class="modal-body-following-content">
                               <div class="account_img">
                                   <img class="acc_img"
@@ -553,212 +221,69 @@
                               person_add_alt
                               </span> </span></button>
                       </div>
-                      
-                      </div>
-                            <div class="seemore">
-                                <a href="#">see more</a>
-                            </div>
-                            
-                        <div id="overlay"></div>
+                      <div class="modal-body-following">
+                        <div class="modal-body-following-content">
+                          <div class="account_img">
+                              <img class="acc_img"
+                                  src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                                  alt="gambar" width="50px" height="50px" />
+                          </div>
+                          <div class="name-username">
+                              <a href="">Ferdinand Iskandar</a>
+                              <p>@KuRoZz</p>
+                          </div>
+                          <button class="follow_button" id="follow_button"><span class="material-icons"> <span class="material-icons-outlined">
+                            person_add_alt
+                            </span> </span></button>
                     </div>
-                    <div class="credits">
-                        <a href="#">terms of service</a>
-                        <a href="#">privacy policy</a>
-                        <a href="#">cookie policy</a><br>
-                        <a href="#">&copy; 2021 IcyRavenclaw Fondation</a> 
+                    
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!--FAB CONTAINER-->
-        <div class="fab-container">
-            <div class="fab fab-icon-holder">
-              <span class="material-icons">home</span>
-            </div>
-
-            <ul class="fab-options">
-              <li>
-                <span class="fab-label">Home</span>
-                <div class="fab-icon-holder">
-                  <a href="index.html"><span class="material-icons">home</span></a>
-                </div>
-              </li>
-              <li>
-                <span class="fab-label">Upload</span>
-                <div class="fab-icon-holder">
-                  <a href="#"><span class="material-icons">add</span></a>
-                </div>
-              </li>
-              <li>
-                <span class="fab-label">Massage</span>
-                <div class="fab-icon-holder">
-                  <a href="message_box.html"><span class="material-icons">chat</span></a>
-                </div>
-              </li>
-            </ul>
+                          <div class="seemore">
+                              <a href="#">see more</a>
+                          </div>
+                          
+                      <div id="overlay"></div>
+                  </div>
+                  <div class="credits">
+                      <a href="#">terms of service</a>
+                      <a href="#">privacy policy</a>
+                      <a href="#">cookie policy</a><br>
+                      <a href="#">&copy; 2021 IcyRavenclaw Fondation</a> 
+                  </div>
+              </div>
           </div>
+      </div>
+
+      <!--FAB CONTAINER-->
+      <div class="fab-container">
+          <div class="fab fab-icon-holder">
+            <span class="material-icons">home</span>
+          </div>
+
+          <ul class="fab-options">
+            <li>
+              <span class="fab-label">Home</span>
+              <div class="fab-icon-holder">
+                <a href="index.html"><span class="material-icons">home</span></a>
+              </div>
+            </li>
+            <li>
+              <span class="fab-label">Upload</span>
+              <div class="fab-icon-holder">
+                <a href="#"><span class="material-icons">add</span></a>
+              </div>
+            </li>
+            <li>
+              <span class="fab-label">Massage</span>
+              <div class="fab-icon-holder">
+                <a href="message_box.html"><span class="material-icons">chat</span></a>
+              </div>
+            </li>
+          </ul>
         </div>
-        <!--FAB CONTAINER-->
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close"></span>
-              <!--modal-post-start-->
-              <div class="modal-post">
-              <div class="post_modal" style="width: fit-content; margin-left: 0%; height: 97%;">
-                <div class="the_post_content">
-                  <div class="profile-picture">
-                    <img
-                      src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                      alt=""
-                    />
-                    <h3>
-                      <a href="#">test_someone</a>
-                    </h3>
-                  </div>
-          
-                  <div class="post_body">
-                    <img
-                      src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-                      alt=""
-                    />
-                    <div class="utility-icon">
-                      <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                      <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                      <button class="like_button"><span class="material-icons">send_round</span></button>
-                    </div>
-                    <div class="desc">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                         ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="apalaj" style="color: aliceblue;">
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>  
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>  
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>  
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>  
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>  
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>  
-                <div class="thecomment">
-                  <div class="comment_content">
-                    <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                        alt=""
-                      />
-                      <h3>
-                        <a href="#">test_someone</a>
-                      </h3>
-                  </div>
-                </div>
-                <div class="comment">
-                  <a>THIS IS COMMENT SAMPLE</a>
-                </div>     
-              </div>
-            </div>
-              <!--modal-post-end-->
-    </div>
+      </div>
+      <!--FAB CONTAINER-->
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
@@ -766,34 +291,65 @@
         <script>feather.replace()</script>
         <script>
           // Get the modal
-          var modal = document.getElementById("myModal");
-          
-          // Get the button that opens the modal
-          var btn = document.getElementById("comment_button");
-          
-          // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName("close")[0];
+          var modal2 = document.getElementById("myModal2");
 
-          for(var i = 0 ; i < 1000 ; i++) {
-            btn.onclick = function() {
-            modal.style.display = "block";
-            };
+          // Get the button that opens the modal
+          var btn2 = document.getElementById("myBtn2");
+
+          // Get the <span> element that closes the modal
+          var span2 = document.getElementsByClassName("close2")[0];
+
+          // When the user clicks on the button, open the modal
+          btn2.onclick = function() {
+          modal2.style.display = "block";
           }
-          
+
           // When the user clicks on <span> (x), close the modal
-          span.onclick = function() {
-            modal.style.display = "none";
+          span2.onclick = function() {
+          modal2.style.display = "none";
           }
-          
+
           // When the user clicks anywhere outside of the modal, close it
           window.onclick = function(event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
+          if (event.target == modal2) {
+              modal2.style.display = "none";
           }
-          </script>
+          }
+      </script>
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementsByClassName("Comment_button");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
-       
+        for(var i = 0 ; i < 1000 ; i++) {
+          btn[i].onclick = function() {
+          modal.style.display = "block";
+          };
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      }
+        </script>
+        <script>
+          window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.className += " hidden"; // class "loader hidden"
+          });
+        </script> 
 </body>
 
 

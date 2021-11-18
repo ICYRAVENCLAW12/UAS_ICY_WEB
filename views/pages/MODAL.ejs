@@ -13,34 +13,41 @@
     <link rel="stylesheet" href="/Assets/css/messages.css">
     <title>Message Box ICY</title>
     <style>
-         .modal {
-          display: none; /* Hidden by default */
-          position: fixed; /* Stay in place */
-          z-index: 1; /* Sit on top */
-          padding-top: 100px; /* Location of the box */
-          left: 0;
-          top: 0;
-          width: 100%; /* Full width */
-          height: 100%; /* Full height */
-          overflow: auto; /* Enable scroll if needed */
-          background-color: black; /* Fallback color */
-          background-color: rgba(0, 0, 0, 0.527); /* Black w/ opacity */
-          margin-left: 0;
-          border: none;
+        .profile-picture img {
+          border-radius: 50%;
+          height: 40px;
+          margin-right: 2%;
         }
+
+        @media screen and (min-width: 1100px) { /*besar*/
         .fab-container {
           display: none;
         }
+
         /* Modal Content */
         .modal-content {
           background-color: black;
-          border: 2px solid var(--base-color-2);
-          margin-left: 25% ;
+          border: 2px solid blue;
+          margin-left: 1% ;
           margin-top: 2%;
           margin-bottom: 2%;
           padding: 0px;
-          width: 50%;
-          height: 80%;
+          width: 100vh;
+          height: 70vh;
+        }
+
+        .modal {
+          width: 100%;
+          height: 100%;
+          border: solid white;
+        }
+
+        .modal-dialog {
+          width: 100%;
+          height: 90%;
+          border: solid aqua;
+          margin-right: 15%;
+          margin-left: 15%;
         }
         
         .modal-content .apalaj {
@@ -50,18 +57,25 @@
         
         .modal-post {
           display: flex;
-          height: 95%;
+          width: 100%;
+          height: 100%;
+          border: solid blueviolet;
+        }
+
+        .post_modal {
+          border: solid pink;
+          width: 1000px;
         }
         
         .apalaj::-webkit-scrollbar {
           display: none;
         }
+        
         .apalaj {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-        } 
-        
+
         .thecomment {
         padding: 2%;
         }
@@ -89,14 +103,13 @@
         padding-bottom: 1%;
         font-size: 10pt;
         }
-      }
+
+        } 
         
         .modal-body-following,{
           padding: 0 !important;
           height: 40vh;
           padding-top: 100px;
-          overflow-y: auto;
-          overflow-x: hidden;
         }
         
         .follow_button .material-icons {
@@ -151,188 +164,191 @@
           font-weight: 600;
           font-size: 17px;
         }
+
+        .post_body img {
+          width: 400px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 4px;
+          margin-bottom: 0;
+        }
+
+        .desc {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          font-size: 15px;
+          color: white;
+          word-break: break-all;
+          max-width: 768px;
+        }
+  
     </style>
 </head>
 <body>
-    <nav class="fixed-top sticky-top">
-        <%- include('../layouts/navbar.ejs'); %>
-    </nav>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-             Launch demo modal
-        </button>
-  
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-content">
-                        <!--modal-post-start-->
-                        <div class="modal-post">
-                        <div class="post_modal" style="width: fit-content; margin-left: 0%; height: 97%;">
-                          <div class="the_post_content">
-                            <div class="profile-picture">
-                              <img
+  <% post_inner.forEach((Post) => { %>
+  <button class="Comment_button" id="comment_button" data-toggle="modal" data-target="#exampleModal"><img
+    src="<%= Post.imagePath %>"
+    alt=""
+  /></button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+            <div class="modal-post">
+              <div class="post_modal" style="width: fit-content; margin-left: 0%; height: 97%;">
+                <div class="the_post_content">
+                  <div class="profile-picture">
+                    <img
+                      src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                      alt=""
+                    />
+                    <h3>
+                      <a href="#">test_someone</a>
+                    </h3>
+                  </div>
+          
+                  <div class="post_body">
+                    <img
+                      src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                      alt=""
+                    />
+                    <div class="utility-icon">
+                      <button class="like_button"><span class="material-icons">favorite_border</span></button>
+                      <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
+                      <button class="like_button"><span class="material-icons">send_round</span></button>
+                    </div>
+                    <div class="desc">
+                      <p> 
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel euismod velit. Aliquam non magna mi. Proin tortor tortor, tristique et orci quis, vestibulum varius elit. Vivamus scelerisque,
+                      lacus efficitur ullamcorper ultricies, erat massa bibendum purus, a facilisis nulla erat ut justo. Aenean non imperdiet massa. Nulla scelerisque lorem sed molestie mattis. Fusce ornare, libero a 
+                      tempus imperdiet, lacus nisl elementum quam, sit amet tincidunt nibh erat id dolor. Phasellus vitae vulputate dui, id imperdiet risus. Praesent condimentum vehicula elit, ut mollis tellus dictum 
+                      sed. Mauris rhoncus suscipit lorem, at dignissim odio gravida at. Mauris sagittis, enim vitae tincidunt placerat, risus elit dictum ipsum, nec tincidunt justo velit eu neque.
+                      </p>
+                    </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="apalaj" style="color: aliceblue;">
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
                                 src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
                                 alt=""
                               />
                               <h3>
                                 <a href="#">test_someone</a>
                               </h3>
-                            </div>
-                    
-                            <div class="post_body">
-                              <img
-                                src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+                          </div>
+                        </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
                                 alt=""
                               />
-                              <div class="utility-icon">
-                                <button class="like_button"><span class="material-icons">favorite_border</span></button>
-                                <button class="like_button" id="comment_button"><span class="material-icons">maps_ugc_outline</span></button>
-                                <button class="like_button"><span class="material-icons">send_round</span></button>
-                              </div>
-                              <div class="desc">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                                   et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                                   ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                                   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                              </div>
-                            </div>
+                              <h3>
+                                <a href="#">test_someone</a>
+                              </h3>
                           </div>
                         </div>
-                        <div class="apalaj" style="color: aliceblue;">
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>  
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                alt=""
+                              />
+                              <h3>
+                                <a href="#">test_someone</a>
+                              </h3>
                           </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
-                          </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>  
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
-                          </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>  
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
-                          </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>  
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
-                          </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>  
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
-                          </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>  
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
-                          </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>  
-                          <div class="thecomment">
-                            <div class="comment_content">
-                              <img
-                                  src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                                  alt=""
-                                />
-                                <h3>
-                                  <a href="#">test_someone</a>
-                                </h3>
-                            </div>
-                          </div>
-                          <div class="comment">
-                            <a>THIS IS COMMENT SAMPLE</a>
-                          </div>     
                         </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>  
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                alt=""
+                              />
+                              <h3>
+                                <a href="#">test_someone</a>
+                              </h3>
+                          </div>
+                        </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>  
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                alt=""
+                              />
+                              <h3>
+                                <a href="#">test_someone</a>
+                              </h3>
+                          </div>
+                        </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>  
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                alt=""
+                              />
+                              <h3>
+                                <a href="#">test_someone</a>
+                              </h3>
+                          </div>
+                        </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>  
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                alt=""
+                              />
+                              <h3>
+                                <a href="#">test_someone</a>
+                              </h3>
+                          </div>
+                        </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>  
+                        <div class="thecomment">
+                          <div class="comment_content">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                alt=""
+                              />
+                              <h3>
+                                <a href="#">test_someone</a>
+                              </h3>
+                          </div>
+                        </div>
+                        <div class="comment">
+                          <a>THIS IS COMMENT SAMPLE</a>
+                        </div>     
                       </div>
+                    </div>
+                  </div>
                 </div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+              </div>
             </div>
-            </div>
-        </div>
+        <% }) %>
+      
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
