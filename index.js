@@ -65,58 +65,13 @@ app.post('/changepw', async (req, res, next)=>{
       })
 })
 
-// app.post('/profile_settings' , async(req , res)=>{
-// const Username= req.session.user;
-//  await User.findOne({"email": User},async(err , User)=>{
-//   if(Username != null){
-//     console.log(Username)
-//     console.log('berhasil');
-//     res.render('/profile_settings' , {name : Username})
-//   }else{
-//     res.render('pages/signup',{
-//       companyName: 'Salah',
-//       error: 'dont have any account'
-//     })
-//     console.log('gagal');
-//   }
-//  })
-// })
-
-app.post('/profile_settings', async (req, res, next)=>{
-  const Username= req.session.user;
-  const Pass = req .session.pass;
-  const Name = req.body.name;
-  const Bio = req.body.Bio;
-  const Email = req.body.email;
-  const Number = req.body.number;
-
-  await User.findOne({"email" : User}, async (err, User)=> {
-        if (Name != account.name) {
-          console.log(User);
-          console.log(Name);
-          console.log(Bio);
-          console.log(Email);
-          console.log(Number);
-          await account.updateOne ({email: Username}, {name:Name})
-          await account.updateOne ({email: Username}, {bio:Bio})
-          await account.updateOne ({email: Username}, {email:Email})
-          await account.updateOne ({email: Username}, {number:Number})
-          console.log(User)
-          res.render('pages/setting')
-          } else {
-                res.render('pages/profile_settings', {
-                companyName : 'SALAH',
-                error : 'wrong old password. '
-            })
-        }
-      })
-})
-
 app.post('/add', async ( req, res, next)=>{
   const {name, type, img} = req.body;
+  const username = req.session.name;
   const movie = new Movie({
     name,
-    type
+    type,
+    username
   });
 
   // SETTING IMAGE AND IMAGE TYPES
