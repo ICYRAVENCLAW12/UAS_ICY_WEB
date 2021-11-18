@@ -146,6 +146,14 @@
                 color: #5c7aea;
                 text-decoration: none;
             }
+            .btn-color {
+                color: #5c7aea;
+                border: #5c7aea 1px solid;
+            }
+            .btn-color:hover {
+                color: black;
+                background-color: #5c7aea;
+            }
 
             @media (max-width: 980px) {
                 .bodyhtml {
@@ -266,5 +274,13 @@
                 }
                 input[type='checkbox']:checked {
                     background: #abd;
+                }
+                .btn-color {
+                    color: #5c7aea;
+                    border: #5c7aea 1px solid;
+                }
+                .btn-color:hover {
+                    color: black;
+                    background-color: #5c7aea;
                 }
             }

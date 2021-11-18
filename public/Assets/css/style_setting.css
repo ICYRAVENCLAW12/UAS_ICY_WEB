@@ -109,8 +109,3 @@ color: white;
 .form-group .form-control {
   -webkit-text-security: disc;
 }
-
-.button-send button{
-  border-radius: 20%;
-  border: 1px solid var(--base-color-2)
-}
