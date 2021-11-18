@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Movie = require('../models/Movie');
+const account = require('../models/account');
 
 router.get("/", async (req, res, next) => {
     //cek user session
@@ -8,6 +9,7 @@ router.get("/", async (req, res, next) => {
         res.redirect('/auth/login');
     } else try{
         const movie  = await Movie.find();
+        console.log(movie)
         res.render("pages/home", {
           movie
         });
@@ -36,8 +38,14 @@ router.get('/message',(req, res) => {
     res.render('pages/message')
 })
 
-router.get('/profile_page',(req, res) => {
-    res.render('pages/profile_pages')
+router.get('/profile_page',async (req, res) => {
+    console.log(req.session.name)
+    const Name = req.session.name;
+    const Username = req.session.user;
+    const data2 = await account.find({name: Name});
+    const data1 = await Movie.find({username : Name});
+    console.log(data2)
+    res.render('pages/profile_pages', {movie: data1, userr: data2})
 })
 
 router.get('/modal',(req, res) => {
@@ -53,10 +61,6 @@ router.get('/setting',(req, res) => {
 })
 
 router.get('/profile_setting',(req, res) => {
-    const userdata = req.session.user;
-    const pw = req.session.pass;
-    console.log(userdata);
-    console.log(pw);
     res.render('pages/profile_settings')
 })
 
@@ -86,6 +90,5 @@ router.get('/logout', (req,res) => {
     //redirect ke login
     res.redirect('/auth/login');
 })
-
 
 module.exports = router;

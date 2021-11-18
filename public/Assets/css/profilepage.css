@@ -42,7 +42,7 @@ body {
 
 .grid-mid {
   grid-area: profile;
-  height: 100vh;
+  height: 90vh;
   padding: var(--main-padding);
   padding: 0;
   margin: 2.5% 0 0 0;

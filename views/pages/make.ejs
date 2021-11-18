@@ -1,5 +1,3 @@
-import { Form } from '@cleverbeagle/fur';
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +6,22 @@ import { Form } from '@cleverbeagle/fur';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
     <!-- add to document <head> -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ICY</title>
+        <link rel = "icon" href = 
+        "https://i.ibb.co/7rWKwZS/1.jpg" 
+        type = "image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
         rel="stylesheet">
@@ -22,312 +36,7 @@ import { Form } from '@cleverbeagle/fur';
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <style>
-        .filepond--item{
-            width: 140px;
-            height: 200px;
-        }
-    </style>
-    <style>
-      body {
-          background-color:#010815;;
-        }
-        
-        /* Loader */
-        
-        .loader {
-          position: fixed;
-          z-index: 9999;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background:black;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        
-        .loader > img {
-          width: 400px;
-        }
-        
-        .loader.hidden {
-          animation: fadeOut 1s;
-          animation-fill-mode: forwards;
-        }
-        
-        @keyframes fadeOut {
-          100% {
-              opacity: 0;
-              visibility: hidden;
-          }
-        }
-  
-        /* Navigation Bar */
-        
-        div.profile-nav > a {
-          font-size: 35px;
-          padding: 15%;
-          margin-right: 5%;
-        }
-        
-        nav {
-          background-color: black;
-        }
-        
-        ul.search {
-          flex-direction: row;
-          width: 500px;
-          height: 50px;
-          border-radius: 30px;
-          display: flex;
-          align-items: center;
-          padding: 20px;
-        }
-        
-        button.button {
-          background-color:#010815;
-          color: white;
-          margin-left: -50px;
-          margin-top: 5px;
-          border: none;
-        }
-        
-        input.input{
-          flex: 1;
-          height: 40px;
-          width: 400px;
-          border: none;
-          border-radius: 30px;
-          outline: none;
-          font-size: 18px;
-          padding-left: 20px;
-          color: gray;
-          background-color: #010815;
-        }
-        
-        div.online_friends {
-          text-align: left;
-          padding: 10px;
-          font-size: 15px;
-          border: 3px;
-        }
-        
-        div.language_menu {
-          background-color: rgb(46, 49, 49);
-        }
-        
-        div.language_menu > a {
-          color: white;
-        }
-        
-        .navbar a.navbar-brand b {
-          font-family: Black Ops One , cursive;
-          font-size: xx-large; 
-          padding: 0; 
-          color: #010815;
-        }
-        
-        .dropdown-toggle::after {
-          content: none;
-        }
-        
-        .navbar {
-          background-color: #5c7aea !important;
-          position: sticky; 
-        }
-        
-        .custom-toggler.navbar-toggler {
-          border: 2px solid black;
-        }
-        
-        .custom-toggler.navbar-toggler span {
-          color:black;
-        }
-        
-        li.nav-item {
-          padding: 0; 
-        }
-        
-        li.nav-item span.material-icons {
-          color: black;
-          font-size: 20pt;
-          margin-left: -5px;
-          
-        }
-        
-        .account_menu a.dropdown-item img {
-          width: 50px;
-          margin-left: 0px;
-          margin-right: 8px;
-          
-        }
-        
-        li.nav-item span:hover {
-          box-shadow: 5px 5px 10px black;
-          border-radius: 10px;
-        }
-        
-        li.nav-item span.material-icons:hover {
-          color:#010815;
-          font-size: 20pt;
-          margin-left: -5px ;
-        }
-        
-        .account_menu a.dropdown-item {
-          color: white;
-          padding: 10px, 0px;
-        
-        }
-        
-        .account_menu a.dropdown-item:hover {
-          color: white;
-          background-color: #5c7aea;
-          border-radius: 0;
-          padding: 10px, 0px;
-        }
-        
-        nav.navbar a.navbar-brand {
-          color: black;
-        }
-  
-        @media screen and (max-width: 1100px ) { /*kecil*/
-          .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            background-color: black; /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.527); /* Black w/ opacity */
-            margin-left: 0;
-            border: none;
-          }
-          
-          /* Modal Content */
-          .modal-content {
-            background-color: black;
-            border: 2px solid var(--base-color-2);
-            margin-left: 18% ;
-            margin-top: 2%;
-            margin-bottom: 2%;
-            padding: 0px;
-            width: 65%;
-            height: 90%;
-            overflow-y: scroll;
-          }
-          
-          .modal-content::-webkit-scrollbar {
-            display: none;
-          }
-          
-          .modal-content {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-    
-          .modal-post {
-            height: 95%;
-          }
-          
-          .container-xxl {
-            grid-template-columns: 1fr;
-          }
-    
-          .leftside {
-            display: none;
-          }
-          .fab-container {
-            display: contents;
-          }
-          } 
-  
-        @media screen and (min-width: 1100px ) { /*besar*/
-          .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: black; /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.527); /* Black w/ opacity */
-            margin-left: 0;
-            border: none;
-          }
-          .fab-container {
-            display: none;
-          }
-          /* Modal Content */
-          .modal-content {
-            background-color: black;
-            border: 2px solid var(--base-color-2);
-            margin-left: 35%;
-            margin-right: 35%;
-            margin-top: 2%;
-            margin-bottom: 2%;
-            padding: 0px;
-            width: 30%;
-            height: 80%;
-          }
-          
-          .modal-content .apalaj {
-            overflow-y: scroll;
-            height: 100%;
-          }
-          
-          .modal-post {
-            display: flex;
-            height: 103%;
-          }
-          
-          .apalaj::-webkit-scrollbar {
-            display: none;
-          }
-          .apalaj {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-            margin-left: 20%;
-          }
-          } 
-          
-          .thecomment {
-          padding: 2%;
-          }
-          
-          .comment_content {
-          display: flex;
-          align-items: center;
-          padding-top: 2%;
-          padding-left: 2%;
-          padding-bottom: 0;
-          }
-          
-          .comment_content img {
-          width: 6%;
-          margin-right: 2%;
-          }
-          
-          .comment_content h3 a {
-          font-size: 20pt;
-          }
-          
-          .comment a {
-          padding-left: 12%;
-          margin-top: 0%;
-          padding-bottom: 1%;
-          font-size: 15pt;
-          }
-        
-      </style>
-
+    <link rel="stylesheet" href="Assets/css/upload.css">
 
 
     <!-- add before </body> -->
@@ -359,7 +68,8 @@ import { Form } from '@cleverbeagle/fur';
 </head>
 
 <body>
-  <%- include('../layouts/navbar.ejs'); %>
+    <%- include('../layouts/navbar.ejs'); %> 
+    <body>
         <div class="main">
             <div class="ui lebar-semua" style="background-color: #5c7aea; margin-top: 3%; padding: 1%; border-radius: 10px;">
               <style>
@@ -387,7 +97,7 @@ import { Form } from '@cleverbeagle/fur';
                       <div class="ui two fields" style="margin: 0% 3%;">
                           <div>
                               <label for="name" style="color: #010815; font-size: 16pt; font-weight: bold;">&nbsp Description :</label>
-                              <input type="text" name="name" class="input-desc" style="margin-bottom: 3%; border-radius: 10px;"> <!--height: 75%; min-width: 100%;-->
+                              <input type="text" name="name" class="input-desc" style="margin-bottom: 3%; border-radius: 10px; height: 75%; min-width: 100%;">
                           </div>
                       </div>
                     </div>
@@ -397,14 +107,14 @@ import { Form } from '@cleverbeagle/fur';
                 </form>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/feather-icons"></script>
-        <script>feather.replace()</script>
-        
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>feather.replace()</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 </body>
 
 </html>

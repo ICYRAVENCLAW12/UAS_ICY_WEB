@@ -30,15 +30,23 @@ router.post('/login', async(req,res) => {
         const username = req.body.username;
         const password = req.body.password;
   
-        const data = await User.find();
+        const data = await User.find({email: username});
   
         data.forEach((account) => {
             if (username == account.email) {
              if (password == account.password) {
+                console.log(data)
                 req.session.user = username;
-                req.session.pass = password
+                req.session.pass = password;
+                req.session.name = account.name;
+                req.session.bio = account.bio;
+                req.session.number = account.number;
+                
                 console.log(req.session.user)
                 console.log(req.session.pass)
+                console.log(req.session.name)
+                console.log(req.session.bio)
+                console.log(req.session.number)
                 res.redirect('/');
             } else {
                 res.render('pages/login', {

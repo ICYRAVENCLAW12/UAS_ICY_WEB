@@ -211,7 +211,7 @@
                     height: 100%;
                 }
                 .btn-color3:hover {
-                    color: black;
+                    color: #5c7aea;
                     background: transparent;
                     border: 2px solid #5c7aea;
                     height: 100%;
@@ -260,14 +260,13 @@
                 <small class="kecil">Enter your email or username and we'll send you a link to get back into your account.</small>
             </div>
             <div class="card-body">
-                <form>
-                    <div class="form-group">
+                <form action="/VERIF" method="post">
+                    <div class="form-group" >
                         <label class="card-font" style="font-weight: bold;" for="exampleInputEmail1">Email / Username :</label>
-                        <input class="form-control" placeholder="Email / Username :" type="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input class="form-control" placeholder="Email / Username :" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
-
+                    <a href="/forgetverif" class="nolink"><button class="btn btn-block btn-color3 mb-3" type="submit" name="submit">Send Login Link</button></a>
                 </form>
-                <a href="/forgetverif" class="nolink"><button class="btn btn-block btn-color3 mb-3" type="submit">Send Login Link</button></a>
                 <p class="card-5">Or</p>
                 <div style="text-align:center; margin-bottom: 3%;">
                     <a href="/signup" class="card-3">Create Account</a>

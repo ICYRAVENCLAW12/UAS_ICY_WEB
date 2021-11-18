@@ -1,0 +1,30 @@
+<% movie.reverse().forEach((data1) => { %>
+<div class="post">
+    <div class="the_post_content">
+        <div class="profile-picture">
+            <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                alt="" />
+            <h3>
+                <a href="#"><%= data1.username %></a>
+            </h3>
+        </div>
+
+        <div class="post_body">
+            <img src="<%= data1.coverImagePath %>" alt="" />
+            <div class="utility-icon">
+                <button class="like_button"><span
+                        class="material-icons">favorite_border</span></button>
+                <button class="Comment_button" id="comment_button"><span
+                        class="material-icons">maps_ugc_outline</span></button>
+                <button class="like_button"><span
+                        class="material-icons">send_round</span></button>
+            </div>
+            <div class="desc">
+                <p>
+                    <%= data1.name %>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<% }) %>
