@@ -29,7 +29,7 @@
                 <div class="col-lg-5">
                   <ul class="nav flex-column garis">
                     <li class="nav-item" >
-                      <a class="nav-link" href="/profile_setting"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">account_circle</p>&nbsp &nbsp My Profile</a>
+                      <a class="nav-link" href="/profile_setting"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">account_circle</p>&nbsp &nbsp Edit Profile</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/changepass"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">lock</p>&nbsp &nbsp Change Password</a>
@@ -44,7 +44,7 @@
               </div>
               <div class="col ">
                 <div class="card-body garis" style="text-align: left;">
-                    <form >
+                    <form action="/profile_settings" method="post">
                         <div class="form-group">
                           <div class="profile-picture">
                             <img
@@ -57,31 +57,34 @@
                           </div>
                         </div>
                         <div class="form-group">
-                          <input type="text" id="textColor" placeholder="Name" class="form-control">
+                          <input type="text" id="textColor" placeholder="Name" class="form-control" name="name" >
                         </div>
                         <div class="form-group">
                           <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
-                          <textarea class="form-control" id="textColor" rows="3"></textarea>
+                          <input type="text" id="textColor" placeholder="bio" class="form-control" name="bio" >
                         </div>
                         <div class="form-group">
                             <label >E-Mail</label>
-                            <input type="email" id="textColor" placeholder="Example@gmail.com" class="form-control">
+                            <input type="email" id="textColor" placeholder="Example@gmail.com" class="form-control" name="email">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label >Password</label>
-                            <input type="text" id="textColor"placeholder="*******" class="form-control" style="-webkit-text-security: disc;">
-                        </div>
+                            <input type="text" id="textColor"placeholder="*******" class="form-control" style="-webkit-text-security: disc;" name="password">
+                        </div> -->
                         <div class="form-group">
                             <label >Phone Number</label>
-                            <input type="Number" id="textColor" placeholder="123456789" class="form-control">
+                            <input type="Number" id="textColor" placeholder="123456789" class="form-control" name="number">
                         </div>
                         <div class="mb-3 form-check">
                           <input type="checkbox" class="form-check-input" id="textColor">
                           <label class="form-check-label" for="exampleCheck1" style="color: white;">Are you sure wanna change your password</label>
                         </div>
-                        <div >
-                          <button type="button" class="btn btn-primary">Save</button>
+                        <div>
+                          <button name="submit" id="submit" type="submit" class="btn btn-primary ">Save</button>
                         </div>
+                        <% if(locals.error) { %>
+                          <span class ="text-danger pl-2"><%= error %></span>
+                        <% } %>
                     </form>
                 </div>
               </div>
