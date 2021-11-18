@@ -1,14 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const Movie = require('../models/Movie');
 
-router.get('/', (req,res) => {
+router.get("/", async (req, res, next) => {
     //cek user session
     if(!req.session.user){
         res.redirect('/auth/login');
-    } else {
-        res.render('pages/home');
-    }
-});
+    } else try{
+        const movie  = await Movie.find();
+        res.render("pages/home", {
+          movie
+        });
+      }catch (err){
+        console.log("err: "+ err); 
+      }
+  });
 
 router.get('/forgetpass', (req, res) => {
     res.render('pages/forgetpass_beneran')
@@ -47,10 +53,16 @@ router.get('/setting',(req, res) => {
 })
 
 router.get('/profile_setting',(req, res) => {
+    const userdata = req.session.user;
+    const pw = req.session.pass;
+    console.log(userdata);
+    console.log(pw);
     res.render('pages/profile_settings')
 })
 
 router.get('/changepass',(req, res) => {
+    const data = req.session.user;
+    console.log(data);
     res.render('pages/change')
 })
 
@@ -62,6 +74,11 @@ router.get('/contactus',(req, res) => {
     res.render('pages/Contactus')
 })
 
+router.get('/upload',(req, res) => {
+    res.render('pages/make')
+})
+
+
 router.get('/logout', (req,res) => {
     //hapus session
     req.session.destroy();
@@ -69,5 +86,6 @@ router.get('/logout', (req,res) => {
     //redirect ke login
     res.redirect('/auth/login');
 })
+
 
 module.exports = router;
