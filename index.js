@@ -121,7 +121,7 @@ app.post('/VERIF', (req, res) => { //email verif forget password
     port: 25, // port for secure SMTP
     auth: {
         user: 'icyravenclaw12@gmail.com',        // Email Dev
-        pass: 'ICYravenCLAW_12'     // Pass Dev
+        pass: 'kzfrhrxjoqkogpsv'     // Pass Dev
     },
     tls: {
       rejectUnauthorized: false
