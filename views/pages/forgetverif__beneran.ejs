@@ -271,6 +271,9 @@
                     <a href="#" style="color: #5c7aea; font-family: sans-serif; font-weight: bold;">Resend Code</a>
                     <a style="color: #5c7aea; font-family: sans-serif;">if you didn't get the email.</a>
                 </div>
+                <% if(locals.error) { %>
+                    <span class ="text-danger pl-2"><%= error %></span>
+                <% } %>
             </div>
         </form>
 
