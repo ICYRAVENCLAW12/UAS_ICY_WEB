@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="icon" href="https://i.ibb.co/7rWKwZS/1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Assets/css/see_more.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="body_html">
+    <nav class="fixed-top sticky-top">
+        <%- include('../layouts/navbar.ejs'); %>
+    </nav>
+    <div class="grid-container-trending">
+
+        <!-- Friends Online -->
+        <div class="grid-left" id="friends_online">
+            <div class="friends_online-header">
+                <span class="material-icons">group</span>
+                <h4 class="titles">Friends Online</h4>
+            </div>
+        </div>
+        <!-- End of Friends Online -->
+        
+        <!-- Trending -->
+        <div class="grid-mid" id="profile">
+            <div class="header">
+                <h4 class="titles"> Trends</h4>
+            </div>
+            <div class="trends">
+                <% for(var i = 0; i < trend.length ; i++) { %>
+                    <div class="trend">
+                        <a href=""><%= trend[i].name %></a>
+                        <button onclick="location.href='login_beneran.html';"><span
+                                class="material-icons">more_horiz</span></button>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <!-- End of Trending -->
+
+        <!-- Follow Me -->
+        <div class="grid-right-top-followme" id="follow_me">
+            <a class="titles">FOLLOW ME</a>
+            <div class="side-suggested_accounts">
+                <% for(var i = 0; i < followme.length ; i++) { %>
+                    <% if (i === 2) { %>
+                        <% break; %>
+                    <% } %>
+                    <div class="side-suggested_account">
+                        <div class="account_img">
+                            <img class="acc_img"
+                                src="<%= followme[i].imagePath %>"
+                                alt="gambar" width="50px" height="50px" />
+                        </div>
+                        <div class="name-username">
+                            <a href=""><%= followme[i].name %></a>
+                            <p>@KuRoZz</p>
+                        </div>
+                        <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
+                                class="fa fa-user-plus"></i></button>
+                    </div>
+                <% } %>
+            </div>
+            <div class="trending-followMe">
+                <a href="/followme">See More</a>
+            </div>
+        </div>
+        <!-- End of Follow Me -->
+
+        <!-- Credits-->
+        <div class="grid-credits" id="credits">
+            <div class="credits-content">
+                <a href="#">terms of service</a>
+                <a href="#">privacy policy</a>
+                <a href="#">cookie policy</a><br>
+                <a href="#">&copy; 2021 IcyRavenclaw Fondation</a>
+            </div>
+        </div>
+        <!-- End of Credits -->
+    </div>
+    <!-- End of Container -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="/Assets/js/profile.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
