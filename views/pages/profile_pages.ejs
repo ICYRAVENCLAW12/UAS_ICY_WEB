@@ -113,7 +113,7 @@
                             </div>
                             <div class="number-tweets-followers-following">
                                 <div class="number_tweets">
-                                    <p> <b>0</b>&nbsp;&nbsp;Tweets</p>
+                                    <p> <b><%= movie.length %></b>&nbsp;&nbsp;Tweets</p>
                                 </div>
                                 <div class="number_followers">
                                     <button type="button" data-modal-target="#modal-followers">
@@ -211,26 +211,19 @@
         <div class="grid-right-top" id="trending_now">
             <a class="titles">#TRENDING NOW</a>
             <div class="trends">
-                <div class="trend">
-                    <a href="">North Korea nuked Washington DC</a>
-                    <button onclick="location.href='login_beneran.html';"><span
-                            class="material-icons">more_horiz</span></button>
-                </div>
-
-                <div class="trend">
-                    <a href="">Kim Jong Un's drastic weight loss</a>
-                    <button onclick="location.href='login_beneran.html';"><span
-                            class="material-icons">more_horiz</span></button>
-                </div>
-
-                <div class="trend">
-                    <a href="">North Korea united with South Korea</a>
-                    <button onclick="location.href='login_beneran.html';"><span
-                            class="material-icons">more_horiz</span></button>
-                </div>
+                <% for(var i = 0; i < trend.length ; i++) { %>
+                    <% if (i === 3) { %>
+                        <% break; %>
+                    <% } %>
+                    <div class="trend">
+                        <a href=""><%= trend[i].name %></a>
+                        <button onclick="location.href='login_beneran.html';"><span
+                                class="material-icons">more_horiz</span></button>
+                    </div>
+                <% } %>
             </div>
             <div class="trending-seeMore">
-                <a href="">See More</a>
+                <a href="/trending">See More</a>
             </div>
         </div>
         <!-- End of Trending Now -->
@@ -239,36 +232,27 @@
         <div class="grid-right-bottom" id="follow_me">
             <a class="titles">FOLLOW ME</a>
             <div class="suggested_accounts">
-                <div class="suggested_account">
-                    <div class="account_img">
-                        <img class="acc_img"
-                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                            alt="gambar" width="50px" height="50px" />
+                <% for(var i = 0; i < followme.length ; i++) { %>
+                    <% if (i === 2) { %>
+                        <% break; %>
+                    <% } %>
+                    <div class="suggested_account">
+                        <div class="account_img">
+                            <img class="acc_img"
+                                src="<%= followme[i].imagePath %>"
+                                alt="gambar" width="50px" height="50px" />
+                        </div>
+                        <div class="name-username">
+                            <a href=""><%= followme[i].name %></a>
+                            <p>@KuRoZz</p>
+                        </div>
+                        <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
+                                class="fa fa-user-plus"></i></button>
                     </div>
-                    <div class="name-username">
-                        <a href="">Ferdinand Iskandar</a>
-                        <p>@KuRoZz</p>
-                    </div>
-                    <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
-                            class="fa fa-user-plus"></i></button>
-                </div>
-
-                <div class="suggested_account">
-                    <div class="account_img">
-                        <img class="acc_img"
-                            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                            alt="gambar" width="50px" height="50px" />
-                    </div>
-                    <div class="name-username">
-                        <a href="">Ferdinand Iskandar</a>
-                        <p>@KuRoZz</p>
-                    </div>
-                    <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
-                            class="fa fa-user-plus"></i></button>
-                </div>
+                <% } %>
             </div>
             <div class="trending-followMe">
-                <a href="">See More</a>
+                <a href="/followme">See More</a>
             </div>
         </div>
         <!-- End of Follow Me -->
