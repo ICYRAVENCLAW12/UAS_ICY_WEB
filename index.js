@@ -160,7 +160,7 @@ app.post('/VERIF', (req, res) => { //email verif forget password
     } else {
       console.log('Otp salah. JS berhasil jalan.')
       res.render('pages/forgetverif__beneran', {
-        error: 'wrong OTP, please try again.'
+        error: 'wrong OTP, please check your email again.'
       });
     }
   })
