@@ -111,10 +111,12 @@ div.profile-nav > a {
   padding: 1.5% 5%;
   cursor: pointer;
   position: absolute;
-  margin-left: 73%;
-  margin-top: -0.3%;
+  margin-left: 80%;
+  margin-right: 10%;
+  margin-top: -0.9%;
   font-weight: bold;
   width: 5px;
+  display: flex;
 }
 
 .spanmodal2 a :hover {
@@ -123,6 +125,7 @@ div.profile-nav > a {
 
 .spanmodal2 a {
   color:white;
+  margin-right: 10%;
 }
 
 
@@ -253,7 +256,7 @@ color: white;
 }
 
 .upload-button {
-  background-color: var(--base-color);
+  background-color: transparent;
   border: none;
   color: white;
   font-weight: 500;
@@ -261,9 +264,14 @@ color: white;
   border-radius: 30px;
   width: 80px;
   height: 40px;
-  margin-top: 5px;
-  margin-left: -90px;
+  margin-top: -6.5px;
+  margin-left: 0px;
+  margin-right: 2px;
   margin-bottom: 5px;
+}
+
+.upload-button:hover {
+  color: aqua;
 }
 
 .profile-picture img {

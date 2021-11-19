@@ -33,6 +33,10 @@ const userSchema = mongoose.Schema({
     bio: {
         type:String,
         required: false
+    },
+    ImagePath: {
+        type: String,
+        required: false
     }
     
 })

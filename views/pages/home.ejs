@@ -134,23 +134,22 @@
         <main class="post_main">
               <!-- tweetbox start -->
               <div class="feed">
-      
+                <% picture.reverse().forEach(pic => { %>
                 <div class="uploads">
                   <form>
                     <div class="uploads_input">
                       <img
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                        src=<%= pic.ImagePath %>
                         alt=""
                       />
                       <input type="text" placeholder="What's happening?" />
-                      
                       <span class="spanmodal2">
                         <a href="/upload"><span class="material-icons">add_photo_alternate</span></a>
+                        <button class="upload-button">Share</button>
                       </span>
-                      
-                      <button class="upload-button">Share</button>
                   </form>
-                </div> 
+                </div>
+                <% }) %>
               <!-- tweetbox ends -->
               <!--post start-->
               <%- include('../layouts/pro.ejs'); %>

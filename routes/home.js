@@ -8,11 +8,11 @@ router.get("/", async (req, res, next) => {
     if(!req.session.user){
         res.redirect('/auth/login');
     } else try{
-        const movie  = await Movie.find();
-        console.log(movie)
-        res.render("pages/home", {
-          movie
-        });
+        const Email = req.session.user;
+        const pic = await account.find({email: Email});
+        const m  = await Movie.find();
+        console.log(m)
+        res.render("pages/home", {movie: m, picture: pic});
       }catch (err){
         console.log("err: "+ err); 
       }
@@ -46,6 +46,72 @@ router.get('/profile_page',async (req, res) => {
     const data1 = await Movie.find({username : Name});
     console.log(data2)
     res.render('pages/profile_pages', {movie: data1, userr: data2})
+})
+
+router.get('/change1', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/1.jpg"});
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/1.jpg"});
+    req.session.ImagePath ='../../Assets/1.jpg';
+    console.log(req.session.ImagePath)
+    res.redirect('/profile_page')
+})
+router.get('/change2', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/2.png"})
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/2.png"})
+    req.session.ImagePath ='../../Assets/2.png';
+    res.redirect('/profile_page')
+})
+router.get('/change3', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/3.png"})
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/3.png"})
+    req.session.ImagePath ='../../Assets/3.png';
+    res.redirect('/profile_page')
+})
+router.get('/change4', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/4.png"})
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/4.png"})
+    req.session.ImagePath ='../../Assets/4.png';
+    res.redirect('/profile_page')
+})
+router.get('/change5', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/5.jpg"})
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/5.jpg"})
+    req.session.ImagePath ='../../Assets/5.jpg';
+    res.redirect('/profile_page')
+})
+router.get('/change6', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/6.png"})
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/6.png"})
+    req.session.ImagePath ='../../Assets/6.png';
+    res.redirect('/profile_page')
+})
+router.get('/change7', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/7.png"})
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/7.png"})
+    req.session.ImagePath ='../../Assets/7.png';
+    res.redirect('/profile_page')
+})
+router.get('/change8', async (req, res) => {
+    const Email = req.session.user;
+    console.log(Email)
+    await account.updateOne ({email: Email}, {ImagePath: "../../Assets/8.png"})
+    await Movie.updateMany ({Email: Email}, {ImagePath: "../../Assets/8.png"})
+    req.session.ImagePath ='../../Assets/8.png';
+    res.redirect('/profile_page')
 })
 
 router.get('/modal',(req, res) => {

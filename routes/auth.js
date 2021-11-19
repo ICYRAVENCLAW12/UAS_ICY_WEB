@@ -41,12 +41,14 @@ router.post('/login', async(req,res) => {
                 req.session.name = account.name;
                 req.session.bio = account.bio;
                 req.session.number = account.number;
+                req.session.ImagePath = account.ImagePath;
                 
                 console.log(req.session.user)
                 console.log(req.session.pass)
                 console.log(req.session.name)
                 console.log(req.session.bio)
                 console.log(req.session.number)
+                console.log(req.session.ImagePath)
                 res.redirect('/');
             } else {
                 res.render('pages/login', {
@@ -80,7 +82,6 @@ router.post('/signup',async (req,res) =>{
     const email = req.body.email;
     const number = req.body.number
 
-
     const data = await User.find();
     await data.forEach((account) => {
         if (email == account.email) {
@@ -99,7 +100,8 @@ router.post('/signup',async (req,res) =>{
             sex: sex,
             email: email,
             password: password,
-            number: number
+            number: number,
+            ImagePath: "../../Assets/1.png"
         });
         await user.save((err, res) => {
             if (err) console.error(err);

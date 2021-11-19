@@ -22,8 +22,15 @@ const movieSchema = new Schema({
     username: {
         type: String,
         required: false
-    }
-    
+    },
+    Email: {
+        type: String,
+        required: true
+    },
+    ImagePath: {
+        type: String,
+        require: false
+    }   
 });
 // https://mongoosejs.com/docs/tutorials/virtuals.html
 // a virtual is a property that is not stored in MongoDB. Virtuals are typically used for computed properties on documents.

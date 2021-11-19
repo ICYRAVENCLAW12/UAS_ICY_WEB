@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
+    <link rel = "icon" href = 
+    "https://i.ibb.co/7rWKwZS/1.jpg" 
+    type = "image/x-icon">
     <link rel="icon" href="https://i.ibb.co/7rWKwZS/1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -84,6 +87,7 @@
                     </div>
                 </div>
             </div>
+            <% userr.forEach((data2) => { %>
             <div class="top">
                 <div class="background_img">
                     <div class="top_content">
@@ -92,14 +96,12 @@
                                 <img src="https://saudivax.com/wp-content/uploads/2020/09/empty-profile-pic.jpg"
                                     alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
                                 <div class="change_img">
-                                    <form action="change_pp" method="post">
                                     <input type="file" id="file" name="file">
-                                    <label for="file" id="uploadBtn">Change Image</label>
-                                </form>
+                                    <button class="changebutton" id="changebutton">Change Image</button>
                                 </div>
                             </div>
                         </div>
-                        <% userr.forEach((data2) => { %>
+    
                         <div class="top_right">
                             <div class="name">
                                 <h4><%= data2.name %></h4>
@@ -123,10 +125,9 @@
                                 </div>
                             </div>
                             <div class="edit_profile">
-                                <button type="button" onclick="location.href='profile.html';">Edit Profile</button>
+                                <button type="button" onclick="location.href='/profile_setting';">Edit Profile</button>
                             </div>
                         </div>
-                        <% }) %>
                     </div>
                     <div class="more_profile_info">
                         <div class="username">
@@ -153,6 +154,7 @@
                     </ul>
                 </div>
             </div>
+            <% }) %>
 
             <!-- Tweets, Media, Shorts -->
 
@@ -399,6 +401,75 @@
     <div id="overlay"></div>
     <!-- End of Modal Information-->
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal3">
+        <!-- Modal content -->
+        <div class="modal-content3">
+        <span class="close3">&times;</span>
+            <div class="pic">
+                <div class="profile_img_modal">
+                    <img src=../../Assets/1.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change1">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/2.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change2">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/3.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change3">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/4.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change4">Choose Image</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="pic">
+                <div class="profile_img_modal">
+                    <img src=../../Assets/5.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change5">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/6.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change6">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/7.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change7">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/8.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change8">Choose Image</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -410,6 +481,33 @@
     <script>
         feather.replace();
     </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("changebutton");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close3")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
 </body>
 
 </html>
