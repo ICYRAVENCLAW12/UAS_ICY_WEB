@@ -1,23 +1,19 @@
 body {
   --main-radius: 15px;
   --main-padding: 8px;
-  --base-color-1: rgb(46, 49, 49);
+  --base-color: rgb(46, 49, 49);
   --base-color-2: #5c7aea;
-  --base-color-3: #ffffff;
+  --base-color-3: white;
+  --base-color-4: grey;
   background-color: #010815;
-  position: fixed;
-  right: 0;
-  left: 0;
 }
-
-/* Loader */
 
 /* Lay Out */
 
 .grid-container {
   display: grid;
   grid-template-columns: 300px 670px 350px;
-  grid-template-rows: 340px 258px;
+  grid-template-rows: 360px 278px;
   grid-template-areas:
     "friends_online profile follow_me"
     "friends_online profile trending"
@@ -31,11 +27,11 @@ body {
 }
 
 .grid-left {
-  margin-top: 5%;
+  margin-top: 5.5%;
   border: 1.5px solid var(--base-color-2);
   grid-area: friends_online;
-  border-radius: var(--main-radius);
-  padding-top: 3%;
+  border-radius: 10px;
+  padding: 0;
   background:black;
   height: 625px;
 }
@@ -220,7 +216,6 @@ nav.navbar a.navbar-brand {
 }
 
 /* Top */
-
 .header {
   position: sticky;
   top: 0;
@@ -253,8 +248,7 @@ nav.navbar a.navbar-brand {
 .friends-information button {
   background-color: transparent;
   border: none;
-  color: var(--base-color-3);
-  margin-bottom: 10px;
+  color: var(--base-color-4);
 }
 
 .friends-information .material-icons {
@@ -262,7 +256,7 @@ nav.navbar a.navbar-brand {
 }
 
 .friends-information button:hover {
-  color: var(--base-color-3);
+  color: rgb(39, 107, 233);
 }
 
 .background_img {
@@ -283,11 +277,6 @@ nav.navbar a.navbar-brand {
   background-size: cover;
   opacity: 0.5;
   z-index: -99;
-}
-
-button.changebutton {
-  background-color: transparent;
-  border: none;
 }
 
 .page_name h3 {
@@ -394,7 +383,7 @@ button.changebutton {
 .edit_profile button {
   background-color: transparent;
   color: var(--base-color-3);
-  border: 2px solid var(--base-color-2);
+  border: 2px solid var(--base-color-3);
   width: 325px;
   border-radius: 5px;
   font-weight: 500;
@@ -566,7 +555,7 @@ button.changebutton {
 }
 
 .grid-left .titles {
-  font-size: 30px;
+  font-size: 28px;
   color: var(--base-color-3);
   padding-left: 3%; 
   font-weight: 700;
@@ -574,12 +563,18 @@ button.changebutton {
 
 .friends_online-header {
   display: flex;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  padding-top: 3.2%;
+  padding-left: 3%;
+  background-color: black;
+  border-bottom: 1.5px solid var(--base-color-2);
 }
 
 .friends_online-header .material-icons {
   color: var(--base-color-3);
   padding: 3% 0 0 3%;
-  width: 32px;
 }
 
 .suggested_account, .modal-body-followers-content, .modal-body-following-content {
@@ -826,66 +821,4 @@ button.changebutton {
   .modal-body-information {
     width: 600px;
   }
-}
-
-/* The Modal (background) */
-.modal3 {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content3 {
-  margin-top: 4%;
-  margin-left: 25%;
-  margin-right: 12%;
-  height: 80%;
-  width: 50%;
-  background-color: #010815;
-  border: 2px solid var(--base-color-2);
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.pic {
-  display: flex;
-}
-.profile_img_modal {
-  padding-left: 4.5%;
-  padding-right: 4.5%;
-  padding-top: 5%;
-  padding-bottom: 8%;
-}
-
-.change_img_modal button.changebutton {
-  margin-left: 10%;
-  margin-top: 5%;
-  background-color: #010815;
-  border-radius: 20px;
-  border: 2px solid #5c7aea;
-  color: #5c7aea;
-}
-
-/* The Close Button */
-.close3 {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close3:hover,
-.close3:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }
