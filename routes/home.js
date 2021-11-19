@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Movie = require('../models/Movie');
 const account = require('../models/account');
+const Followme = require('../models/followme');
+const Trends = require('../models/trending');
 
 router.get("/", async (req, res, next) => {
     //cek user session
@@ -44,8 +46,22 @@ router.get('/profile_page',async (req, res) => {
     const Username = req.session.user;
     const data2 = await account.find({name: Name});
     const data1 = await Movie.find({username : Name});
+    const data = await Followme.find();
+    const data3 = await Trends.find();
     console.log(data2)
-    res.render('pages/profile_pages', {movie: data1, userr: data2})
+    res.render('pages/profile_pages', {movie: data1, userr: data2, , followme: data, trend: data3})
+})
+
+router.get('/followme', async (req, res) => {
+    const data = await Followme.find();
+    const data2 = await Trends.find();
+    res.render('pages/followme', {followme: data, trend: data2})
+})
+
+router.get('/trending', async (req, res) => {
+    const data = await Followme.find();
+    const data2 = await Trends.find();
+    res.render('pages/trending', {followme: data, trend: data2})
 })
 
 router.get('/change1', async (req, res) => {
