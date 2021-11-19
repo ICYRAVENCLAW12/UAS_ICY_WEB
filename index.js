@@ -110,11 +110,17 @@ app.post('/VERIF', (req, res) => {
   console.log(email)
   req.session.math = math;
   req.session.email = email;
-  let transporter = nodemailer.createTransport({
+  
+  let transporter = nodemailer.createTransport({ // nodemailer function 
     service: 'gmail',
+    secure: false, // use SSL
+    port: 25, // port for secure SMTP
     auth: {
         user: 'icyravenclaw12@gmail.com',        // Email Dev
         pass: 'ICYravenCLAW_12'     // Pass Dev
+    },
+    tls: {
+      rejectUnauthorized: false
     }
     });
 
