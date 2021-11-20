@@ -136,16 +136,16 @@
               <div class="feed">
                 <% picture.reverse().forEach(pic => { %>
                 <div class="uploads">
-                  <form>
+                  <form action="/addtulisan" method="post">
                     <div class="uploads_input">
                       <img
                         src=<%= pic.ImagePath %>
                         alt=""
                       />
-                      <input type="text" placeholder="What's happening?" />
+                      <input type="text" placeholder="What's happening?" name="tulis">
                       <span class="spanmodal2">
                         <a href="/upload"><span class="material-icons">add_photo_alternate</span></a>
-                        <button class="upload-button">Share</button>
+                        <button class="upload-button" type="submit">Share</button>
                       </span>
                   </form>
                 </div>

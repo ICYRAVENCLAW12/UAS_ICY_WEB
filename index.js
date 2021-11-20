@@ -80,17 +80,43 @@ app.post('/changepic', async (req, res, next) => {
   }
 })
 
+app.post('/addtulisan', async ( req, res, next)=>{
+  const name = req.body.tulis;
+  const username = req.session.name;
+  const Email = req.session.user;
+  const ImagePath = req.session.ImagePath;
+  const id = 2;
+  console.log("adda")
+  console.log(name)
+  const movie = new Movie({
+    name,
+    username,
+    Email,
+    ImagePath,
+    id
+  });
+  try{
+    const newMovie = await movie.save();
+    console.log(newMovie);  
+    res.redirect('/')  ;
+  }catch (err){
+    console.log(err);    
+  }
+});
+
 app.post('/add', async ( req, res, next)=>{
   const {name, type, img} = req.body;
   const username = req.session.name;
   const Email = req.session.user;
   const ImagePath = req.session.ImagePath;
+  const id = 1;
   const movie = new Movie({
     name,
     type,
     username,
     Email,
-    ImagePath
+    ImagePath,
+    id
   });
   
   const moviei = await Movie.find();

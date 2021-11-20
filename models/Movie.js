@@ -13,15 +13,15 @@ const movieSchema = new Schema({
     // https://mongoosejs.com/docs/schematypes.html#buffers
     img: {
         type: Buffer,
-        required: true
+        required: false
     },
     imgType: {
         type: String,
-        required: true
+        required: false
     },
     username: {
         type: String,
-        required: false
+        required: true
     },
     Email: {
         type: String,
@@ -30,6 +30,10 @@ const movieSchema = new Schema({
     ImagePath: {
         type: String,
         require: false
+    },
+    id: {
+        type: Number,
+        required: true
     }   
 });
 // https://mongoosejs.com/docs/tutorials/virtuals.html
