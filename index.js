@@ -107,8 +107,6 @@ app.post('/add', async ( req, res, next)=>{
   }
 });
 
-
-//==================== OTP ========================
 app.post('/VERIF', (req, res) => { //email verif forget password
   const email = req.body.email; // take email input from body
   const math = Math.floor(Math.random() * 999999) + 111111; // generate 6 random number for verification
@@ -135,7 +133,7 @@ app.post('/VERIF', (req, res) => { //email verif forget password
         from: 'icyravenclaw12@gmail.com', 
         to: email,
         subject: 'your otp verification code is here',
-        text: ' Hey, ' + email + '! We heard that you lost your ICY password. Sorry about that! But don’t worry! You can use the following otp code to reset your password: ' + math + ', thank you'
+        text: ' Hey ' + email + '! We heard that you lost your ICY password. Sorry about that! But don’t worry! You can use the following otp code to reset your password: ' + math + 'thank you'
     };
 
     // Step 3
@@ -158,10 +156,7 @@ app.post('/VERIF', (req, res) => { //email verif forget password
       res.render('pages/change_otp') // direct to change password page
       req.session.destroy; // destroy all session 
     } else {
-      console.log('Otp salah. JS berhasil jalan.')
-      res.render('pages/forgetverif__beneran', {
-        error: 'wrong OTP, please check your email again.'
-      });
+      console.log('your a failure i send you to jesus') // checking sake
     }
   })
 

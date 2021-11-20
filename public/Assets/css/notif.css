@@ -210,7 +210,6 @@ body {
   .rightside {
     color: white;
     padding-left: 1%;
-    padding-right: 0%;
   }
 
   /*FREND REQ*/
@@ -220,9 +219,14 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
   }
+  
+  .follow_button .material-icons {
+    padding: 15% 0 0 0;
+  }
 
   .modal-body-following-content {
     padding-left: 6%; 
+    padding-right: 6%; 
     display: grid; 
     grid-template-columns: 10% 65% 17.5% 17.5%; 
     align-items: center;
@@ -237,8 +241,8 @@ body {
     width: 90px; 
     height: 37px;
     font-size: 20px;
+    padding-left: 10%;
     margin-top: 8%;
-    margin-left: -100px;
   }
 
   .leftside {
@@ -251,62 +255,40 @@ body {
     border: 1px solid var(--base-color-2);
   }
 
+  .follow_button a {
+    margin-left: -5px;
+    margin-bottom: 5px;
+  }
+
   .acc_img {
     border-radius: 50%;
     margin-right: 0;
   }
 
-  .grid-mg {
-    margin-top: 0.5%;
-  }
-
   .name-username {
-    border: none;
-    text-decoration: none;
-    margin-top: 3%;
+    padding-top: 7%;
+    
   }
-
-  .name-username a {
-    text-decoration: none;
-    color: white;
+  
+  .name-username a p {
+    margin-bottom: 0; 
+    padding-bottom: 0; 
+    margin-left: -500px;
   }
-
-  .name-username a:hover {
-    text-decoration: none;
-    color: white;
-  }
-
+  
   .name-username p {
-    text-decoration: none;
     color: gray;
   }
-
-  @media screen and (max-width: 1200px) {
-    .grid-mg {
-      margin-top: 1%;
-      width: 330%;
-      margin-left: -5%;
-    }
   
-    .name-username {
-      border: none;
-      text-decoration: none;
-      margin-top: 5%;
-      margin-left: 2%;
-    }
-  
-    .name-username a {
-      text-decoration: none;
-      color: white;
-    }
-  
-    .name-username a:hover {
-      text-decoration: none;
-      color: white;
-    }
-  
-    .name-username p {
-      text-decoration: none;
-      color: gray;
-    }
+  .name-username a {
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
   }
+
+  .likes_content, .follow_req {
+    display: none;
+  }
+
+
+

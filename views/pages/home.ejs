@@ -160,85 +160,51 @@
               <div class="container">
                   <div class="box">
                       <a class="Right_box">#TRENDINGNOW</a>
+                        <% for(var i = 0; i < trend.length ; i++) { %>
+                          <% if (i === 3) { %>
+                              <% break; %>
+                          <% } %>
                           <div class="trend-content" style="margin-top: 20px;">
-                              <div class="news">
-                                  <a>North Korea nuke Washington DC</a>
-                              </div>
-                              <div class="logo">
-                                  <a href="login.html"><span class="material-icons">more_horiz</span></a>
-                              </div>
+                            <div class="news">
+                              <a href=""><%= trend[i].name %></a>
+                            </div>
+                            <div class="logo">
+                              <button onclick="location.href='login_beneran.html';"><span
+                                      class="material-icons">more_horiz</span></button>
+                            </div>
                           </div>
-                          <div class="trend-content">
-                              <div class="news">
-                                  <a>North Korea nuke Washington DC</a>
-                              </div>
-                              <div class="logo">
-                                  <a href="login.html"><span class="material-icons">more_horiz</span></a>
-                              </div>
-                          </div>
-                          <div class="trend-content">
-                              <div class="news">
-                                  <a>North Korea nuke Washington DC</a>
-                              </div>
-                              <div class="logo">
-                                  <a href="login.html"><span class="material-icons">more_horiz</span></a>
-                              </div>
-                          </div>
-                          <div class="seemore">
-                              <a href="#">see more</a>
-                          </div>
+                          <% } %>
+                          <div class="trending-followMe">
+                            <a href="/trending">See More</a>
+                        </div>
                   </div>
-                  <div class="box">
+                  <div class="box" id="follow_me">
                       <a class="Right_box">FOLLOW ME</a>
                       <div class="modal-body-following">
-                            <div class="modal-body-following-content">
-                              <div class="account_img">
-                                  <img class="acc_img"
-                                      src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                                      alt="gambar" width="50px" height="50px" />
-                              </div>
-                              <div class="name-username">
-                                  <a href="">Ferdinand Iskandar</a>
-                                  <p>@KuRoZz</p>
-                              </div>
-                              <button class="follow_button" id="follow_button"><span class="material-icons"> <span class="material-icons-outlined">
-                                person_add_alt
-                                </span> </span></button>
+                              <% for(var i = 0; i < followme.length ; i++) { %>
+                                <% if (i === 3) { %>
+                                    <% break; %>
+                                <% } %>
+                                <div class="modal-body-following-content">
+                                    <div class="account_img">
+                                        <img class="acc_img"
+                                            src="<%= followme[i].imagePath %>"
+                                            alt="gambar" width="50px" height="50px" />
+                                    </div>
+                                    <div class="name-username">
+                                        <a href=""><%= followme[i].name %></a>
+                                        <p>@KuRoZz</p>
+                                    </div>
+                                    <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
+                                            class="fa fa-user-plus"></i><span class="material-icons"> <span class="material-icons-outlined">
+                                              person_add_alt
+                                              </span> </span></button></button>
+                                </div>
+                            <% } %>
                         </div>
-                        <div class="modal-body-following">
-                          <div class="modal-body-following-content">
-                            <div class="account_img">
-                                <img class="acc_img"
-                                    src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                                    alt="gambar" width="50px" height="50px" />
-                            </div>
-                            <div class="name-username">
-                                <a href="">Ferdinand Iskandar</a>
-                                <p>@KuRoZz</p>
-                            </div>
-                            <button class="follow_button" id="follow_button"><span class="material-icons"> <span class="material-icons-outlined">
-                              person_add_alt
-                              </span> </span></button>
-                      </div>
-                      <div class="modal-body-following">
-                        <div class="modal-body-following-content">
-                          <div class="account_img">
-                              <img class="acc_img"
-                                  src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-                                  alt="gambar" width="50px" height="50px" />
-                          </div>
-                          <div class="name-username">
-                              <a href="">Ferdinand Iskandar</a>
-                              <p>@KuRoZz</p>
-                          </div>
-                          <button class="follow_button" id="follow_button"><span class="material-icons"> <span class="material-icons-outlined">
-                            person_add_alt
-                            </span> </span></button>
-                    </div>
-                    
                     </div>
                           <div class="seemore">
-                              <a href="#">see more</a>
+                              <a href="/followme">See more</a>
                           </div>
                           
                       <div id="overlay"></div>
@@ -348,7 +314,31 @@
             const loader = document.querySelector(".loader");
             loader.className += " hidden"; // class "loader hidden"
           });
-        </script> 
+        </script>
+        <script>
+          // To change icon when clicked 
+          function changeIcons(icon) {
+            icon.classList.toggle("fa-user-times");
+          }
+
+          // Stop body scroll 
+          $.fn.isolatedScroll = function() {
+            this.bind('mousewheel DOMMouseScroll', function (e) {
+                var delta = e.wheelDelta || (e.originalEvent && e.originalEvent.wheelDelta) || -e.detail,
+                    bottomOverflow = this.scrollTop + $(this).outerHeight() - this.scrollHeight >= 0,
+                    topOverflow = this.scrollTop <= 0;
+
+                if ((delta < 0 && bottomOverflow) || (delta > 0 && topOverflow)) {
+                    e.preventDefault();
+                }
+            });
+            return this;
+          };
+
+          $('.grid-mid').isolatedScroll();
+          $('.modal-body-following').isolatedScroll();
+          $('.modal-body-followers').isolatedScroll();
+        </script>
 </body>
 
 
