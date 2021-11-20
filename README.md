@@ -15,17 +15,17 @@ David Ciang - 535200011
 
 CREATING ICY WEB IN NUTSHELL
 
-add login
-add logout (yes you are now can login and logut now)
-add upload file with picture and without picture (like instagram doin  dragon ball fusion with twitter right)
-addin change password, change profile
-addin forget password function
-remove bug (at what cost, ofc adding more bugs)
-add more bugs
-trying to fix it
-give up
-crying in shade
-don't care
-connect all pages
-get mentally ill
-done
+* add login
+* add logout (yes you are now can login and logut now)
+* add upload file with picture and without picture (like instagram doin  dragon ball fusion with twitter right)
+* addin change password, change profile
+* addin forget password function
+* remove bug (at what cost, ofc adding more bugs)
+* add more bugs
+* trying to fix it
+* give up
+* crying in shade
+* don't care
+* connect all pages
+* get mentally ill
+* done
