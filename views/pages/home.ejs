@@ -135,7 +135,7 @@
               <div class="feed">
                 <% picture.reverse().forEach(pic => { %>
                 <div class="uploads">
-                  <form action="/addtulisan" method="post">
+                  <form action="/addtulisan" method="post" autocomplete="off">
                     <div class="uploads_input">
                       <img
                         src=<%= pic.ImagePath %>
