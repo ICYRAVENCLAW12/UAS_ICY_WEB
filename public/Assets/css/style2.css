@@ -29,7 +29,7 @@ div.profile-nav > a {
 
 /*=====================================*/
 
-.container-xxl {
+.grid-container-xxl {
     color: white;
     display: grid;
     height: 100vh;
@@ -626,7 +626,7 @@ br {
     }
   }
 
-  .container-xxl {
+  .grid-container-xxl {
       grid-template-columns: 1fr;
   }
 
@@ -653,13 +653,13 @@ br {
     margin-top: 20px;
     }
   
-  .container-xxl {
+  .grid-container-xxl {
     grid-template-columns: 0.5fr 3fr;
   }
   
   }
 
-  .container-xxl {
+  .grid-container-xxl {
       grid-template-columns: 1fr 5fr;
   }
   
@@ -670,7 +670,7 @@ br {
   }
 
   @media screen and (min-width: 1100px) {
-      .container-xxl {
+      .grid-container-xxl {
           grid-template-columns: 3fr 9fr 3.5fr;
       }
   }
@@ -718,7 +718,7 @@ br {
       }
 
 
-      .container-xxl {
+      .grid-container-xxl {
         grid-template-columns: 1fr;
       }
 
@@ -1078,7 +1078,7 @@ br {
           height: 95%;
         }
         
-        .container-xxl {
+        .grid-container-xxl {
           grid-template-columns: 1fr;
         }
   

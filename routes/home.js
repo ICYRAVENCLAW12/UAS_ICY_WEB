@@ -45,6 +45,7 @@ router.get('/message',(req, res) => {
 router.get('/profile_page',async (req, res) => {
     console.log(req.session.name)
     const Name = req.session.name;
+    console.log(Name)
     const Username = req.session.user;
     const data2 = await account.find({name: Name});
     const data1 = await Movie.find({username : Name});

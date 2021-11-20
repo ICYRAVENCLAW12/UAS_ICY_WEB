@@ -101,7 +101,7 @@ router.post('/signup',async (req,res) =>{
             email: email,
             password: password,
             number: number,
-            ImagePath: "../../Assets/1.png"
+            ImagePath: "../../Assets/2.png"
         });
         await user.save((err, res) => {
             if (err) console.error(err);

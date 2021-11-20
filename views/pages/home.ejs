@@ -22,9 +22,8 @@
 </head>
 
 <body class="body_html">
-   
     <%- include('../layouts/navbar.ejs'); %>  
-    <div class="container-xxl">
+    <div class="grid-container-xxl" >
         <div class="leftside">
             <div class="Friend_bar_Option">
                 <span class="material-icons"> group </span>
@@ -314,30 +313,6 @@
             const loader = document.querySelector(".loader");
             loader.className += " hidden"; // class "loader hidden"
           });
-        </script>
-        <script>
-          // To change icon when clicked 
-          function changeIcons(icon) {
-            icon.classList.toggle("fa-user-times");
-          }
-
-          // Stop body scroll 
-          $.fn.isolatedScroll = function() {
-            this.bind('mousewheel DOMMouseScroll', function (e) {
-                var delta = e.wheelDelta || (e.originalEvent && e.originalEvent.wheelDelta) || -e.detail,
-                    bottomOverflow = this.scrollTop + $(this).outerHeight() - this.scrollHeight >= 0,
-                    topOverflow = this.scrollTop <= 0;
-
-                if ((delta < 0 && bottomOverflow) || (delta > 0 && topOverflow)) {
-                    e.preventDefault();
-                }
-            });
-            return this;
-          };
-
-          $('.grid-mid').isolatedScroll();
-          $('.modal-body-following').isolatedScroll();
-          $('.modal-body-followers').isolatedScroll();
         </script>
 </body>
 

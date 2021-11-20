@@ -194,7 +194,7 @@ app.post('/profile_settings', async (req, res, next)=>{
   const Name = req.body.name; //nama baru
   const BIO = req.session.bio;
   const number1 = req.session.number; //nomor yang lama di session
-  const Bio = req.body.Bio; //bio
+  const Bio = req.body.bio; //bio
   const Email = req.body.email; //email
   const Number = req.body.number; //no telp
 
@@ -208,29 +208,40 @@ app.post('/profile_settings', async (req, res, next)=>{
           console.log(Number); //checking sake
 
           if (Name) { //if name is not null or undifine then
-            await account.updateOne ({email: Username}, {name:Name}) // find target and update it
+            await account.updateOne ({email: Username}, {name: Name}) // find target and update it
             await Movie.updateMany ({username: old_name}, {username: Name}) // update the post name too so syncronus
             req.session.name = Name; // create new session
+            req.session.user = Username; // set the session normal
             console.log('ini' + req.session.name) // checking sake
           } else { // if name is null or undifine then
             console.log('tidak berubah') // not doing any changes
-            req.session.name = Username; // set the session normal
+            
           }
           if (Email) { //if name is not null or undifine then
-            await account.updateOne ({email: Username}, {email:Email}) // find target and update it
+            await account.updateOne ({email: Username}, {email: Email}) // find target and update it
             req.session.user = Email; // create new session
             console.log('ini' + req.session.name) // checking sake
           } else { // if name is null or undifine then
             console.log('tidak berubah')// not doing any changes
-            req.session.user = old_name; // set the session normal
+            
+          }
+          if (Bio) { //if name is not null or undifine then
+            await account.updateOne ({email: Username}, {bio: Bio}) // find target and update it
+            console.log('ini' + Bio) // checking sake
+            req.session.user = Username;
+            console.log(req.session.user)
+            console.log(req.session.name)
+          } else { // if name is null or undifine then
+            console.log('tidak berubah')// not doing any changes
+      
           }
           if (Number) { //if name is not null or undifine then
-            await account.updateOne ({email: Username}, {number:Number}) // find target and update it
+            await account.updateOne ({email: Username}, {number: Number}) // find target and update it
             req.session.number = Number; // create new session
             console.log('ini' + req.session.name) // checking sake
           } else { // if name is null or undifine then 
             console.log('tidak berubah')// not doing any changes
-            req.session.number = number1; // set the session normal
+        
           }
           console.log('ini' + User) // checking sake
           res.render('pages/setting') // direct to setting homepage

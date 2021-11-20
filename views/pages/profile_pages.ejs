@@ -93,7 +93,7 @@
                     <div class="top_content">
                         <div class="image">
                             <div class="profile_img">
-                                <img src=<%= data2.ImagePath %>
+                                <img src="<%= data2.ImagePath %>"
                                     alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
                                 <div class="change_img">
                                     <input type="file" id="file" name="file">
@@ -135,10 +135,7 @@
                         </div>
                         <div class="bio">
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Sapiente amet cumque in! Magni nulla voluptates dolore tenetur
-                                debitis magnam molestiae cum alias dolorem tempore sapiente
-                                quis nisi, amet sunt illo!
+                                <%= data2.bio %>
                             </p>
                         </div>
                     </div>
@@ -181,67 +178,67 @@
         <!-- End of Profile -->
 
         <!-- Trending Now -->
-        <div class="grid-right-top" id="trending_now">
-            <a class="titles">#TRENDING NOW</a>
-            <div class="trends">
-                <% for(var i = 0; i < trend.length ; i++) { %>
-                    <% if (i === 3) { %>
-                        <% break; %>
-                    <% } %>
-                    <div class="trend">
-                        <a href=""><%= trend[i].name %></a>
-                        <button onclick="location.href='login_beneran.html';"><span
-                                class="material-icons">more_horiz</span></button>
-                    </div>
-                <% } %>
-            </div>
-            <div class="trending-seeMore">
-                <a href="/trending">See More</a>
-            </div>
-        </div>
-        <!-- End of Trending Now -->
-
-        <!-- Follow Me -->
-        <div class="grid-right-bottom" id="follow_me">
-            <a class="titles">FOLLOW ME</a>
-            <div class="suggested_accounts">
-                <% for(var i = 0; i < followme.length ; i++) { %>
-                    <% if (i === 2) { %>
-                        <% break; %>
-                    <% } %>
-                    <div class="suggested_account">
-                        <div class="account_img">
-                            <img class="acc_img"
-                                src="<%= followme[i].imagePath %>"
-                                alt="gambar" width="50px" height="50px" />
+            <div class="grid-right-top" id="trending_now">
+                <a class="titles">#TRENDING NOW</a>
+                <div class="trends">
+                    <% for(var i = 0; i < trend.length ; i++) { %>
+                        <% if (i === 3) { %>
+                            <% break; %>
+                        <% } %>
+                        <div class="trend">
+                            <a href=""><%= trend[i].name %></a>
+                            <button onclick="location.href='login_beneran.html';"><span
+                                    class="material-icons">more_horiz</span></button>
                         </div>
-                        <div class="name-username">
-                            <a href=""><%= followme[i].name %></a>
-                            <p>@KuRoZz</p>
-                        </div>
-                        <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
-                                class="fa fa-user-plus"></i></button>
-                    </div>
-                <% } %>
+                    <% } %>
+                </div>
+                <div class="trending-seeMore">
+                    <a href="/trending">See More</a>
+                </div>
             </div>
-            <div class="trending-followMe">
-                <a href="/followme">See More</a>
-            </div>
-        </div>
-        <!-- End of Follow Me -->
+            <!-- End of Trending Now -->
 
-        <!-- Credits-->
-        <div class="grid-credits" id="credits">
-            <div class="credits-content">
-                <a href="#">terms of service</a>
-                <a href="#">privacy policy</a>
-                <a href="#">cookie policy</a><br>
-                <a href="#">&copy; 2021 IcyRavenclaw Fondation</a>
+            <!-- Follow Me -->
+            <div class="grid-right-bottom" id="follow_me">
+                <a class="titles">FOLLOW ME</a>
+                <div class="suggested_accounts">
+                    <% for(var i = 0; i < followme.length ; i++) { %>
+                        <% if (i === 2) { %>
+                            <% break; %>
+                        <% } %>
+                        <div class="suggested_account">
+                            <div class="account_img">
+                                <img class="acc_img"
+                                    src="<%= followme[i].imagePath %>"
+                                    alt="gambar" width="50px" height="50px" />
+                            </div>
+                            <div class="name-username">
+                                <a href=""><%= followme[i].name %></a>
+                                <p>@KuRoZz</p>
+                            </div>
+                            <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
+                                    class="fa fa-user-plus"></i></button>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="trending-followMe">
+                    <a href="/followme">See More</a>
+                </div>
             </div>
-        </div>
-        <!-- End of Credits -->
-    </div>
-    <!-- End of Container -->
+            <!-- End of Follow Me -->
+
+            <!-- Credits-->
+            <div class="grid-credits" id="credits">
+                <div class="credits-content">
+                    <a href="#">terms of service</a>
+                    <a href="#">privacy policy</a>
+                    <a href="#">cookie policy</a><br>
+                    <a href="#">&copy; 2021 IcyRavenclaw Fondation</a>
+                </div>
+            </div>
+            <!-- End of Credits -->
+            </div>
+        <!-- End of Container -->
 
     <!-- Modal Followers -->
     <div class="modal-followers" id="modal-followers">
@@ -362,7 +359,7 @@
     <div id="myModal" class="modal3">
         <!-- Modal content -->
         <div class="modal-content3">
-        <span class="close3">&times;</span>
+            <span class="close3">&times;</span>
             <div class="pic">
                 <div class="profile_img_modal">
                     <img src=../../Assets/1.jpg
