@@ -7,11 +7,11 @@ EMAIL ADMIN = icyravenclaw12@gmail.com
 EMAIL PASS  = admin
 
 constributor 
-Kelvin G'yandi - 535200016
-Joshua Steven - 535200048
-Lorico Salim - 535200015
-Ferdinand Iskandar - 535200012
-David Ciang - 535200011
+* Kelvin G'yandi - 535200016
+* Joshua Steven - 535200048
+* Lorico Salim - 535200015
+* Ferdinand Iskandar - 535200012
+* David Ciang - 535200011
 
 CREATING ICY WEB IN NUTSHELL
 
