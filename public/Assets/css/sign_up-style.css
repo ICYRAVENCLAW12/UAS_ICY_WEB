@@ -47,6 +47,42 @@ body {
   }
   }
 
+  .navbar {
+    border: 2px solid #5c7aea;
+    box-shadow: none;
+}
+.bg-color1 {
+    background: #5c7aea;
+}
+.navbar .navigasi-1 {
+    font-size: 20pt;
+    font-family: 'Black Ops One', cursive;
+    color: black;
+    text-decoration: none;
+}
+.navbar .navigasi-1:hover {
+    color: black;
+}
+.navbar .navigasi-2 {
+    color: black;
+    font-family: 'Black Ops One', cursive;
+    text-decoration: none;
+    position: relative;
+}
+.navbar .navigasi-2::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+.navbar .navigasi-2:hover::after {
+    width: 100%;
+}
+
 .card-header {
     background-color: var(--base-color-2);
     border-radius: 20px;
@@ -59,7 +95,7 @@ body {
 }
 
 .sign_up {
-    margin-top: 7%;
+    margin-top: 2%;
     margin-left: 35%;
     margin-right: 35%;
     margin-bottom: 1%;
