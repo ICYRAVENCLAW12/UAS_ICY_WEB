@@ -46,7 +46,7 @@ body {
       width: 1540px;
       margin: 20px auto;
       overflow-y: scroll;
-      height: 100vh;
+      height: 81.5vh;
     }
   
     .box::-webkit-scrollbar {

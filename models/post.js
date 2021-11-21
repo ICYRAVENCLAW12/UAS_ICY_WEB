@@ -1,26 +1,33 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const productSchema = mongoose.Schema({
-    imagePath: {
+const movieSchema = new Schema({
+    name: {
         type: String,
         required: true
     },
-    Username: {
+    type: {
         type: String,
         required: true
     },
-    desc: {
-        type: String,
-        required:true
+    // https://mongoosejs.com/docs/schematypes.html#buffers
+    img: {
+        type: Buffer,
+        required: true
     },
-    Username_pic: {
+    imgType: {
         type: String,
-        require: false
-    },
-    modalImagePath: {
-        type: String,
-        require: true
-    },
+        required: true
+    }
+    
 });
+// https://mongoosejs.com/docs/tutorials/virtuals.html
+// a virtual is a property that is not stored in MongoDB. Virtuals are typically used for computed properties on documents.
+// IT WILL GIVE US OUR IMAGE SOURCE THAT WE WILL USE IN OUT IMG TAG
+movieSchema.virtual('coverImagePath').get(function (){
+    if(this.img != null && this.imgType != null){
+        return `data:${this.imgType};charset=utf-8;base64,${this.img.toString('base64')}`;
+    }
+})
 
-module.exports = mongoose.model('post', productSchema, 'POST_DATABASE')
+module.exports = mongoose.model('posted', movieSchema, 'POSTING')

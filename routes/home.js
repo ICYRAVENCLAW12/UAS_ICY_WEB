@@ -4,19 +4,22 @@ const Movie = require('../models/Movie');
 const account = require('../models/account');
 const Followme = require('../models/followme');
 const Trends = require('../models/trending');
+const post = require('../models/post')
 
 router.get("/", async (req, res, next) => {
     //cek user session
     if(!req.session.user){
         res.redirect('/auth/login');
     } else try{
+        const Name = req.session.name;
         const Email = req.session.user;
         const pic = await account.find({email: Email});
         const m  = await Movie.find();
+        const data2 = await account.find({name: Name});
         const flow = await Followme.find();
         const tren = await Trends.find();
         console.log(m)
-        res.render("pages/home", {movie: m, picture: pic, followme: flow, trend: tren});
+        res.render("pages/home", {movie: m, picture: pic, followme: flow, trend: tren, account: pic});
       }catch (err){
         console.log("err: "+ err); 
       }
@@ -34,12 +37,26 @@ router.get('/forgetverif', (req, res) => {
     res.render('pages/forgetverif__beneran')
 })
 
-router.get('/explore', (req, res) => {
-    res.render('pages/explore')
+router.get('/explore', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    const explor = await post.find().limit(15);
+    console.log(explor)
+    res.render('pages/explore', {account: pic, posting: explor})
 })
 
-router.get('/message',(req, res) => {
-    res.render('pages/message')
+router.get('/explore-page', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    const explor = await post.find()
+    console.log(explor)
+    res.render('pages/explore-pages', {account: pic, posting: explor})
+})
+
+router.get('/message', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/message', {account: pic})
 })
 
 router.get('/profile_page',async (req, res) => {
@@ -47,24 +64,30 @@ router.get('/profile_page',async (req, res) => {
     const Name = req.session.name;
     console.log(Name)
     const Username = req.session.user;
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
     const data2 = await account.find({name: Name});
     const data1 = await Movie.find({username : Name});
     const data = await Followme.find();
     const data3 = await Trends.find();
     console.log(data2)
-    res.render('pages/profile_pages', {movie: data1, userr: data2, followme: data, trend: data3})
+    res.render('pages/profile_pages', {movie: data1, userr: data2, followme: data, trend: data3, account: pic})
 })
 
 router.get('/followme', async (req, res) => {
     const data = await Followme.find();
     const data2 = await Trends.find();
-    res.render('pages/followme', {followme: data, trend: data2})
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/followme', {followme: data, trend: data2, account: pic})
 })
 
 router.get('/trending', async (req, res) => {
     const data = await Followme.find();
     const data2 = await Trends.find();
-    res.render('pages/trending', {followme: data, trend: data2})
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/trending', {followme: data, trend: data2, account: pic})
 })
 
 router.get('/change1', async (req, res) => {
@@ -233,35 +256,49 @@ router.get('/modal',(req, res) => {
     res.render('pages/MODAL')
 })
 
-router.get('/notification_panel',(req, res) => {
-    res.render('pages/notif')
+router.get('/notification_panel', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/notif', {account: pic})
 })
 
-router.get('/setting',(req, res) => {
-    res.render('pages/setting')
+router.get('/setting',async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/setting', {account: pic})
 })
 
-router.get('/profile_setting',(req, res) => {
-    res.render('pages/profile_settings')
+router.get('/profile_setting', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/profile_settings', {account: pic})
 })
 
-router.get('/changepass',(req, res) => {
+router.get('/changepass', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
     const data = req.session.user;
     console.log(data);
-    res.render('pages/change')
+    res.render('pages/change', {account: pic})
 })
 
-router.get('/helpandabout',(req, res) => {
-    res.render('pages/helpandabout')
+router.get('/helpandabout',async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/helpandabout', {account: pic})
 })
 
-router.get('/contactus',(req, res) => {
-    res.render('pages/Contactus')
+router.get('/contactus', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/Contactus', {account: pic})
 })
 
-router.get('/upload',(req, res) => {
-    res.render('pages/make')
-})
+router.get('/upload', async (req, res) => {
+    const Email = req.session.user;
+    const pic = await account.find({email: Email});
+    res.render('pages/make', {account: pic})
+}) 
 
 
 router.get('/logout', (req,res) => {

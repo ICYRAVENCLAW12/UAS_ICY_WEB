@@ -164,11 +164,13 @@
                     <div class="tab-pane fade your_media" id="media" role="tabpanel" aria-labelledby="media-tab">
                         <div class="box">
                             <% movie.forEach((data1) => { %>
+                                <% if(data1.id == 1){ %>
                                 <div class="item">
                                     <a href="#">
                                         <img id="myimg" src=<%= data1.coverImagePath %> alt="">
                                     </a>
                                 </div>
+                                <% } %>
                             <% }) %>
                         </div>
                     </div>
