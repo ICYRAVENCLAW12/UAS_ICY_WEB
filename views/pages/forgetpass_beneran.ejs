@@ -267,6 +267,9 @@
                     </div>
                     <a href="/forgetverif" class="nolink"><button class="btn btn-block btn-color3 mb-3" type="submit" name="submit">Send Login Link</button></a>
                 </form>
+                <% if(locals.error) { %>
+                    <span class ="text-danger pl-2"><%= error %></span>
+                <% } %>
                 <p class="card-5">Or</p>
                 <div style="text-align:center; margin-bottom: 3%;">
                     <a href="/signup" class="card-3">Create Account</a>
