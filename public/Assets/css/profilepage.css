@@ -4,6 +4,7 @@ body {
   --base-color-1: rgb(46, 49, 49);
   --base-color-2: #5c7aea;
   --base-color-3: #ffffff;
+  --base-color-4: grey;
   background-color: #010815;
   position: fixed;
   right: 0;
@@ -17,7 +18,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 300px 670px 350px;
-  grid-template-rows: 340px 258px;
+  grid-template-rows: 360px 278px;
   grid-template-areas:
     "friends_online profile follow_me"
     "friends_online profile trending"
@@ -253,7 +254,7 @@ nav.navbar a.navbar-brand {
 .friends-information button {
   background-color: transparent;
   border: none;
-  color: var(--base-color-3);
+  color: var(--base-color-4);
   margin-bottom: 10px;
 }
 
@@ -394,7 +395,7 @@ button.changebutton {
 .edit_profile button {
   background-color: transparent;
   color: var(--base-color-3);
-  border: 2px solid var(--base-color-2);
+  border: 2px solid var(--base-color-3);
   width: 325px;
   border-radius: 5px;
   font-weight: 500;
