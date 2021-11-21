@@ -3,9 +3,9 @@
 ICY RAVENCLAW WEB
 we happily introduce you to ICY WEB a social media
 
-# [EMAIL ADMIN] = icyravenclaw12@gmail.com
+# EMAIL ADMIN = icyravenclaw12@gmail.com
 
-# [EMAIL PASS] = admin
+# EMAIL PASS = admin
 
 constributor
 
