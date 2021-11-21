@@ -130,7 +130,16 @@
                 font-family: sans-serif;
             }
 
-            @media (max-width: 980px) {
+            .input-otp {
+                width: 30%;
+                margin: 0% 35%;
+                padding: 0.5% 0%;
+            }
+            .input-otp:focus {
+                border: none;
+            }
+
+            @media screen and (max-width: 1000px) {
                 .bodyhtml {
                     background: black;
                 }
@@ -224,6 +233,14 @@
                     font-weight: bold;
                     font-family: sans-serif;
                 }
+                .input-otp {
+                    width: 50%;
+                    margin: 0% 25%;
+                    padding: 0.5% 0%;
+                }
+                .input-otp:focus {
+                    border: none;
+                }
             }
         </style>
         <script type="text/javascript">
@@ -247,13 +264,16 @@
                     <img src="https://media2.giphy.com/media/ukx7mWo5EyObRskaas/giphy.gif?cid=790b761129adcf55dea1b628e0bc7388f9351669bb07ec7c&rid=giphy.gif&ct=s" alt="Gambar">
                 </div>
                 <h1 style="font-weight: bold;">OTP</h1>
-                <input type="text" name="random">
+                <input type="text" name="random" class="input-otp">
                 <button class="btn btn-color1 card-sub" type="submit" name="submit">Confirm</button>
                 <br>
                 <div class="resend-code">
                     <a href="#" style="color: #5c7aea; font-family: sans-serif; font-weight: bold;">Resend Code</a>
                     <a style="color: #5c7aea; font-family: sans-serif;">if you didn't get the email.</a>
                 </div>
+                <% if(locals.error) { %>
+                    <span class ="text-danger pl-2"><%= error %></span>
+                <% } %>
             </div>
         </form>
 
