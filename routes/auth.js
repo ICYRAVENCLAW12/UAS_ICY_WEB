@@ -53,7 +53,7 @@ router.post('/login', async(req,res) => {
             } else {
                 res.render('pages/login', {
                     companyName : 'SALAH',
-                    error : 'wrong username or password. '
+                    error : 'Wrong Email or Password. '
                 })
             }
         }})
