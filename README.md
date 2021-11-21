@@ -5,8 +5,6 @@ ICY RAVENCLAW WEB
 we happily introduce you to ICY WEB a social media
 # =====================================
 
-# =====================================
-
 # EMAIL ADMIN = icyravenclaw12@gmail.com
 
 # EMAIL PASS = admin
@@ -28,6 +26,6 @@ constributor
 * add upload file with picture and without picture (like instagram doin dragon ball fusion with twitter right)
 * addin change password, change profile
 * addin forget password function
-* etc
+* etc yea
 
 # =====================================
