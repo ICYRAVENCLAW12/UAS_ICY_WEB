@@ -16,6 +16,8 @@ constributor
 * David Ciang - 535200011
 * CREATING ICY WEB IN NUTSHELL
 
+# =====================================
+
 * add login
 * add logout (yes you are now can login and logut now)
 * add upload file with picture and without picture (like instagram doin dragon ball fusion with twitter right)
