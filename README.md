@@ -28,13 +28,6 @@ constributor
 * add upload file with picture and without picture (like instagram doin dragon ball fusion with twitter right)
 * addin change password, change profile
 * addin forget password function
-* remove bug (at what cost, ofc adding more bugs)
-* add more bugs
-* trying to fix it
-* give up
-* crying in shade
-* don't care
-* connect all pages
-* get mentally ill
-* done
+* etc
+
 # =====================================
