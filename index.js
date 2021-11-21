@@ -183,6 +183,10 @@ app.post('/VERIF', (req, res) => { //email verif forget password
       req.session.destroy; // destroy all session 
     } else {
       console.log('your a failure') // checking sake
+      console.log('Otp salah. JS berhasil jalan.') // checking
+      res.render('pages/forgetverif__beneran', {
+        error: 'wrong OTP, please check your email again.'
+      });
     }
   })
 
