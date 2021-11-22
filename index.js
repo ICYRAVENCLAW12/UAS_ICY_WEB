@@ -182,10 +182,7 @@ app.post('/VERIF', (req, res) => { //email verif forget password
       res.render('pages/change_otp') // direct to change password page
       req.session.destroy; // destroy all session 
     } else {
-      console.log('your a failure') // checking sake
-      res.render('pages/forgetpass_beneran', {
-        error: 'wrong OTP, please input your email again and check your email again.'
-      });
+      console.log('your a failure i send you to jesus') // checking sake
     }
   })
 
@@ -200,6 +197,7 @@ app.post('/profile_settings', async (req, res, next)=>{
   const Bio = req.body.bio; //bio
   const Email = req.body.email; //email
   const Number = req.body.number; //no telp
+  const pic = await account.find({email: Username});
 
   await User.findOne({"email" : User}, async (err, User)=> { //mencari database mana yang akan diganti
         if (Name != account.name) { //cek jika nama baru dan lama tidak sama
@@ -247,7 +245,7 @@ app.post('/profile_settings', async (req, res, next)=>{
         
           }
           console.log('ini' + User) // checking sake
-          res.render('pages/setting') // direct to setting homepage
+          res.render('pages/setting', {account: pic}) // direct to setting homepage
           } else { // if the name is same
                 res.render('pages/profile_settings', {
                 companyName : 'SALAH', //you cannot do it awkkwkww

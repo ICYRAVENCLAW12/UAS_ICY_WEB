@@ -262,14 +262,11 @@
             <div class="card-body">
                 <form action="/VERIF" method="post">
                     <div class="form-group" >
-                        <label class="card-font" style="font-weight: bold;" for="exampleInputEmail1">Email :</label>
-                        <input class="form-control" placeholder="Email" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                        <label class="card-font" style="font-weight: bold;" for="exampleInputEmail1">Email / Username :</label>
+                        <input class="form-control" placeholder="Email / Username :" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
                     <a href="/forgetverif" class="nolink"><button class="btn btn-block btn-color3 mb-3" type="submit" name="submit">Send Login Link</button></a>
                 </form>
-                <% if(locals.error) { %>
-                    <span class ="text-danger pl-2"><%= error %></span>
-                <% } %>
                 <p class="card-5">Or</p>
                 <div style="text-align:center; margin-bottom: 3%;">
                     <a href="/signup" class="card-3">Create Account</a>

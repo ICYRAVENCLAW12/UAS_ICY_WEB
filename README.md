@@ -1,31 +1,44 @@
-# [EMAIL AND PASSWORD FOR ADMIN]
+# [*Files upload to MongoDB and Display those file*](https://www.youtube.com/watch?v=3f5Q9wDePzY&list=PLjrjtggw2EDxwzgTWdfxwbEKW_Cu43srx&index=4)
 
-# =====================================
-ICY RAVENCLAW WEB
-we happily introduce you to ICY WEB a social media
-# =====================================
+### gridfs-stream
 
-# EMAIL ADMIN = icyravenclaw12@gmail.com
+*Easily stream files to and from MongoDB GridFS.*
 
-# EMAIL PASS = admin
+```npm install gridfs-stream```
 
-# =====================================
-constributor
+[*official docs*](https://www.npmjs.com/package/gridfs-stream)
 
-* Kelvin G'yandi - 535200016
-* Joshua Steven - 535200048
-* Lorico Salim - 535200015
-* Ferdinand Iskandar - 535200012
-* David Ciang - 535200011
-* CREATING ICY WEB IN NUTSHELL
+### method-override
 
-# =====================================
+*Lets you use HTTP verbs such as PUT or DELETE in places *
+*where the client doesn't support it.*
 
-* add login
-* add logout (yes you are now can login and logut now)
-* add upload file with picture and without picture (like instagram doin dragon ball fusion with twitter right)
-* addin change password, change profile
-* addin forget password function
-* etc yea
+[*official docs*](https://www.npmjs.com/package/method-override)
 
-# =====================================
+### Multer's GridFS storage engine
+
+*GridFS storage engine for Multer to store uploaded files directly to MongoDb.*
+*This module is intended to be used with the v1.x branch of Multer.*
+
+```npm i multer-gridfs-storage```
+
+[*official docs*](https://www.npmjs.com/package/multer-gridfs-storage)
+
+### crypto
+
+[*node.js prebuild module*](https://nodejs.org/api/crypto.html)
+
+*The crypto module provides cryptographic functionality that includes a set of *
+*wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify functions.*
+
+## Overview of project
+
+ - mongodb setup 
+ - create disk storage with **Multer's GridFS storage engine**
+ - create routes for
+   1. **loads form(get)** : Rendering page with uploaded previous image
+   2. **uploads file to db(post)** : upload a single file and redirect
+   3. **display all file in json format(get)** : returning json object from db
+   4. **display single file object(get)** : displaying json format
+   5. **Display image(get)** : displaying orginal image
+   6. **delete files(delete)** : delete by using params
