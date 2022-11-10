@@ -1,5 +1,3 @@
-# [EMAIL AND PASSWORD FOR ADMIN]
-
 # =====================================
 ICY RAVENCLAW WEB
 we happily introduce you to ICY WEB a social media
