@@ -4,12 +4,6 @@
 ICY RAVENCLAW WEB
 we happily introduce you to ICY WEB a social media
 # =====================================
-
-# EMAIL ADMIN = icyravenclaw12@gmail.com
-
-# EMAIL PASS = admin
-
-# =====================================
 constributor
 
 * Kelvin G'yandi - 535200016
