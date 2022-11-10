@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel = "icon" href = 
+    "https://i.ibb.co/7rWKwZS/1.jpg" 
+    type = "image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style_setting.css">
+
+    <style>
+      input[disabled], input[readonly] { 
+        background-color: black; 
+        color: burlywood;
+        cursor: default; 
+        padding-left: 10px;
+      }
+    </style>
+</head>
+<body>
+    <nav class="fixed-top sticky-top">
+      <%- include('../layouts/navbar.ejs'); %>
+    </nav>
+    <div class="form" style="padding-top: 40px;">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                  <ul class="nav flex-column garis">
+                    <li class="nav-item" >
+                      <a class="nav-link" href="/profile_setting"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">account_circle</p>&nbsp &nbsp My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/changepass"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px;  ">lock</p>&nbsp &nbsp Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/helpandabout"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">help</p>&nbsp &nbsp Help center</a>
+                    </li>    
+                    <li class="nav-item">
+                      <a class="nav-link" href="/contactus"><p class="material-icons" style="color: white;font-size: 20pt; padding-top: 15px; ">info</p>&nbsp &nbsp Contact Us</a>
+                    </li>  
+              </div>
+              <div class="col">
+                <div class="card-body" style="text-align: left;">
+                    <h1 style="color: white;">If there something you wanna ask or there some question, you can contact 
+                        us below 
+                    </h1>
+                    <div class="form">
+                      <label for="exampleFormControlTextarea1" class="form-label"></label>
+                      <textarea class="form-control" id="textColor" rows="3" style="background-color: black; border-color: #5C7AEA ;"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" style="margin-left:0.2%;  margin-top: 1%;">Send</button>
+                    <h1 style="color: white; display: flex;">Or you can contact us at : </h1>
+                    <div class="form-group row">
+                      <label for="staticEmail" class="col-sm-2 col-form-label">Email/github</label>
+                      <div class="form-group col-sm-10" style="color: #5C7AEA;">
+                        <input type="email" readonly class="form-control-plaintext" id="staticEmail" value="icyravenclaw12@gmail.com">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="icyravenclaw">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="staticEmail" class="col-sm-2 col-form-label">Calls</label>
+                      <div class="col-sm-10 ">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="081753974860">
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script>
+  document.getElementById("textColor").style.color='White';
+</script>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+  });
+</script> 
+</body>
+</html>

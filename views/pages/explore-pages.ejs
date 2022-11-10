@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICY</title>
+    <link rel = "icon" href = 
+    "https://i.ibb.co/7rWKwZS/1.jpg" 
+    type = "image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style2.css">
+</head>
+
+<body class="body_html">  
+  <%- include('../layouts/navbar.ejs'); %>  
+    <div class="grid-container-xxl" >
+        <div class="leftside">
+        </div>
+        <main class="post_main">
+              <!--post start-->
+              <%- include('../layouts/pro-explore.ejs'); %>
+              <!--post end-->  
+        </main>
+        <div class="rightside">  
+        </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>feather.replace()</script>
+        <script>
+          // Get the modal
+          var modal2 = document.getElementById("myModal2");
+
+          // Get the button that opens the modal
+          var btn2 = document.getElementById("myBtn2");
+
+          // Get the <span> element that closes the modal
+          var span2 = document.getElementsByClassName("close2")[0];
+
+          // When the user clicks on the button, open the modal
+          btn2.onclick = function() {
+          modal2.style.display = "block";
+          }
+
+          // When the user clicks on <span> (x), close the modal
+          span2.onclick = function() {
+          modal2.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+          if (event.target == modal2) {
+              modal2.style.display = "none";
+          }
+          }
+      </script>
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementsByClassName("Comment_button");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        for(var i = 0 ; i < 1000 ; i++) {
+          btn[i].onclick = function() {
+          modal.style.display = "block";
+          };
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      }
+        </script>
+        <script>
+          window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.className += " hidden"; // class "loader hidden"
+          });
+        </script>
+</body>
+
+
+</html>

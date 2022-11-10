@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel = "icon" href = 
+    "https://i.ibb.co/7rWKwZS/1.jpg" 
+    type = "image/x-icon">
+    <link rel="icon" href="https://i.ibb.co/7rWKwZS/1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Assets/css/profilepage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- add before </body> -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+
+
+    <!-- VANILLA JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            FilePond.registerPlugin(
+                FilePondPluginImagePreview,
+                FilePondPluginImageResize,
+                FilePondPluginFileEncode
+            );
+            // https://pqina.nl/filepond/docs/patterns/api/filepond-object/#setting-options
+            FilePond.setOptions({
+                stylePanelAspectRatio: 150 / 100,
+                imageResizeTargetWidth: 100,
+                imageResizeTargetHeight: 150,
+            })
+            FilePond.parse(document.body);
+        });
+
+    </script>
+
+</head>
+
+<body class="body_html">
+    <nav class="fixed-top sticky-top">
+        <%- include('../layouts/navbar.ejs'); %>
+    </nav>
+    <div class="grid-container">
+
+        <!-- Friends Online -->
+        <div class="grid-left" id="friends_online">
+            <div class="friends_online-header">
+                <span class="material-icons">group</span>
+                <h4 class="titles">Friends Online</h4>
+            </div>
+        </div>
+        <!-- End of Friends Online -->
+
+        <!-- Empty -->
+        <div class="grid-empty">&nbsp;</div>
+        <!-- End of Empty -->
+
+        <!-- Profile -->
+        <div class="grid-mid" id="profile">
+            <div class="header">
+                <div class="page_name">
+                    <h3>Profile</h3>
+                </div>
+                <div class="header-left">
+                    <div class="friends">
+                        <p><b>0</b>&nbsp;&nbsp;Friends</p>
+                    </div>
+                    <div class="friends-information"> 
+                        <button type="button" data-modal-target="#modal-information"><span class="material-icons"> info </span></button>
+                        <span class="popup-text" id="popup"></span>
+                    </div>
+                </div>
+            </div>
+            <% userr.forEach((data2) => { %>
+            <div class="top">
+                <div class="background_img">
+                    <div class="top_content">
+                        <div class="image">
+                            <div class="profile_img">
+                                <img src="<%= data2.ImagePath %>"
+                                    alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                                <div class="change_img">
+                                    <input type="file" id="file" name="file">
+                                    <button class="changebutton" id="changebutton">Change Image</button>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="top_right">
+                            <div class="name">
+                                <h4><%= data2.name %></h4>
+                                <span class="material-icons"> verified </span>
+                                <!--
+                                <button class="edit" onclick="location.href='profile.html';"><i
+                                        data-feather="edit"></i></button>
+                                -->
+                            </div>
+                            <div class="number-tweets-followers-following">
+                                <div class="number_tweets">
+                                    <p> <b><%= movie.length %></b>&nbsp;&nbsp;Tweets</p>
+                                </div>
+                                <div class="number_followers">
+                                    <button type="button" data-modal-target="#modal-followers">
+                                        <b>0</b>&nbsp;&nbsp;Followers</button>
+                                </div>
+                                <div class="number_following">
+                                    <button type="button" data-modal-target="#modal-following">
+                                        <b>0</b>&nbsp;&nbsp;Following</button>
+                                </div>
+                            </div>
+                            <div class="edit_profile">
+                                <button type="button" onclick="location.href='/profile_setting';">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="more_profile_info">
+                        <div class="username">
+                            <p>@KuRoZz</p>
+                        </div>
+                        <div class="bio">
+                            <p>
+                                <%= data2.bio %>
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs justify-content-center main" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="tweets-tab" data-toggle="tab" href="#tweets" role="tab"
+                                aria-controls="tweets" aria-selected="true">Tweets</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="media-tab" data-toggle="tab" href="#media" role="tab"
+                                aria-controls="media" aria-selected="false">Media</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <% }) %>
+
+            <!-- Tweets, Media, Shorts -->
+
+            <div class="bottom">
+                <div class="tab-content bottom_content" id="myTabContent">
+                    <div class="tab-pane fade show active your_tweets" id="tweets" role="tabpanel"
+                        aria-labelledby="tweets-tab">
+                        <%- include('../layouts/pro_profile.ejs'); %>
+                    </div>            
+                    <div class="tab-pane fade your_media" id="media" role="tabpanel" aria-labelledby="media-tab">
+                        <div class="box">
+                            <% movie.forEach((data1) => { %>
+                                <% if(data1.id == 1){ %>
+                                <div class="item">
+                                    <a href="#">
+                                        <img id="myimg" src=<%= data1.coverImagePath %> alt="">
+                                    </a>
+                                </div>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Profile -->
+
+        <!-- Trending Now -->
+            <div class="grid-right-top" id="trending_now">
+                <a class="titles">#TRENDING NOW</a>
+                <div class="trends">
+                    <% for(var i = 0; i < trend.length ; i++) { %>
+                        <% if (i === 3) { %>
+                            <% break; %>
+                        <% } %>
+                        <div class="trend">
+                            <a href=""><%= trend[i].name %></a>
+                            <button onclick="location.href='login_beneran.html';"><span
+                                    class="material-icons">more_horiz</span></button>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="trending-seeMore">
+                    <a href="/trending">See More</a>
+                </div>
+            </div>
+            <!-- End of Trending Now -->
+
+            <!-- Follow Me -->
+            <div class="grid-right-bottom" id="follow_me">
+                <a class="titles">FOLLOW ME</a>
+                <div class="suggested_accounts">
+                    <% for(var i = 0; i < followme.length ; i++) { %>
+                        <% if (i === 2) { %>
+                            <% break; %>
+                        <% } %>
+                        <div class="suggested_account">
+                            <div class="account_img">
+                                <img class="acc_img"
+                                    src="<%= followme[i].imagePath %>"
+                                    alt="gambar" width="50px" height="50px" />
+                            </div>
+                            <div class="name-username">
+                                <a href=""><%= followme[i].name %></a>
+                                <p>@KuRoZz</p>
+                            </div>
+                            <button class="follow_button" id="follow_button"><i onclick="changeIcons(this)"
+                                    class="fa fa-user-plus"></i></button>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="trending-followMe">
+                    <a href="/followme">See More</a>
+                </div>
+            </div>
+            <!-- End of Follow Me -->
+
+            <!-- Credits-->
+            <div class="grid-credits" id="credits">
+                <div class="credits-content">
+                    <a href="#">terms of service</a>
+                    <a href="#">privacy policy</a>
+                    <a href="#">cookie policy</a><br>
+                    <a href="#">&copy; 2021 IcyRavenclaw Fondation</a>
+                </div>
+            </div>
+            <!-- End of Credits -->
+            </div>
+        <!-- End of Container -->
+
+    <!-- Modal Followers -->
+    <div class="modal-followers" id="modal-followers">
+        <div class="modal-header">
+            <div class="title"> Followers</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body-followers">
+            <div class="modal-body-followers-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><i class="fa fa-user-times"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- End of Modal Followers -->
+
+    <!-- Modal Following -->
+    <div class="modal-following" id="modal-following">
+        <div class="modal-header">
+            <div class="title">Following</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body-following">
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+
+            <div class="modal-body-following-content">
+                <div class="account_img">
+                    <img class="acc_img"
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+                        alt="gambar" width="50px" height="50px" />
+                </div>
+                <div class="name-username">
+                    <a href="">Ferdinand Iskandar</a>
+                    <p>@KuRoZz</p>
+                </div>
+                <button class="follow_button" id="follow_button"><span class="material-icons"> person_remove </span></button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- End of Modal Following -->
+
+    <!-- Modal Information -->
+    <div class="modal-information" id="modal-information">
+        <div class="modal-header">
+            <div class="title"> Information</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body-information">
+            <div class="modal-body-information-content">
+                <h4>Friends are people or accounts you followed and they followed you back.</h4>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- End of Modal Information-->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal3">
+        <!-- Modal content -->
+        <div class="modal-content3">
+            <span class="close3">&times;</span>
+            <div class="pic">
+                <div class="profile_img_modal">
+                    <img src=../../Assets/1.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change1">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/2.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change2">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/3.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change3">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/4.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change4">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/5.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change5">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/6.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change6">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/7.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change7">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/8.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change8">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/9.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change9">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/10.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change10">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/11.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change11">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/12.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change12">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/13.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change13">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/14.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change14">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/15.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change15">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/16.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change16">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/17.png
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change17">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/18.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change18">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/19.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change19">Choose Image</a></button>
+                    </div>
+                </div>
+                <div class="profile_img_modal">
+                    <img src=../../Assets/20.jpg
+                        alt="gambar" class="rounded-circle prof_img" id="photo" width="150px" height="150px" />
+                    <div class="change_img_modal">
+                        <button class="changebutton" id="changebutton"><a href="/change20">Choose Image</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="/Assets/js/profile.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("changebutton");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close3")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+</body>
+
+</html>

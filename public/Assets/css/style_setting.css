@@ -1,0 +1,116 @@
+body {
+    --main-radius: 15px;
+    --main-padding: 8px;
+    --base-color-1: rgb(46, 49, 49);
+    --base-color-2: #5c7aea;
+    --base-color-3: #ffffff;
+    background-color: #010815;
+  }
+
+  .body::-webkit-scrollbar {
+      display: none;
+  }
+
+body {
+background-color: black;
+height: 100vh;
+}
+
+.row {
+border-radius: 10px;
+background-color:black;
+border: 2px solid var(--base-color-2);
+height: 89%;
+}
+
+.garis {
+border-right: 1px solid var(--base-color-2);
+height:100%;
+position: relative;
+}
+
+li > a {
+color:white;
+font-size: 20pt;
+}
+
+li > a:hover {
+color: black;
+background-color: var(--base-color-2);
+font-size: 20pt;
+}
+
+.material-icons{
+font-size: 20px;
+color: white;
+}
+
+.form-group input {
+    background-color: var(--base-color);
+    border:1px solid var(--base-color-2);
+}
+
+.form-group textarea {
+    background-color: var(--base-color-1);
+    border:1px solid var(--base-color-2);
+}
+
+.form-group label.form-check-label {
+    color: white;
+}
+
+.form-group label {
+    color: white;
+}
+
+.form-group input:focus {
+    background-color: var(--base-color-1);
+    border:1px solid var(--base-color-2);
+}
+
+.form-group textarea:focus {
+    background-color: var(--base-color-1);
+    border:1px solid var(--base-color-2);
+}
+
+.profile-picture {
+ text-align: center;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    height: 250px;
+    margin-right: 2%;
+  }
+  
+.profile-picture h3 {
+  font-size: 16pt;
+  color: white;
+  }
+
+.form-group::placeholder{
+    color: gray;
+    opacity: 1;
+}
+
+.form-group input {
+    color: white;
+  background-color:transparent ;
+}
+
+.form-group textarea {
+    color: white;
+}
+
+.form-group input {
+  background-color: var(--base-color-1);
+}
+
+.card-body-password > .form-group {
+  -webkit-text-security: disc;
+  padding: 1% 1% 0 0;
+}
+
+.card-body-password {
+  padding: 0% 0% 1% 1%;
+}

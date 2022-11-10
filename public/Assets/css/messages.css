@@ -1,0 +1,85 @@
+body {
+    --main-radius: 15px;
+    --main-padding: 8px;
+    --base-color-1: rgb(46, 49, 49);
+    --base-color-2: #5c7aea;
+    --base-color-3: #ffffff;
+    background-color: #010815;
+    position: fixed;
+    right: 0;
+    left: 0;
+  }
+
+/*=====================================================================*/
+
+.friend {
+    border: 2px solid var(--base-color-2);
+    border-radius: 20px;
+    margin: 1% 0%;
+    display: flex;
+    font-size: 16pt;
+    font-family: sans-serif;
+    background-color: #5C7AEA;
+}
+
+.friend img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-right: 1%;
+}
+
+.friendlist {
+    border-right: 1px solid  var(--base-color-2);
+    padding-right: 3%;
+}
+
+.friend a.name {
+    margin-top: 10px;
+    margin-left: 5px;
+    color: #010815;
+}
+
+.btn-color1 {
+    background: #5C7AEA;
+    color: black;
+}
+
+.kelas {
+    margin-top: 1%;
+    padding: 1%;
+    border-radius: 10px;
+    border: 1px solid var(--base-color-2);
+    height: 830px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+}
+
+.massaging input, .massaging button {
+    position: fixed;
+    bottom: 10%;
+}
+
+.massaging input.input {
+    width: 37%;
+    margin-left: 10px;
+    height: 5%;
+    border-radius: 25px;
+    border: none;
+    background-color:var(--base-color-1);
+}
+
+.massaging .button {
+    left: 73%;
+    height: 5%;
+    width: 5%;
+    border-radius: 25px;
+    border: none;
+    background-color:var(--base-color-1);
+}
+
+.messages p {
+    color: white;
+}

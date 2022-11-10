@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Login-ICY</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+        <link rel="stylesheet" href="/Assets/css/login.css">
+        <link rel="icon" href="C:\Joshua\Kuliah Semester 3\Web Programming (8 sks)\Project_UTS\Project_Beneran\Icons\favicon.ico">
+        <link rel = "icon" href = 
+        "https://i.ibb.co/7rWKwZS/1.jpg" 
+        type = "image/x-icon">
+        <link rel="stylesheet" href="/Assets/css/login.css">
+        <script>
+            function showpass(){
+                const pass = document.getElementById("passwordaja");
+                const hide = document.getElementById("hide");
+                if (pass.type === "password") {
+                    pass.type = "text";
+                    hide.innerHTML = "hide password";
+                }
+                else {
+                    pass.type = "password";
+                    hide.innerHTML = "show password";
+                }
+            }
+        </script>
+    </head>
+    <body class="bodyhtml">
+        <div class="loader">
+            <img src="https://i.ibb.co/7rWKwZS/1.jpg" alt="Loading..." />
+        </div>
+        <nav class="navbar navbar-dark bg-color1">
+            <a class="navbar-brand navigasi-1" href="/">ICY</a>
+            <ul class="navbar-nav" style="display: flex;">
+                <li class="nav-item">
+                    <a class="navigasi-2" href="/signup" >Sign Up</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main">
+            <div class="gambar">
+                    <img style="object-fit: cover; margin: 3px; margin-top: 70px; border-radius: 10px;" width="150px" height="300px" src="https://source.unsplash.com/collection/user/erondu">
+                    <img style="object-fit: cover; margin: 3px; margin-bottom: 70px; border-radius: 10px;" width="150px" height="300px" src="https://source.unsplash.com/collection/user/thisisareku">
+                    <img style="object-fit: cover; margin: 3px; margin-top: 70px; border-radius: 10px;" width="150px" height="300px" src="https://source.unsplash.com/collection/user/micheile">
+                    <img style="object-fit: cover; margin: 3px; margin-bottom: 70px; border-radius: 10px;" width="150px" height="300px" src="https://source.unsplash.com/collection/user/melakii">
+            </div>
+            <div class="card text-white bg-color2 card-1">
+                <div class="card-header card-2">
+                    <span class="material-icons">account_box</span>
+                    <br>
+                    Login
+                </div>
+                <div class="card-body">
+                    <form action="/auth/login" method="post">
+                        <div class="form-group">
+                            <label class="card-font" style="font-weight: bold;" for="email">Email :</label>
+                            <input class="card-input form-control" placeholder="Email" type="email" id="email" name="username" aria-describedby="emailHelp" required autofocus> 
+                            <small class="form-text card-fontsedang" id="emailHelp">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="card-font" style="font-weight: bold;" for="password">Password :</label>
+                            <input placeholder="Password" type="password" class="card-input form-control" id="passwordaja" name="password" required autofocus>
+                            <a class="card-fontkecil forget-pass" href="/forgetpass">Forgot password?</a>
+                            <a class="show-pass" id="hide" onclick="showpass()">show password</a>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="card-input form-check-input" id="exampleCheck1">
+                            <label class="form-check-label card-fontsedang" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <button class="card-input btn btn-block btn-color" name="submit" id="submit" type="submit">Login</button>
+                        <% if(locals.error) { %>
+                            <span class ="text-danger pl-2"><%= error %></span>
+                        <% } %>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script>
+            window.addEventListener("load", function () {
+              const loader = document.querySelector(".loader");
+              loader.className += " hidden"; // class "loader hidden"
+            });
+          </script>
+          <script>
+            var input = document.getElementById("email");
+            input.addEventListener("keyup", function(event) {
+              if (event.keyCode === 13) {
+               event.preventDefault();
+               document.getElementById("submit").click();
+              }
+            });
+            </script>
+    </body>
+</html>
